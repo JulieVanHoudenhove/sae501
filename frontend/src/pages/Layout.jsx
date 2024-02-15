@@ -1,12 +1,11 @@
 import "../styles/main.css";
-import { Outlet, Link } from "react-router-dom";
-import logo from "../assets/oeil_roy_lunetier.svg";
+import { Outlet } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
 const Layout = () => {
 	return (
 		<>
-			{/* NAVBAR */}
-
+			<Navbar />
 			<Outlet />
 		</>
 	);
