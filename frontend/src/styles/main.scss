@@ -14,6 +14,7 @@
 $color-dark: #303133;
 $color-dark-hover: rgba(48, 49, 51, 0.5);
 $color-main: #f4efeb;
+$color-text: #777777;
 
 // Globals
 
@@ -23,6 +24,11 @@ $color-main: #f4efeb;
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
+	color: $color-dark;
+}
+
+body {
+	overflow-x: hidden;
 }
 
 // Layouts
@@ -77,5 +83,31 @@ nav {
 	}
 }
 
+.btn-main {
+	background-color: $color-dark;
+	padding: 15px 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: $color-main;
+	border: none;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 0.3s;
+	text-transform: uppercase;
+
+	&:hover {
+		background-color: darken($color: $color-dark, $amount: 5);
+	}
+}
+
+.link-secondary {
+	color: $color-dark;
+	cursor: pointer;
+	text-decoration: none;
+}
+
 // Pages
 @import "home/home";
+@import "product/product";
