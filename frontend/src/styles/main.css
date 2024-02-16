@@ -1,0 +1,301 @@
+@font-face {
+  font-family: "Nunito Sans";
+  src: url("../assets/fonts/NunitoSans-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Matcha";
+  src: url("../assets/fonts/matcha.ttf") format("truetype");
+}
+
+* {
+  font-family: "Nunito Sans", serif;
+  font-weight: 500;
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #303133;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+nav {
+  width: 100vw;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 50px;
+  border-bottom: #00000010 1px solid;
+}
+
+nav img {
+  height: 60px;
+  width: 60px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+nav img:hover {
+  -webkit-transform: translateY(-1px);
+          transform: translateY(-1px);
+}
+
+nav ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 25px;
+}
+
+nav ul li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #303133;
+  text-decoration: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+nav ul li a:hover {
+  color: rgba(48, 49, 51, 0.5);
+}
+
+nav ul li a:hover svg {
+  fill: rgba(48, 49, 51, 0.5);
+}
+
+nav ul li a svg {
+  height: 20px;
+  width: 20px;
+  fill: #303133;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.btn-main {
+  background-color: #303133;
+  padding: 15px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #f4efeb;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-transform: uppercase;
+}
+
+.btn-main:hover {
+  background-color: #242426;
+}
+
+.link-secondary {
+  color: #303133;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.product-page {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 50px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 15px;
+}
+
+.product-page .breadcrumb {
+  padding: 0 50px;
+  color: #777777;
+  font-size: 14px;
+}
+
+.product-page .configurator {
+  padding: 0 50px;
+  width: calc(100% - 100px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 50px;
+}
+
+.product-page .configurator .preview-container {
+  min-width: 60%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+
+.product-page .configurator .preview-container .canvas {
+  height: 55vh;
+  width: 100%;
+  background-color: lightgray;
+}
+
+.product-page .configurator .preview-container .images-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+
+.product-page .configurator .preview-container .images-container .image {
+  background-color: lightgray;
+  height: 150px;
+  width: 220px;
+}
+
+.product-page .configurator .product {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+}
+
+.product-page .configurator .product span {
+  color: #777777;
+  font-size: 16px;
+}
+
+.product-page .configurator .product h1 {
+  font-family: "Matcha";
+  font-size: 64px;
+}
+
+.product-page .configurator .product .product-variants {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 15px;
+}
+
+.product-page .configurator .product .product-variants .texture-variant {
+  width: 100%;
+  height: 75px;
+  padding: 0 10px;
+  border: #77777750 1px solid;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+}
+
+.product-page .configurator .product .product-variants .texture-variant img {
+  height: 55px;
+  width: 55px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.product-page .configurator .product .product-variants .texture-variant .no-image {
+  height: 55px;
+  width: 55px;
+  background-color: lightgray;
+}
+
+.product-page .configurator .product .product-variants .texture-variant p {
+  color: #777777;
+  text-transform: uppercase;
+  font-size: 18px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.product-page .configurator .product .product-variants .texture-variant:hover, .product-page .configurator .product .product-variants .texture-variant.current {
+  border: #303133 1px solid;
+}
+
+.product-page .configurator .product .product-variants .texture-variant:hover p, .product-page .configurator .product .product-variants .texture-variant.current p {
+  color: #303133;
+}
+
+.product-page .configurator .product button {
+  margin-top: 20px;
+}
+
+.product-page .configurator .product a {
+  text-align: center;
+}
+
+.product-page .product-details {
+  margin-top: 100px;
+  padding: 50px;
+  width: 100%;
+  background-color: #f4efeb;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+
+.product-page .product-details h2 {
+  font-family: "Matcha";
+  font-size: 48px;
+}
+
+.product-page .product-details p {
+  color: #777777;
+  font-size: 16px;
+  max-width: 60%;
+  line-height: 135%;
+}
+/*# sourceMappingURL=main.css.map */
