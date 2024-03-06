@@ -3,6 +3,7 @@ import { PrismaService } from 'src/prisma.service';
 import { User, Prisma } from "@prisma/client";
 import {hashSync} from "bcrypt";
 import {CreateUserDto} from "./dto/create-user.dto";
+import {UpdateUserDto} from "./dto/update-user.dto";
 
 @Injectable()
 export class UsersService {
@@ -41,16 +42,15 @@ export class UsersService {
         });
     }
 
-    async update(params: {
-        where: Prisma.UserWhereUniqueInput;
-        data: Prisma.UserUpdateInput;
-    }): Promise<User> {
-        const { where, data } = params;
-        data.password = hashSync(String(data.password), 12);
+    async update(
+        id: number,
+        updateUserDto: UpdateUserDto
+    ): Promise<User> {
+        updateUserDto.password = hashSync(updateUserDto.password, 12);
 
         return this.prisma.user.update({
-            data,
-            where,
+            where: { id },
+            data: updateUserDto,
         });
     }
 
