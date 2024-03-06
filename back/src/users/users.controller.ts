@@ -1,10 +1,11 @@
-import {Body, Controller, Delete, Get, Param, ParseIntPipe, Patch, Post} from '@nestjs/common';
+import {Body, Controller, Delete, Get, Param, ParseIntPipe, Patch, Post, UseGuards} from '@nestjs/common';
 import { UsersService } from './users.service';
 import { User as UserModel } from '@prisma/client';
 import {CreateUserDto} from "./dto/create-user.dto";
 import {UpdateUserDto} from "./dto/update-user.dto";
-import {ApiCreatedResponse, ApiOkResponse, ApiTags} from "@nestjs/swagger";
+import {ApiBearerAuth, ApiCreatedResponse, ApiOkResponse, ApiTags} from "@nestjs/swagger";
 import {UserEntity} from "./users.entity";
+import {JwtAuthGuard} from "../auth/jwt-auth.guard";
 
 @Controller('users')
 @ApiTags('users')
@@ -13,6 +14,8 @@ export class UsersController {
 
 
   @Post()
+  @UseGuards(JwtAuthGuard)
+  @ApiBearerAuth()
   @ApiCreatedResponse({ type: UserEntity })
   async create(
       @Body() createUserDto: CreateUserDto,
@@ -21,6 +24,8 @@ export class UsersController {
   }
 
   @Get()
+  @UseGuards(JwtAuthGuard)
+  @ApiBearerAuth()
   @ApiOkResponse({ type: UserEntity, isArray: true })
   async findAll(): Promise<UserModel[]> {
     const users = await this.usersService.users({});
@@ -28,18 +33,24 @@ export class UsersController {
   }
 
   @Get(':id')
+  @UseGuards(JwtAuthGuard)
+  @ApiBearerAuth()
   @ApiOkResponse({ type: UserEntity })
   async findOne(@Param('id', ParseIntPipe) id: number): Promise<UserModel> {
     return new UserEntity(await this.usersService.user({ id: Number(id) }));
   }
 
   @Patch(':id')
+  @UseGuards(JwtAuthGuard)
+  @ApiBearerAuth()
   @ApiOkResponse({ type: UserEntity })
   async update(@Param('id', ParseIntPipe) id: number, @Body() updateUserDto: UpdateUserDto): Promise<UserModel> {
     return new UserEntity(await this.usersService.update(id, updateUserDto));
   }
 
   @Delete(':id')
+  @UseGuards(JwtAuthGuard)
+  @ApiBearerAuth()
   @ApiOkResponse({ type: UserEntity })
   async remove(@Param('id', ParseIntPipe) id: number): Promise<UserModel> {
     return new UserEntity(await this.usersService.remove({ id: id }));
