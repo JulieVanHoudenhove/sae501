@@ -3,11 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        matcha: ['Matcha', 'sans-serif'],
+                        nunito: ['Nunito Sans', 'sans-serif']
+                    },
+                    colors: {
+                        cream: '#F4EFEB',
+                        dark: '#303133',
+                        footer_dark: '#1B1D1F',
+                        footer_darkest: '#141618'
+                    },
+                    spacing: {
+                        container: '108px'
+                    }
+                }
+            }
+        }
+    </script>
     <title>SAÉ 501 - Roy Lunetier</title>
 </head>
 <body>
-    <h1>Roy Lunetier</h1>
-    <h2>Configurateur de lunettes</h2>
-    <h3>Jules BOUSREZ, Nathan DEUIL, Robin LANFRANCHI, Julie VAN HOUDENHOVE</h3>
+    <header class="bg-white py-5 px-9 w-full fixed h-[100px] top-0">
+        <nav class="flex justify-between items-center">
+            <img class="h-[60px]" src="images/oeil_roy_lunetier.svg" alt="Logo Roy Lunetier">
+            <ul class="flex gap-7">
+                <li>
+                    <a href="#a-propos">A propos</a>
+                </li>
+                <li>
+                    <a href="#projet">Projet</a>
+                </li>
+                <li>
+                    <a href="#equipe">Équipe</a>
+                </li>
+                <li>
+                    <a href="">Accueil</a>
+                </li>
+                <li>
+                    <a href="">Accueil</a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/roylunetier/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="mt-[100px]">
+        <section id="accueil">
+            <div class="h-screen w-screen" style="background-image: url('images/RL-10.jpg');">
+                <div class="absolute w-full h-full flex items-center flex-col justify-center">
+                    <h2 class="uppercase text-white tracking-[8px]">Roy Lunetier</h2>
+                    <h3 class="font-matcha text-[75px] text-center text-white">Un projet de visualisation 3D et<br>de réalité augmentée</h3>
+                </div>
+            </div>
+        </section>
+        <section id="a-propos" class="bg-cream p-container flex flex-col items-center gap-9">
+            <h2 class="font-matcha text-dark text-[50px] text-center">Présentation de l'entreprise</h2>
+            <p class="text-justify">Roy Lunetier, une marque de lunettes basée en Bourgogne, incarne l'essence de l'éco-conception et de l'artisanat
+            français. Chaque paire de lunettes est façonnée avec un savoir-faire exceptionnel et respecte la tradition des lunetiers français tout en intégrant des détails contemporains uniques. L'entreprise se distingue par la revalorisation de matériaux oubliés, utilisés exclusivement dans une production artisanale à la main. Les lunettes sont conçues avec passion et résultent de la volonté de produire localement et durablement. L'expérience de la fabrication artisanale, la défense du savoir-faire français, et la production locale en Bourgogne sont au cœur de leurs missions. La valorisation de l'artisanat, de l'amour de l'objet et du développement durable guide leur démarche. Les montures, créées à partir d'anciens matériaux réunis, sont proposées en série limitée, évaluant les besoins en fonction des ressources disponibles. Roy Lunetier offre des lignes intemporelles réinterprétant des formes variées, avec une exigence constante de finitions de qualité. Des étuis artisanaux faits à la main, utilisant des chutes de cuir et de caoutchouc, complètent l'engagement envers l'authenticité et la durabilité.</p>
+        </section>
+        <section id="projet" class="flex flex-col">
+            <div class="flex">
+                <div class="w-1/2 flex flex-col p-container items-center justify-center gap-[18px]">
+                    <h2 class="font-matcha text-[35px] text-dark text-center">Présentation du projet</h2>
+                    <p class="text-justify">Le projet est un configurateur de lunette. Avec le fait de pouvoir regarder la modélisation de la paire de lunettes sous tous les angles mais aussi de changer la couleur. Il sera également possible, à l’aide de la réalité augmentée, d’essayer les lunettes comme lorsqu’on utilise des filtres sur les réseaux sociaux, cela permettra de se projeter, de voir si la paire nous va, mais aussi si la couleur nous va au teint. Il y aura un back office qui permettra de rentrer les données comme le nom de la paire, les couleurs dans lesquelles elle est disponible et ainsi de suite, cela facilite l’ajout de nouvelles paires ou le retrait d’autres.</p>
+                </div>
+                <img class="w-1/2 object-cover" src="images/RL-2.jpg" alt="">
+            </div>
+            <div class="flex">
+                <img class="w-1/2 object-cover" src="images/RL-1.jpg" alt="">
+                <div class="w-1/2 flex flex-col p-container items-center justify-center gap-[18px]">
+                    <h2 class="font-matcha text-[35px] text-dark text-center">Les technologies utilisées</h2>
+                    <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis sem at purus rhoncus pretium. Integer imperdiet sapien ut neque venenatis, at consectetur lacus efficitur. Phasellus vitae leo dignissim, hendrerit arcu sit amet,
+                    ornare metus. Suspendisse malesuada turpis vel rhoncus luctus. Integer ultrices mattis orci, egestas congue nibh congue non. Aenean eleifend placerat sem et mattis. Duis sodales nisi quis turpis bibendum condimentum. Cras ornare, ex vitae
+                    venenatis aliquet, magna velit condimentum velit, sed feugiat neque lectus bibendum ligula. Duis sodales odio id ultricies fermentum. Etiam sollicitudin turpis in nisl imperdiet, a malesuada urna lobortis. Vivamus ut augue eleifend, gravida metus a, pretium dui.</p>
+                </div>
+            </div>
+        </section>
+        <section id="equipe" class="bg-cream p-container flex flex-col items-center gap-9">
+            <h2 class="font-matcha text-dark text-[50px] text-center">Présentation de l'équipe</h2>
+            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis sem at purus rhoncus pretium. Integer imperdiet
+            sapien ut neque venenatis, at consectetur lacus efficitur. Phasellus vitae leo dignissim, hendrerit arcu sit amet,
+            ornare metus. Suspendisse malesuada turpis vel rhoncus luctus. Integer ultrices mattis orci, egestas congue nibh congue non. Aenean eleifend placerat sem et mattis. Duis sodales nisi quis turpis bibendum condimentum. Cras ornare, ex vitae venenatis aliquet, magna velit condimentum velit, sed feugiat neque lectus bibendum ligula. Duis sodales odio id ultricies fermentum. Etiam sollicitudin turpis in nisl imperdiet, a malesuada urna lobortis. Vivamus ut augue eleifend, gravida metus a, pretium dui.</p>
+        </section>
+        <section class="flex">
+            <div class="flex flex-col">
+                <div class="h-1/2 flex flex-col items-center justify-center gap-[18px] text-center py-container px-[50px]">
+                    <h3 class="font-matcha text-[32px]">Jules Bousrez</h3>
+                    <p class="text-[18px] leading-8">Développeur frontend<br>Three.JS et React</p>
+                </div>
+                <img class="h-1/2 object-cover" src="images/benjamin.jpg" alt="">
+            </div>
+            <div class="flex flex-col">
+                <img class="h-1/2 object-cover" src="images/benjamin.jpg" alt="">
+                <div class="h-1/2 flex flex-col items-center justify-center gap-[18px] text-center py-container px-[50px]">
+                    <h3 class="font-matcha text-[32px]">Nathan Deuil</h3>
+                    <p class="text-[18px] leading-8">Développeur backend<br>Nest.JS</p>
+                </div>
+            </div>
+            <div class="flex flex-col">
+                <div class="h-1/2 flex flex-col items-center justify-center gap-[18px] text-center py-container px-[50px]">
+                    <h3 class="font-matcha text-[32px]">Robin Lanfranchi</h3>
+                    <p class="text-[18px] leading-8">Développeur AR<br>???</p>
+                </div>
+                <img class="h-1/2 object-cover" src="images/benjamin.jpg" alt="">
+            </div>
+            <div class="flex flex-col">
+                <img class="h-1/2 object-cover" src="images/benjamin.jpg" alt="">
+                <div class="h-1/2 flex flex-col items-center justify-center gap-[18px] text-center py-container px-[50px]">
+                    <h3 class="font-matcha text-[32px]">Julie Van Houdenhove</h3>
+                    <p class="text-[18px] leading-8">Cheffe de projet,<br>Développeuse frontend</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <div class="bg-footer_dark flex justify-between items-center p-9">
+            <img class="h-[100px]" src="images/logo_roy_lunetier_white.svg" alt="">
+            <nav>
+                <ul class="flex text-white gap-7">
+                    <li>
+                        <a href="#">Accueil</a>
+                    </li>
+                    <li>
+                        <a href="#a-propos">A propos</a>
+                    </li>
+                    <li>
+                        <a href="#projet">Projet</a>
+                    </li>
+                    <li>
+                        <a href="#equipe">Équipe</a>
+                    </li>
+                    <li>
+                        <a href="">Accueil</a>
+                    </li>
+                    <li>
+                        <a href="">Accueil</a>
+                    </li>
+                </ul>
+            </nav>
+            <a class="text-white" href="">Mentions légales</a>
+        </div>
+        <div class="bg-footer_darkest flex items-center justify-center py-9">
+            <p class="text-white">© 2023 Roy lunetier | Tous droits réservés</p>
+        </div>
+    </footer>
+    <script src="https://kit.fontawesome.com/a4b141eee2.js" crossorigin="anonymous"></script>
 </body>
 </html>
