@@ -4,8 +4,8 @@ import { CreateCategoryDto } from './dto/create-category.dto';
 import { UpdateCategoryDto } from './dto/update-category.dto';
 import {ApiBearerAuth, ApiCreatedResponse, ApiOkResponse, ApiTags} from "@nestjs/swagger";
 import {JwtAuthGuard} from "../auth/jwt-auth.guard";
-import {CategoryEntity} from "./categories.entity";
-import {Category, Category as CategoryModel} from "./entities/category.entity";
+import {CategoryEntity} from "./entities/category.entity";
+import {Category as CategoryModel} from '@prisma/client';
 
 @Controller('categories')
 @ApiTags('categories')
