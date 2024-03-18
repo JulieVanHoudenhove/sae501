@@ -11,5 +11,11 @@ export class CategoryEntity implements Category {
 
     @ApiProperty()
     name: string;
+
+    @ApiProperty()
+    createdAt: Date;
+
+    @ApiProperty()
+    updatedAt: Date;
 }
 
