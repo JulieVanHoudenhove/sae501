@@ -37,7 +37,7 @@ export class UsersController {
   @ApiBearerAuth()
   @ApiOkResponse({ type: UserEntity })
   async findOne(@Param('id', ParseIntPipe) id: number): Promise<UserModel> {
-    return new UserEntity(await this.usersService.user({ id: Number(id) }));
+    return new UserEntity(await this.usersService.user({ id: id }));
   }
 
   @Patch(':id')
