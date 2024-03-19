@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -22,51 +22,51 @@
             }
         }
     </script>
-    <title>Kickstater</title>
+    <title>Kickstarter</title>
 </head>
-<body>
-    <header>
-        <h2>funder.</h2>
+<body class="bg-cream">
+    <header class="flex justify-center items-center my-10">
+        <h2 class="font-cooper text-6xl text-dark">funder.</h2>
     </header>
-    <section>
+    <section class="mx-28">
         <img src="images/site.png">
-        <div>
-            <div></div>
-            <div></div>
-            <p>58%</p>
+        <div class="relative mt-12 flex items-center h-16">
+            <div class="absolute bg-white h-16 w-full shadow-[0_13px_22px_0_rgba(0,0,0,0.10)]"></div>
+            <div class="absolute bg-pink h-16 w-[1000px]"></div>
+            <p class="absolute text-white font-cooper text-[54px] mx-4">58<span class="font-cooper text-[32px]">%</span></p>
         </div>
     </section>
-    <section>
-        <div>
-            <h1>Changer de regard avec notre technologie 3D</h1>
-            <p>Avez-vous déjà ressenti la frustration de ne pas trouver la paire parfaite de lunettes chez l'opticien ? Nous
+    <section class="m-28 flex gap-44">
+        <div class="flex flex-col gap-12 w-1/2">
+            <h1 class="font-cooper text-5xl text-dark">Changer de regard avec<br>notre technologie 3D</h1>
+            <p class="text-dark">Avez-vous déjà ressenti la frustration de ne pas trouver la paire parfaite de lunettes chez l'opticien ? Nous
                 aussi. C'est pourquoi nous avons décidé de changer les règles du jeu. Notre équipe passionnée a développé une
                 solution révolutionnaire pour mettre fin à cette expérience décevante. Bienvenue dans le futur de l'optique !
             </p>
         </div>
-        <div>
-            <div>
-                <div>
-                    <p>100 000<span>€</span></p>
-                    <p>est notre objectif</p>
+        <div class="w-1/2 flex flex-col gap-7">
+            <div class="flex gap-14">
+                <div class="flex flex-col gap-3">
+                    <p class="text-pink font-cooper text-5xl">100 000<span class="font-cooper text-3xl">€</span></p>
+                    <p class="text-dark font-poppins text-[22px]">est notre objectif</p>
                 </div>
-                <div>
-                    <p>58<span>%</span></p>
-                    <p>financés</p>
+                <div class="flex flex-col gap-3">
+                    <p class="text-pink font-cooper text-5xl">58<span class="font-cooper text-3xl">%</span></p>
+                    <p class="text-dark font-poppins text-[22px]">financés</p>
                 </div>
-                <div>
-                    <p>21</p>
-                    <p>jours restants</p>
+                <div class="flex flex-col gap-3">
+                    <p class="text-pink font-cooper text-5xl">21</p>
+                    <p class="text-dark font-poppins text-[22px]">jours restants</p>
                 </div>
             </div>
-            <button>Participer</button>
-            <div>
-                <p>Partager</p>
-                <div>
-                    <i class="fa-brands fa-facebook"></i>
-                    <i class="fa-brands fa-instagram"></i>
-                    <i class="fa-brands fa-twitter"></i>
-                    <i class="fa-brands fa-whatsapp"></i>
+            <button class="text-white font-bold bg-pink w-full py-3 text-xl">Participer</button>
+            <div class="flex text-dark items-center justify-end gap-5">
+                <p class="text-dark text-xl">Partager</p>
+                <div class="flex gap-5">
+                    <i class="fa-brands fa-facebook text-2xl"></i>
+                    <i class="fa-brands fa-instagram text-2xl"></i>
+                    <i class="fa-brands fa-twitter text-2xl"></i>
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
                 </div>
             </div>
         </div>
