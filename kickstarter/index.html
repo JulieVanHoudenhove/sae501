@@ -3,9 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        cooper: ['Cooper', 'sans-serif'],
+                        poppins: ['Poppins Sans', 'sans-serif']
+                    },
+                    colors: {
+                        cream: '#FAF5F1',
+                        dark: '#424242',
+                        pink: '#E781AC',
+                    },
+                }
+            }
+        }
+    </script>
     <title>Kickstater</title>
 </head>
 <body>
-    
+    <header>
+        <h2>funder.</h2>
+    </header>
+    <section>
+        <img src="images/site.png">
+        <div>
+            <div></div>
+            <div></div>
+            <p>58%</p>
+        </div>
+    </section>
+    <section>
+        <div>
+            <h1>Changer de regard avec notre technologie 3D</h1>
+            <p>Avez-vous déjà ressenti la frustration de ne pas trouver la paire parfaite de lunettes chez l'opticien ? Nous
+                aussi. C'est pourquoi nous avons décidé de changer les règles du jeu. Notre équipe passionnée a développé une
+                solution révolutionnaire pour mettre fin à cette expérience décevante. Bienvenue dans le futur de l'optique !
+            </p>
+        </div>
+        <div>
+            <div>
+                <div>
+                    <p>100 000<span>€</span></p>
+                    <p>est notre objectif</p>
+                </div>
+                <div>
+                    <p>58<span>%</span></p>
+                    <p>financés</p>
+                </div>
+                <div>
+                    <p>21</p>
+                    <p>jours restants</p>
+                </div>
+            </div>
+            <button>Participer</button>
+            <div>
+                <p>Partager</p>
+                <div>
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://kit.fontawesome.com/a4b141eee2.js" crossorigin="anonymous"></script>
 </body>
 </html>
