@@ -19,6 +19,21 @@ async function main() {
             password: hashSync('test', 12),
         },
     })
+    const category = await prisma.category.upsert({
+        where: { name: 'Acétate'},
+        update: {},
+        create: {
+            name: 'Acétate'
+        }
+    })
+    const product = await prisma.product.upsert({
+        where: { name: 'Anne'},
+        update: {},
+        create: {
+            name: 'Anne',
+            categoryId: 1
+        }
+    })
     console.log({ user1, user2 })
 }
 main()
