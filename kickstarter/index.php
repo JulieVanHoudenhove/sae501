@@ -27,6 +27,11 @@
     <!-- SWIPER -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- ALPINE JS -->
+    <!-- Alpine Plugins -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+    <!-- Alpine Core -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     <title>Kickstarter</title>
 </head>
@@ -36,6 +41,11 @@ $data = 'contribution.json';
 if (file_exists($data)) {
     $data = file_get_contents($data);
     $contributions = json_decode($data);
+}
+$info = 'question.json';
+if (file_exists($info)) {
+    $info = file_get_contents($info);
+    $questions = json_decode($info);
 }
 ?>
 
@@ -157,6 +167,34 @@ if (file_exists($data)) {
                 </ul>
                 <p class="text-dark text-base">Chaque membre de notre équipe apporte une expertise unique et un dévouement sans faille à notre projet. Ensemble, nous formons une équipe dynamique et passionnée, prête à relever les défis et à concrétiser notre vision révolutionnaire dans le domaine de l'optique.</p>
             </div>
+        </div>
+    </section>
+    <section class="m-28">
+        <p>Nous vous promettons des mises à jour hebdomadaires sur l'évolution de notre projet, vous tenant informés des étapes franchies et des obstacles surmontés. Votre soutien continu nous pousse vers le succès !<br><br> N'oubliez pas de visiter notre site web pour rester connectés et recevoir les dernières actualités. Restez au fait des développements les plus récents et rejoignez-nous dans cette passionnante aventure !<br><br>Notre site : https://mmi21f15.mmi-troyes.fr/sae501/presentation/</p>
+    </section>
+    <section class="m-28 flex flex-col gap-9">
+        <h2 class="font-cooper text-dark text-6xl">Les questions que vous nous posez</h2>
+        <div>
+            <?php
+            foreach ($questions as $question) {
+                echo '
+                <div x-data="{ expanded: false }" class="bg-white shadow-[0_0_43px_0_rgba(0,0,0,0.1)] p-8 flex flex-col justify-between gap-9">
+                    <div @click="expanded = ! expanded" class="flex justify-between items-center cursor-pointer">
+                        <p class="text-xl text-dark font-bold">' . $question->question . '</p>
+                        <i x-show="expanded" class=" fa-solid fa-chevron-down text-3xl text-pink"></i>
+                        <i x-show="!expanded" class=" fa-solid fa-chevron-up text-3xl text-pink"></i>
+                    </div>
+                    <div x-show="expanded" x-collapse>
+                        <p class="text-base text-dark">' . $question->anwser . '</p>
+                    </div>
+                </div>
+            </div>
+            ';
+            }
+            ?>
+        </div>
+        <div class="flex justify-end">
+            <button class="text-white font-bold bg-pink w-full py-3 text-xl max-w-[500px]">Poser une question</button>
         </div>
     </section>
     <!-- FONTAWESOME -->
