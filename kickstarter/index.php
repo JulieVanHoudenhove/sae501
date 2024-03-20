@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,6 +25,17 @@
     </script>
     <title>Kickstarter</title>
 </head>
+
+
+
+<?php
+$data = 'contribution.json';
+if (file_exists($data)) {
+    $data = file_get_contents($data);
+    $contributions = json_decode($data);
+}
+?>
+
 <body class="bg-cream">
     <header class="flex justify-center items-center my-10">
         <h2 class="font-cooper text-6xl text-dark">funder.</h2>
@@ -32,7 +44,7 @@
         <img src="images/site.png">
         <div class="relative mt-12 flex items-center h-16">
             <div class="absolute bg-white h-16 w-full shadow-[0_13px_22px_0_rgba(0,0,0,0.10)]"></div>
-            <div class="absolute bg-pink h-16 w-[1000px]"></div>
+            <div class="absolute bg-pink h-16 w-[800px]"></div>
             <p class="absolute text-white font-cooper text-[54px] mx-4">58<span class="font-cooper text-[32px]">%</span></p>
         </div>
     </section>
@@ -44,7 +56,7 @@
                 solution révolutionnaire pour mettre fin à cette expérience décevante. Bienvenue dans le futur de l'optique !
             </p>
         </div>
-        <div class="w-1/2 flex flex-col gap-7">
+        <div class="w-1/2 flex flex-col gap-7 justify-end">
             <div class="flex gap-14">
                 <div class="flex flex-col gap-3">
                     <p class="text-pink font-cooper text-5xl">100 000<span class="font-cooper text-3xl">€</span></p>
@@ -71,6 +83,26 @@
             </div>
         </div>
     </section>
+    <section class="m-28">
+        <?php
+        foreach ($contributions as $contribution) {
+            echo '
+                    <div class="bg-white shadow-[0_0_43px_0_rgba(0,0,0,0.1)] w-[368px] h-[764px] p-8 flex flex-col gap-9">
+                        <div class="flex flex-col gap-1 items-center">
+                            <p class="font-cooper text-[32px] text-center text-dark">' . $contribution->name . '</p>
+                            <p class="font-cooper text-pink text-2xl">' . $contribution->price . '</p>
+                            <p class="text-xl text-dark">' . $contribution->contributions . '</p>
+                        </div>
+                        <div class="flex flex-col gap-5 text-dark">
+                            ' . $contribution->rewards . '
+                            <p class="text-dark text-base">' . $contribution->comment . '</p>
+                        </div>
+                    </div>
+                ';
+        }
+        ?>
+    </section>
     <script src="https://kit.fontawesome.com/a4b141eee2.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
