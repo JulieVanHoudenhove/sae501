@@ -121,6 +121,13 @@ if (file_exists($data)) {
         </div>
         <img class="h-[500px] w-1/2 object-cover" src="images/visualisateur.gif">
     </section>
+    <section class="m-28 flex items-center gap-24">
+        <img class="h-[500px] w-1/2 object-cover" src="images/ar.gif">
+        <div class="flex flex-col gap-7 w-1/2">
+            <h2 class="font-cooper text-dark text-6xl">Objectif financier</h2>
+            <p class="text-dark text-base">Notre ambition est à la hauteur de notre vision : nous aspirons à collecter 100 000 euros pour donner vie à notre vision révolutionnaire. Nous nous sommes engagés à créer le visualisateur 3D de lunettes ultime, couplé à une technologie de réalité augmentée innovante qui va changer la façon dont le monde voit l'optique.<br><br>Chaque euro que nous récolterons sera investi de manière stratégique : du développement de pointe aux tests rigoureux, en passant par le recrutement des meilleurs talents et la recherche continue d'améliorations. De plus, une part importante de ces fonds sera dédiée à la commercialisation et à la promotion de notre produit, assurant ainsi une visibilité maximale à notre innovation.<br><br>Avec votre soutien, nous sommes convaincus que nous pouvons non seulement atteindre, mais dépasser notre objectif financier. Ensemble, nous pouvons non seulement transformer l'industrie de l'optique, mais également révolutionner la manière dont les gens choisissent leurs lunettes. Rejoignez-nous dans cette aventure et ensemble, créons l'avenir de l'optique.</p>
+        </div>
+    </section>
     <!-- FONTAWESOME -->
     <script src="https://kit.fontawesome.com/a4b141eee2.js" crossorigin="anonymous"></script>
     <!-- SWIPER -->
