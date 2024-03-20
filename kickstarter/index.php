@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <!-- TAILWIND -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -23,10 +24,12 @@
             }
         }
     </script>
+    <!-- SWIPER -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>*
+
     <title>Kickstarter</title>
 </head>
-
-
 
 <?php
 $data = 'contribution.json';
@@ -36,7 +39,7 @@ if (file_exists($data)) {
 }
 ?>
 
-<body class="bg-cream">
+<body class="bg-cream overflow-x-hidden">
     <header class="flex justify-center items-center my-10">
         <h2 class="font-cooper text-6xl text-dark">funder.</h2>
     </header>
@@ -84,25 +87,48 @@ if (file_exists($data)) {
         </div>
     </section>
     <section class="m-28">
-        <?php
-        foreach ($contributions as $contribution) {
-            echo '
-                    <div class="bg-white shadow-[0_0_43px_0_rgba(0,0,0,0.1)] w-[368px] h-[764px] p-8 flex flex-col gap-9">
-                        <div class="flex flex-col gap-1 items-center">
-                            <p class="font-cooper text-[32px] text-center text-dark">' . $contribution->name . '</p>
-                            <p class="font-cooper text-pink text-2xl">' . $contribution->price . '</p>
-                            <p class="text-xl text-dark">' . $contribution->contributions . '</p>
-                        </div>
-                        <div class="flex flex-col gap-5 text-dark">
-                            ' . $contribution->rewards . '
-                            <p class="text-dark text-base">' . $contribution->comment . '</p>
-                        </div>
-                    </div>
-                ';
-        }
-        ?>
+        <!-- Slider main container -->
+        <div class="swiper contributionsSwiper overflow-visible">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <?php
+                foreach ($contributions as $contribution) {
+                    echo '
+                            <div class="swiper-slide bg-white shadow-[0_0_43px_0_rgba(0,0,0,0.1)] !w-[425px] h-[750px] p-8 flex flex-col justify-between">
+                                <div class="flex flex-col gap-9">
+                                    <div class="flex flex-col gap-1 items-center">
+                                        <p class="font-cooper text-[32px] text-center text-dark">' . $contribution->name . '</p>
+                                        <p class="font-cooper text-pink text-2xl">' . $contribution->price . '</p>
+                                        <p class="text-xl text-dark">' . $contribution->contributions . '</p>
+                                    </div>
+                                    <div class="flex flex-col gap-5 text-dark">
+                                        ' . $contribution->rewards . '
+                                        <p class="text-dark text-base">' . $contribution->comment . '</p>
+                                    </div>
+                                </div>
+                                <button class="text-white font-bold bg-pink w-full py-3 text-xl">Contribuer</button>
+                            </div>
+                        ';
+                }
+                ?>
+            </div>
+        </div>
     </section>
+    <!-- FONTAWESOME -->
     <script src="https://kit.fontawesome.com/a4b141eee2.js" crossorigin="anonymous"></script>
+    <!-- SWIPER -->
+    <script type="module">
+        import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
+
+        const swiper = new Swiper(".contributionsSwiper", {
+            slidesPerView: 'auto',
+            spaceBetween: 30,
+            grabCursor: true,
+            mousewheel: {
+                forceToAxis: true,
+            },
+        })
+    </script>
 </body>
 
 </html>
