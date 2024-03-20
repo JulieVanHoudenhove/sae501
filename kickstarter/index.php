@@ -26,7 +26,7 @@
     </script>
     <!-- SWIPER -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>*
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <title>Kickstarter</title>
 </head>
@@ -113,6 +113,13 @@ if (file_exists($data)) {
                 ?>
             </div>
         </div>
+    </section>
+    <section class="m-28 flex items-center gap-24">
+        <div class="flex flex-col gap-7 w-1/2">
+            <h2 class="font-cooper text-dark text-6xl">Notre Histoire</h2>
+            <p class="text-dark text-base">Notre histoire débute avec une expérience personnelle partagée : la frustration de ne pas trouver la paire de lunettes parfaite chez l'opticien. Cette expérience a été le catalyseur de notre initiative. Convaincus qu'il existait une meilleure façon de choisir des lunettes, nous avons réuni une équipe multidisciplinaire partageant une vision commune : offrir une expérience d'achat plus intuitive, immersive et satisfaisante.<br><br>Nous avons surmonté des défis techniques pour développer une plateforme de visualisation 3D de lunettes, associée à une technologie de réalité augmentée de pointe. Notre objectif est clair : permettre aux clients d'essayer virtuellement des centaines de montures depuis chez eux.<br><br>Cette initiative représente non seulement un progrès pour notre entreprise, mais aussi un bond en avant pour l'industrie de l'optique. Nous croyons fermement qu'elle transformera la manière dont les gens achètent des lunettes, améliorant ainsi leur expérience client.<br><br>Nous sommes reconnaissants envers tous ceux qui nous soutiennent et nous sommes impatients de partager cette révolution avec vous. Rejoignez-nous dans cette aventure et ensemble, changeons la façon dont le monde voit les lunettes.</p>
+        </div>
+        <img class="h-[500px] w-1/2 object-cover" src="images/visualisateur.gif">
     </section>
     <!-- FONTAWESOME -->
     <script src="https://kit.fontawesome.com/a4b141eee2.js" crossorigin="anonymous"></script>
