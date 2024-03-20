@@ -143,6 +143,22 @@ if (file_exists($data)) {
         </div>
         <img class="h-[500px] w-1/2 object-cover" src="images/visualisateur.gif">
     </section>
+    <section class="m-28 flex items-center gap-24">
+        <img class="h-[500px] w-1/2 object-cover" src="images/ar.gif">
+        <div class="flex flex-col gap-7 w-1/2">
+            <h2 class="font-cooper text-dark text-6xl">Qui sommes nous ?</h2>
+            <div>
+                <p class="text-dark text-base">Notre équipe est composée de passionnés de l'optique, du développement web et de la réalité augmentée, tous déterminés à offrir une expérience révolutionnaire aux consommateurs.</p>
+                <ul class="list-disc px-6 text-dark text-base">
+                    <li>Julie, notre cheffe de projet et développeuse frontend expérimentée, dirige cette initiative avec une vision claire et un engagement sans faille envers l'innovation.</li>
+                    <li>Jules, notre expert en développement frontend, spécialisé dans l'utilisation de Three.js. Avec sa passion pour la création d'expériences visuelles immersives, il donne vie à notre vision en développant une interface utilisateur captivante et intuitive pour notre visualisateur de lunettes 3D.</li>
+                    <li>Nathan, notre spécialiste du développement backend, mettant en œuvre les fondations solides nécessaires pour soutenir notre plateforme. Grâce à sa maîtrise de Nest.js, il garantit la fiabilité et la performance de notre système.</li>
+                    <li>Robin est notre expert en développement AR, travaillant avec la technologie de pointe de Jeeliz pour intégrer des fonctionnalités de réalité augmentée innovantes dans notre visualisateur de lunettes. Son savoir-faire garantit une expérience immersive et captivante pour nos utilisateurs.</li>
+                </ul>
+                <p class="text-dark text-base">Chaque membre de notre équipe apporte une expertise unique et un dévouement sans faille à notre projet. Ensemble, nous formons une équipe dynamique et passionnée, prête à relever les défis et à concrétiser notre vision révolutionnaire dans le domaine de l'optique.</p>
+            </div>
+        </div>
+    </section>
     <!-- FONTAWESOME -->
     <script src="https://kit.fontawesome.com/a4b141eee2.js" crossorigin="anonymous"></script>
     <!-- SWIPER -->
