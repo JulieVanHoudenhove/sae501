@@ -47,6 +47,12 @@ if (file_exists($info)) {
     $info = file_get_contents($info);
     $questions = json_decode($info);
 }
+$infos = 'comment.json';
+if (file_exists($infos)) {
+    $infos = file_get_contents($infos);
+    $comments = json_decode($infos);
+}
+
 ?>
 
 <body class="bg-cream overflow-x-hidden">
@@ -194,9 +200,36 @@ if (file_exists($info)) {
             ?>
         </div>
         <div class="flex justify-end">
-            <button class="text-white font-bold bg-pink w-full py-3 text-xl max-w-[500px]">Poser une question</button>
+            <button class="text-white font-bold bg-pink w-full py-3 text-xl max-w-[500px]">Posez une question</button>
         </div>
     </section>
+    <section class="m-28">
+        <h2 class="font-cooper text-dark text-6xl mb-9">Ce que vous dites de nous</h2>
+        <!-- Slider main container -->
+        <div class="swiper commentsSwiper overflow-visible">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <?php
+                foreach ($comments as $comment) {
+                    echo '
+                    <div class="swiper-slide bg-white shadow-[0_0_43px_0_rgba(0,0,0,0.1)] !w-[378px] p-8 flex flex-col justify-between gap-9">
+                        <p class="text-base text-dark"><span class="font-cooper text-pink text-[22px]">“ </span>' . $comment->comment . '<span class="font-cooper text-pink text-[22px]"> ”</span></p>
+                        <div class="flex justify-end">
+                            <p class="text-dark text-base">' . $comment->name . '</p>
+                        </div>
+                    </div>
+                ';
+                }
+                ?>
+            </div>
+        </div>
+        <div class="flex justify-end mt-9">
+            <button class="text-white font-bold bg-pink w-full py-3 text-xl max-w-[500px]">Donnez votre avis</button>
+        </div>
+    </section>
+    <footer class="bg-dark py-9 flex justify-center">
+        <p class="text-white text-sm">© 2023 <span class="font-cooper">funder.</span> | Tous droits réservés</p>
+    </footer>
     <!-- FONTAWESOME -->
     <script src="https://kit.fontawesome.com/a4b141eee2.js" crossorigin="anonymous"></script>
     <!-- SWIPER -->
@@ -204,6 +237,14 @@ if (file_exists($info)) {
         import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
 
         const swiper = new Swiper(".contributionsSwiper", {
+            slidesPerView: 'auto',
+            spaceBetween: 30,
+            grabCursor: true,
+            mousewheel: {
+                forceToAxis: true,
+            },
+        })
+        const swiperComment = new Swiper(".commentsSwiper", {
             slidesPerView: 'auto',
             spaceBetween: 30,
             grabCursor: true,
