@@ -34,6 +34,14 @@ async function main() {
             categoryId: 1
         }
     })
+    const variant = await prisma.variant.upsert({
+        where: { id: 1 },
+        update: {},
+        create: {
+            name: 'Anne 101',
+            productId: 1
+        }
+    })
     console.log({ user1, user2 })
 }
 main()
