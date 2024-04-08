@@ -1,4 +1,15 @@
-import {Body, Controller, Delete, Get, Param, ParseIntPipe, Patch, Post, UseGuards} from "@nestjs/common";
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  ParseIntPipe,
+  Patch,
+  Post, Res, UploadedFile,
+  UseGuards,
+  UseInterceptors
+} from "@nestjs/common";
 import {ApiBearerAuth, ApiCreatedResponse, ApiOkResponse, ApiTags} from "@nestjs/swagger";
 import {ProductsService} from "./products.service";
 import {JwtAuthGuard} from "../auth/jwt-auth.guard";
@@ -6,6 +17,11 @@ import {ProductEntity} from "./entities/product.entity";
 import {CreateProductDto} from "./dto/create-product.dto";
 import {Product as ProductModel} from ".prisma/client";
 import {UpdateProductDto} from "./dto/update-product.dto";
+import {FileInterceptor} from "@nestjs/platform-express";
+import {diskStorage} from "multer";
+import { join, dirname } from "path";
+import {request, Response} from "express";
+import * as path from "path";
 
 @Controller('products')
 @ApiTags('products')
@@ -13,12 +29,24 @@ export class ProductsController {
   constructor(private readonly productsService: ProductsService) {}
 
   @Post()
+  @UseInterceptors(FileInterceptor('file', {
+    storage: diskStorage({
+      destination: 'public/uploads',
+      filename: (req, file, cb) => {
+        cb(null, path.parse(file.originalname).name + Date.now() + path.parse(file.originalname).ext);
+      },
+    }),
+  }))
   @UseGuards(JwtAuthGuard)
   @ApiBearerAuth()
   @ApiCreatedResponse({ type: ProductEntity })
   async create(
-      @Body() createProductDto: CreateProductDto
+      @Body() createProductDto: CreateProductDto,
+      @UploadedFile() file: Express.Multer.File
   ): Promise<ProductModel> {
+    createProductDto.image = file.path.toString()
+    createProductDto.categoryId = Number(createProductDto.categoryId)
+
     return new ProductEntity(await this.productsService.create(createProductDto));
   }
 
@@ -53,5 +81,11 @@ export class ProductsController {
   @ApiCreatedResponse({ type: ProductEntity })
   async remove(@Param('id', ParseIntPipe) id: number) {
     return new ProductEntity(await this.productsService.remove({ id: id }));
+  }
+
+  @Get('/file/:filename')
+  async getFile(@Param('filename') filename: string, @Res() res: Response) {
+    const fileLocation = join(dirname(require('path').resolve('./back')), '/public/uploads', filename);
+    res.sendFile(fileLocation);
   }
 }

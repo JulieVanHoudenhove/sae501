@@ -13,8 +13,8 @@ export class CreateProductDto {
     @ApiProperty({ required: false })
     image?: string;
 
-    @IsNumber()
-    @IsNotEmpty()
     @ApiProperty()
     categoryId: number;
+
+    file?: File;
 }
