@@ -19,8 +19,6 @@ import {Product as ProductModel} from ".prisma/client";
 import {UpdateProductDto} from "./dto/update-product.dto";
 import {FileInterceptor} from "@nestjs/platform-express";
 import {diskStorage} from "multer";
-import { join, dirname } from "path";
-import {request, Response} from "express";
 import * as path from "path";
 
 @Controller('products')
@@ -42,11 +40,13 @@ export class ProductsController {
   @ApiCreatedResponse({ type: ProductEntity })
   async create(
       @Body() createProductDto: CreateProductDto,
-      @UploadedFile() file: Express.Multer.File
+      @UploadedFile() file?: Express.Multer.File
   ): Promise<ProductModel> {
-    createProductDto.image = file.path.toString()
-    createProductDto.categoryId = Number(createProductDto.categoryId)
+    if (file) {
+      createProductDto.image = '/' + file.destination.toString() + '/' + file.filename.toString()
+    }
 
+    createProductDto.categoryId = Number(createProductDto.categoryId)
     return new ProductEntity(await this.productsService.create(createProductDto));
   }
 
@@ -80,12 +80,7 @@ export class ProductsController {
   @ApiBearerAuth()
   @ApiCreatedResponse({ type: ProductEntity })
   async remove(@Param('id', ParseIntPipe) id: number) {
+    // remove product image
     return new ProductEntity(await this.productsService.remove({ id: id }));
-  }
-
-  @Get('/file/:filename')
-  async getFile(@Param('filename') filename: string, @Res() res: Response) {
-    const fileLocation = join(dirname(require('path').resolve('./back')), '/public/uploads', filename);
-    res.sendFile(fileLocation);
   }
 }

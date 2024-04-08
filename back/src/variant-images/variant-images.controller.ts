@@ -46,9 +46,11 @@ export class VariantImagesController {
       @Body() createVariantImageDto: CreateVariantImageDto,
       @UploadedFile() file: Express.Multer.File
   ): Promise<VariantImageModel> {
-    createVariantImageDto.image = file.path.toString();
-    createVariantImageDto.variantId = Number(createVariantImageDto.variantId);
+    if (file) {
+      createVariantImageDto.image = '/' + file.destination.toString() + '/' + file.filename.toString();
+    }
 
+    createVariantImageDto.variantId = Number(createVariantImageDto.variantId);
     return new VariantImageEntity(await this.variantImagesService.create(createVariantImageDto));
   }
 
@@ -90,7 +92,7 @@ export class VariantImagesController {
   ): Promise<VariantImageModel> {
     if (file) {
       const variantImage = new VariantImageEntity(await this.variantImagesService.variantImage({id: id}))
-      updateVariantImageDto.image = file.path.toString();
+      updateVariantImageDto.image = '/' + file.destination.toString() + '/' + file.filename.toString();
 
       if (variantImage.image) {
         fs.unlink(variantImage.image, (err) => {

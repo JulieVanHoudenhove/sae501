@@ -48,8 +48,8 @@ export class VariantsController {
       @Body() createVariantDto: CreateVariantDto,
       @UploadedFiles() files: { materialFile?: Express.Multer.File[], textureFile?: Express.Multer.File[] }
   ): Promise<VariantModel> {
-    createVariantDto.material = files.materialFile[0].path.toString()
-    createVariantDto.textureImage = files.textureFile[0].path.toString()
+    createVariantDto.material = '/' + files.materialFile[0].destination.toString() + '/' + files.materialFile[0].filename.toString()
+    createVariantDto.textureImage = '/' + files.textureFile[0].destination.toString() + '/' + files.textureFile[0].filename.toString()
     createVariantDto.productId = Number(createVariantDto.productId)
 
     return new VariantEntity(await this.variantsService.create(createVariantDto));
@@ -97,7 +97,7 @@ export class VariantsController {
     const variant = new VariantEntity(await this.variantsService.variant({id: id}));
 
     if (files.materialFile) {
-      updateVariantDto.material = files.materialFile[0].path.toString()
+      updateVariantDto.material = '/' + files.materialFile[0].destination.toString() + '/' + files.materialFile[0].filename.toString()
 
       if (variant.material) {
         fs.unlink(variant.material, (err) => {
@@ -110,7 +110,7 @@ export class VariantsController {
     }
 
     if (files.textureFile) {
-      updateVariantDto.textureImage = files.materialFile[0].path.toString()
+      updateVariantDto.textureImage = '/' + files.textureFile[0].destination.toString() + '/' + files.textureFile[0].filename.toString()
 
       if (variant.textureImage) {
         fs.unlink(variant.textureImage, (err) => {
