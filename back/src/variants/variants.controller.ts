@@ -6,7 +6,7 @@ import {
   Param,
   ParseIntPipe,
   Patch,
-  Post, UploadedFile, UploadedFiles,
+  Post, UploadedFiles,
   UseGuards,
   UseInterceptors
 } from "@nestjs/common";
@@ -20,6 +20,7 @@ import {UpdateVariantDto} from "./dto/update-variant.dto";
 import {FileFieldsInterceptor} from "@nestjs/platform-express";
 import {diskStorage} from "multer";
 import * as path from "path";
+import * as fs from "fs";
 
 @Controller('variants')
 @ApiTags('variants')
@@ -73,9 +74,51 @@ export class VariantsController {
 
   @Patch(':id')
   @UseGuards(JwtAuthGuard)
+  @UseInterceptors(FileFieldsInterceptor([
+            { name: 'materialFile', maxCount: 1 },
+            { name: 'textureFile', maxCount: 1 },
+          ],
+          {
+            storage: diskStorage({
+              destination: 'public/uploads',
+              filename: (req, file, cb) => {
+                cb(null, path.parse(file.originalname).name + Date.now() + path.parse(file.originalname).ext);
+              },
+            }),
+          })
+  )
   @ApiBearerAuth()
   @ApiCreatedResponse({ type: VariantEntity })
-  async update(@Param('id', ParseIntPipe) id: number, @Body() updateVariantDto: UpdateVariantDto) {
+  async update(
+      @Param('id', ParseIntPipe) id: number,
+      @Body() updateVariantDto: UpdateVariantDto,
+      @UploadedFiles() files: { materialFile?: Express.Multer.File[], textureFile?: Express.Multer.File[] }
+  ) {
+    const variant = new VariantEntity(await this.variantsService.variant({id: id}));
+
+    if (files.materialFile) {
+      updateVariantDto.material = files.materialFile[0].path.toString()
+
+      if (variant.material) {
+        fs.unlink(variant.material, (err) => {
+          if (err) {
+            console.log(err);
+            return err;
+          }
+        });
+      }
+    }
+
+    if (files.textureFile) {
+      updateVariantDto.textureImage = files.materialFile[0].path.toString()
+
+      if (variant.textureImage) {
+        fs.unlink(variant.textureImage, (err) => {
+          if (err) { console.log(err); return err; }
+        });
+      }
+    }
+
     return new VariantEntity(await this.variantsService.update(id, updateVariantDto));
   }
 
@@ -84,6 +127,26 @@ export class VariantsController {
   @ApiBearerAuth()
   @ApiCreatedResponse({ type: VariantEntity })
   async remove(@Param('id', ParseIntPipe) id: number) {
-    return new VariantEntity(await this.variantsService.remove({ id: id }));
+    const variant = new VariantEntity(await this.variantsService.remove({ id: id }));
+
+    if (variant.material) {
+      fs.unlink(variant.material, (err) => {
+        if (err) {
+          console.log(err);
+          return err;
+        }
+      });
+    }
+
+    if (variant.textureImage) {
+      fs.unlink(variant.textureImage, (err) => {
+        if (err) {
+          console.log(err);
+          return err;
+        }
+      });
+    }
+
+    return variant;
   }
 }
