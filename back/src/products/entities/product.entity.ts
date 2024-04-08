@@ -1,6 +1,7 @@
 import {Product} from "@prisma/client";
 import {ApiProperty} from "@nestjs/swagger";
 import {CategoryEntity} from "../../categories/entities/category.entity";
+import {Exclude} from "class-transformer";
 
 export class ProductEntity implements Product {
     @ApiProperty()
@@ -15,7 +16,7 @@ export class ProductEntity implements Product {
     @ApiProperty({ required: false, nullable: true })
     image: string | null;
 
-    @ApiProperty()
+    @Exclude()
     categoryId: number | null;
 
     @ApiProperty({ required: false, type: CategoryEntity })
