@@ -5,9 +5,10 @@ import { AuthModule } from './auth/auth.module';
 import { CategoriesModule } from './categories/categories.module';
 import { ProductsModule } from './products/products.module';
 import { VariantsModule } from './variants/variants.module';
+import { VariantImagesModule } from './variant-images/variant-images.module';
 
 @Module({
-  imports: [ConfigModule.forRoot(), UsersModule, AuthModule, CategoriesModule, ProductsModule, VariantsModule],
+  imports: [ConfigModule.forRoot(), UsersModule, AuthModule, CategoriesModule, ProductsModule, VariantsModule, VariantImagesModule],
   controllers: [],
   providers: [],
 })
