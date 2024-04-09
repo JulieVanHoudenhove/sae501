@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -8,304 +8,304 @@
 }
 body {
   text-align: center;
-}
+} */
 .JeelizVTOWidgetContainer {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  height: 100vh;
-  overflow: hidden;
-  width: 100vw;
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	height: 100vh;
+	overflow: hidden;
+	width: 100vw;
 }
 .JeelizVTOWidget {
-  margin-right: 0px;
-  max-width: 100%;
-  width: 100%;
-  margin-left: auto;
-  position: relative;
+	margin-right: 0px;
+	max-width: 100%;
+	width: 100%;
+	margin-left: auto;
+	position: relative;
 }
 .JeelizVTOWidgetCanvas {
-  position: absolute;
-  z-index: 1;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  left: -20%;
+	position: absolute;
+	z-index: 1;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	left: -20%;
 }
 .JeelizVTOWidgetControls {
-  position: absolute;
-  z-index: 2;
-  width: 100%;
+	position: absolute;
+	z-index: 2;
+	width: 100%;
 }
 .JeelizVTOWidgetAdjustNotice {
-  width: 100%;
-  position: absolute;
-  background-color: #ffffffa1;
-  color: black;
-  z-index: 3;
-  font-size: 16px;
-  bottom: 0;
-  justify-content: center;
-  padding-top: 2em;
-  padding-bottom: 2em;
-  display: none;
+	width: 100%;
+	position: absolute;
+	background-color: #ffffffa1;
+	color: black;
+	z-index: 3;
+	font-size: 16px;
+	bottom: 0;
+	justify-content: center;
+	padding-top: 2em;
+	padding-bottom: 2em;
+	display: none;
 }
 .JeelizVTOWidgetAdjustExitButton {
-  position: absolute;
-  right: 8px;
-  bottom: 16px;
+	position: absolute;
+	right: 8px;
+	bottom: 16px;
 }
 .JeelizVTOWidgetLoading {
-  position: fixed;
-  z-index: 4;
-  cursor: wait;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
+	position: fixed;
+	z-index: 4;
+	cursor: wait;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.5);
 }
 .JeelizVTOWidgetLoadingText {
-  color: white;
-  font-size: 32pt;
-  margin-top: 40vh;
+	color: white;
+	font-size: 32pt;
+	margin-top: 40vh;
 }
 .JeelizVTOWidgetChangeModelContainer {
-  background: white;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+	background: white;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 
-  overflow-y: scroll;
-  scrollbar-color: #ccc5c0 #f4efeb;
-  scrollbar-width: thin;
-  min-width: 400px;
+	overflow-y: scroll;
+	scrollbar-color: #ccc5c0 #f4efeb;
+	scrollbar-width: thin;
+	min-width: 400px;
 }
 hr {
-  border: 0;
-  height: 1px;
-  background: #3333333e;
-  background-image: linear-gradient(to right, white, #3333333e, white);
+	border: 0;
+	height: 1px;
+	background: #3333333e;
+	background-image: linear-gradient(to right, white, #3333333e, white);
 }
 .selector-section-container {
-  padding: 1.4vw;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+	padding: 1.4vw;
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
 }
 .selector-section {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
 }
 .selector-section h2 {
-  font-size: 1em;
-  text-align: left;
-  font-weight: 500;
-  color: #9b9b9b;
+	font-size: 1em;
+	text-align: left;
+	font-weight: 500;
+	color: #9b9b9b;
 }
 
 /* button left for choosing styles */
 .button-color {
-  background-color: #ffffff;
-  border: 1px solid #77777783;
-  border-radius: 2px;
-  padding: 7px;
-  display: flex;
-  justify-content: space-between;
-  cursor: pointer;
-  color: #777777;
-  font-weight: 400;
-  gap: 10px;
-  align-items: center;
-  font-size: 18px;
-  font-variant: normal;
+	background-color: #ffffff;
+	border: 1px solid #77777783;
+	border-radius: 2px;
+	padding: 7px;
+	display: flex;
+	justify-content: space-between;
+	cursor: pointer;
+	color: #777777;
+	font-weight: 400;
+	gap: 10px;
+	align-items: center;
+	font-size: 18px;
+	font-variant: normal;
 }
 .button-color div {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  text-align: left;
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	text-align: left;
 }
 .button-color img {
-  width: 60px;
-  height: 60px;
+	width: 60px;
+	height: 60px;
 }
 .button-color span {
-  width: 14px;
-  height: 14px;
-  border-radius: 20px;
-  background-color: #ffffff;
-  border: 4px solid #000000;
-  margin-right: 5px;
-  opacity: 0;
-  flex-shrink: 0;
+	width: 14px;
+	height: 14px;
+	border-radius: 20px;
+	background-color: #ffffff;
+	border: 4px solid #000000;
+	margin-right: 5px;
+	opacity: 0;
+	flex-shrink: 0;
 }
 .button-color:hover {
-  /* border-color: #000000; */
-  color: #000000;
-  background: white;
+	/* border-color: #000000; */
+	color: #000000;
+	background: white;
 }
 
 .button-color.active {
-  border-color: #000000;
-  color: #000000;
+	border-color: #000000;
+	color: #000000;
 }
 .button-color.active span {
-  opacity: 1;
+	opacity: 1;
 }
 
 /* adjsut button */
 .adjust-button-container {
-  position: absolute;
-  width: fit-content;
-  right: 20px;
-  bottom: 20px;
+	position: absolute;
+	width: fit-content;
+	right: 20px;
+	bottom: 20px;
 }
 .adjust-button {
-  background-color: #ffffffa1;
-  color: black;
-  backdrop-filter: blur(10px);
-  border: 0;
-  border-radius: 50px;
-  padding: 13px;
-  padding-inline: 100px;
-  display: flex;
-  justify-content: center;
-  cursor: pointer;
-  font-weight: 400;
-  gap: 10px;
-  align-items: center;
-  font-size: 18px;
+	background-color: #ffffffa1;
+	color: black;
+	backdrop-filter: blur(10px);
+	border: 0;
+	border-radius: 50px;
+	padding: 13px;
+	padding-inline: 100px;
+	display: flex;
+	justify-content: center;
+	cursor: pointer;
+	font-weight: 400;
+	gap: 10px;
+	align-items: center;
+	font-size: 18px;
 }
 .adjust-button:hover {
-  background-color: #ffffff;
-  color: black;
+	background-color: #ffffff;
+	color: black;
 }
 
 .selector-section-container-header {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
 }
 .selector-section-container-header > h1 {
-  padding: 10px 0;
-  font-size: 45px !important;
+	padding: 10px 0;
+	font-size: 45px !important;
 }
 .selector-section-container-header > p {
-  color: gray;
+	color: gray;
 }
 .selector-footer {
-  padding: 1.4vw;
-  background: rgb(236, 238, 239);
-  margin: 1.4vw;
-  margin-top: 1vw;
-  border-radius: 5px;
+	padding: 1.4vw;
+	background: rgb(236, 238, 239);
+	margin: 1.4vw;
+	margin-top: 1vw;
+	border-radius: 5px;
 }
 .selector-footer p {
-  color: #777777;
-  font-size: 14px;
-  font-weight: 400;
-  margin-bottom: 15px;
+	color: #777777;
+	font-size: 14px;
+	font-weight: 400;
+	margin-bottom: 15px;
 }
 .button-rdv {
-  background: #303133;
-  color: white;
-  font-size: 16px;
-  padding: 13px;
-  width: 100%;
-  border: 0;
+	background: #303133;
+	color: white;
+	font-size: 16px;
+	padding: 13px;
+	width: 100%;
+	border: 0;
 }
 .button-rdv:hover {
-  background: rgb(64, 65, 67);
-  cursor: pointer;
+	background: rgb(64, 65, 67);
+	cursor: pointer;
 }
 .go-back {
-  color: #303133;
-  text-decoration: underline;
+	color: #303133;
+	text-decoration: underline;
 }
 .go-back:hover {
-  color: rgb(64, 65, 67);
-  cursor: pointer;
+	color: rgb(64, 65, 67);
+	cursor: pointer;
 }
 
 /* loading animation */
 .opacity-pulse {
-  animation: pulse 1s infinite;
-  background: rgb(190, 194, 200);
+	animation: pulse 1s infinite;
+	background: rgb(190, 194, 200);
 }
 @keyframes pulse {
-  0% {
-    opacity: 0.5;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.5;
-  }
+	0% {
+		opacity: 0.5;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0.5;
+	}
 }
 .loading-ar-container {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-  gap: 10px;
-  padding: 10px;
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
+	gap: 10px;
+	padding: 10px;
 }
 .loading-ar-container > div {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	padding: 20px;
 }
 .loading-ar-container * {
-  background: rgba(161, 164, 168, 0.238);
-  animation: pulse 3s infinite;
-  border-radius: 2px;
-  padding: 20px;
+	background: rgba(161, 164, 168, 0.238);
+	animation: pulse 3s infinite;
+	border-radius: 2px;
+	padding: 20px;
 }
 .h-20 {
-  height: 80px;
-  width: 100%;
+	height: 80px;
+	width: 100%;
 }
 .toggle-responsive {
-  display: none;
+	display: none;
 }
 
-@media screen and (max-width: 700px) { 
-  .JeelizVTOWidgetContainer {
-    grid-template-columns: 1fr;
-  }
-  .JeelizVTOWidgetCanvas {
-    left: 0%;
-  }
-  .JeelizVTOWidgetChangeModelContainer {
-    position: fixed;
-    height: 100vh;
-    transform: translateX(-100%);
-    transition: transform 0.3s;
-  }
-  .JeelizVTOWidgetChangeModelContainer.show {
-    transform: translateX(0);
-  }
-  .toggle-responsive {
-    position: fixed;
-    display: grid;
-    place-content: center;
-    width: 70px;
-    height: 70px;
-    right: 15px;
-    top: 15px;
-    z-index: 100;
-    background-color: #ffffffa1;
-    color: black;
-    backdrop-filter: blur(10px);
-    border-radius: 50px;
-    border: rgb(175, 175, 175) 1px solid
-  }
-  .adjust-button-container {
-    display: none;
-  }
+@media screen and (max-width: 700px) {
+	.JeelizVTOWidgetContainer {
+		grid-template-columns: 1fr;
+	}
+	.JeelizVTOWidgetCanvas {
+		left: 0%;
+	}
+	.JeelizVTOWidgetChangeModelContainer {
+		position: fixed;
+		height: 100vh;
+		transform: translateX(-100%);
+		transition: transform 0.3s;
+	}
+	.JeelizVTOWidgetChangeModelContainer.show {
+		transform: translateX(0);
+	}
+	.toggle-responsive {
+		position: fixed;
+		display: grid;
+		place-content: center;
+		width: 70px;
+		height: 70px;
+		right: 15px;
+		top: 15px;
+		z-index: 100;
+		background-color: #ffffffa1;
+		color: black;
+		backdrop-filter: blur(10px);
+		border-radius: 50px;
+		border: rgb(175, 175, 175) 1px solid;
+	}
+	.adjust-button-container {
+		display: none;
+	}
 }
