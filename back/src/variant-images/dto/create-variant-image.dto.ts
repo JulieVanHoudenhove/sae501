@@ -1,11 +1,13 @@
 import {ApiProperty} from "@nestjs/swagger";
+import {Exclude} from "class-transformer";
 
 export class CreateVariantImageDto {
-    @ApiProperty({ required: false })
+    @Exclude()
     image?: string;
 
     @ApiProperty()
     variantId: number;
 
-    file?: File;
+    @ApiProperty({type: 'string', format: 'binary'})
+    file?: Express.Multer.File;
 }

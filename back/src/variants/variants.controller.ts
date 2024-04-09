@@ -10,7 +10,7 @@ import {
   UseGuards,
   UseInterceptors
 } from "@nestjs/common";
-import {ApiBearerAuth, ApiCreatedResponse, ApiOkResponse, ApiTags} from "@nestjs/swagger";
+import {ApiBearerAuth, ApiConsumes, ApiCreatedResponse, ApiOkResponse, ApiTags} from "@nestjs/swagger";
 import {VariantsService} from "./variants.service";
 import {JwtAuthGuard} from "../auth/jwt-auth.guard";
 import {VariantEntity} from "./entities/variant.entity";
@@ -43,6 +43,7 @@ export class VariantsController {
       })
   )
   @ApiBearerAuth()
+  @ApiConsumes('multipart/form-data')
   @ApiCreatedResponse({ type: VariantEntity })
   async create(
       @Body() createVariantDto: CreateVariantDto,
@@ -79,8 +80,8 @@ export class VariantsController {
   }
 
   @Get(':id')
-  @UseGuards(JwtAuthGuard)
-  @ApiBearerAuth()
+  // @UseGuards(JwtAuthGuard)
+  // @ApiBearerAuth()
   @ApiCreatedResponse({ type: VariantEntity })
   async findOne(@Param('id', ParseIntPipe) id: number): Promise<VariantModel> {
     return new VariantEntity(await this.variantsService.variant({id: id}));
@@ -102,6 +103,7 @@ export class VariantsController {
           })
   )
   @ApiBearerAuth()
+  @ApiConsumes('multipart/form-data')
   @ApiCreatedResponse({ type: VariantEntity })
   async update(
       @Param('id', ParseIntPipe) id: number,

@@ -17,7 +17,7 @@ import { UpdateVariantImageDto } from './dto/update-variant-image.dto';
 import {JwtAuthGuard} from "../auth/jwt-auth.guard";
 import {FileInterceptor} from "@nestjs/platform-express";
 import {diskStorage} from "multer";
-import {ApiBearerAuth, ApiCreatedResponse, ApiOkResponse, ApiTags} from "@nestjs/swagger";
+import {ApiBearerAuth, ApiConsumes, ApiCreatedResponse, ApiOkResponse, ApiTags} from "@nestjs/swagger";
 import {VariantImage as VariantImageModel} from ".prisma/client";
 import {VariantImageEntity} from "./entities/variant-image.entity";
 import * as path from "path";
@@ -41,6 +41,7 @@ export class VariantImagesController {
       })
   )
   @ApiBearerAuth()
+  @ApiConsumes('multipart/form-data')
   @ApiCreatedResponse({ type: VariantImageEntity })
   async create(
       @Body() createVariantImageDto: CreateVariantImageDto,
@@ -84,6 +85,7 @@ export class VariantImagesController {
       })
   )
   @ApiBearerAuth()
+  @ApiConsumes('multipart/form-data')
   @ApiCreatedResponse({ type: VariantImageEntity })
   async update(
       @Param('id', ParseIntPipe) id: number,

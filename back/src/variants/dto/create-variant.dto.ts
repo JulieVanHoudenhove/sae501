@@ -1,5 +1,6 @@
-import {IsNotEmpty, IsNumber, IsString} from "class-validator";
+import {IsNotEmpty, IsString} from "class-validator";
 import {ApiProperty} from "@nestjs/swagger";
+import {Exclude} from "class-transformer";
 
 export class CreateVariantDto {
     @IsString()
@@ -7,16 +8,18 @@ export class CreateVariantDto {
     @ApiProperty()
     name: string;
 
-    @ApiProperty({ required: false })
+    @Exclude()
     material?: string;
 
-    @ApiProperty({ required: false })
+    @Exclude()
     textureImage?: string;
 
     @ApiProperty()
     productId: number;
 
-    materialFile?: File;
+    @ApiProperty({type: 'string', format: 'binary'})
+    materialFile?: Express.Multer.File;
 
-    textureFile?: File;
+    @ApiProperty({type: 'string', format: 'binary'})
+    textureFile?: Express.Multer.File;
 }

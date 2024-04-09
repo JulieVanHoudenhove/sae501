@@ -10,7 +10,7 @@ import {
   UseGuards,
   UseInterceptors
 } from "@nestjs/common";
-import {ApiBearerAuth, ApiCreatedResponse, ApiOkResponse, ApiTags} from "@nestjs/swagger";
+import {ApiBearerAuth, ApiConsumes, ApiCreatedResponse, ApiOkResponse, ApiTags} from "@nestjs/swagger";
 import {ProductsService} from "./products.service";
 import {JwtAuthGuard} from "../auth/jwt-auth.guard";
 import {ProductEntity} from "./entities/product.entity";
@@ -38,6 +38,7 @@ export class ProductsController {
   }))
   @UseGuards(JwtAuthGuard)
   @ApiBearerAuth()
+  @ApiConsumes('multipart/form-data')
   @ApiCreatedResponse({ type: ProductEntity })
   async create(
       @Body() createProductDto: CreateProductDto,
@@ -81,6 +82,7 @@ export class ProductsController {
       })
   )
   @ApiBearerAuth()
+  @ApiConsumes('multipart/form-data')
   @ApiCreatedResponse({ type: ProductEntity })
   async update(
       @Param('id', ParseIntPipe) id: number,

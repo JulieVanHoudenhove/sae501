@@ -1,5 +1,6 @@
 import {IsNotEmpty, IsNumber, IsString} from "class-validator";
 import {ApiProperty} from "@nestjs/swagger";
+import {Exclude} from "class-transformer";
 
 export class CreateProductDto {
     @IsString()
@@ -10,11 +11,12 @@ export class CreateProductDto {
     @ApiProperty({ required: false })
     description?: string;
 
-    @ApiProperty({ required: false })
+    @ApiProperty({type: 'string', format: 'binary'})
+    file?: Express.Multer.File;
+
+    @Exclude()
     image?: string;
 
     @ApiProperty()
     categoryId: number;
-
-    file?: File;
 }
