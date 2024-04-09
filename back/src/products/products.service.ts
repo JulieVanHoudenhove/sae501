@@ -15,6 +15,7 @@ export class ProductsService {
       where: productWhereUniqueInput,
       include: {
         category: true,
+        variants: true
       },
     });
   }

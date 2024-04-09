@@ -15,13 +15,25 @@ export class VariantsService {
       where: variantWhereUniqueInput,
       include: {
         product: true,
+        images: true
       },
     });
   }
 
   async variants(params: {
+    skip?: number;
+    take?: number;
+    cursor?: Prisma.VariantWhereUniqueInput;
+    where?: Prisma.VariantWhereInput;
+    orderBy?: Prisma.VariantOrderByWithRelationInput;
   }): Promise<Variant[]> {
+    const { skip, take, cursor, where, orderBy } = params;
     return this.prisma.variant.findMany({
+      skip,
+      take,
+      cursor,
+      where,
+      orderBy,
       include: {
         product: true,
       }

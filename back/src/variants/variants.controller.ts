@@ -48,8 +48,13 @@ export class VariantsController {
       @Body() createVariantDto: CreateVariantDto,
       @UploadedFiles() files: { materialFile?: Express.Multer.File[], textureFile?: Express.Multer.File[] }
   ): Promise<VariantModel> {
-    createVariantDto.material = '/' + files.materialFile[0].destination.toString() + '/' + files.materialFile[0].filename.toString()
-    createVariantDto.textureImage = '/' + files.textureFile[0].destination.toString() + '/' + files.textureFile[0].filename.toString()
+    if (files.materialFile) {
+      createVariantDto.material = '/' + files.materialFile[0].destination.toString() + '/' + files.materialFile[0].filename.toString()
+    }
+
+    if (files.textureFile) {
+      createVariantDto.textureImage = '/' + files.textureFile[0].destination.toString() + '/' + files.textureFile[0].filename.toString()
+    }
     createVariantDto.productId = Number(createVariantDto.productId)
 
     return new VariantEntity(await this.variantsService.create(createVariantDto));
@@ -61,6 +66,15 @@ export class VariantsController {
   @ApiOkResponse({ type: VariantEntity, isArray: true })
   async findAll(): Promise<VariantModel[]> {
     const variants = await this.variantsService.variants({});
+    return variants.map((variant) => new VariantEntity(variant))
+  }
+
+  @Get('product/:id')
+  @UseGuards(JwtAuthGuard)
+  @ApiBearerAuth()
+  @ApiOkResponse({ type: VariantEntity, isArray: true })
+  async findAllByProduct(@Param('id', ParseIntPipe) id: number): Promise<VariantModel[]> {
+    const variants = await this.variantsService.variants({ where: { productId: id } });
     return variants.map((variant) => new VariantEntity(variant))
   }
 

@@ -6,7 +6,7 @@ import {
   Param,
   ParseIntPipe,
   Patch,
-  Post, Res, UploadedFile,
+  Post, UploadedFile,
   UseGuards,
   UseInterceptors
 } from "@nestjs/common";
@@ -20,6 +20,7 @@ import {UpdateProductDto} from "./dto/update-product.dto";
 import {FileInterceptor} from "@nestjs/platform-express";
 import {diskStorage} from "multer";
 import * as path from "path";
+import * as fs from "fs";
 
 @Controller('products')
 @ApiTags('products')
@@ -69,9 +70,37 @@ export class ProductsController {
 
   @Patch(':id')
   @UseGuards(JwtAuthGuard)
+  @UseInterceptors(FileInterceptor('file',
+      {
+        storage: diskStorage({
+          destination: 'public/uploads',
+          filename: (req, file, cb) => {
+            cb(null, path.parse(file.originalname).name + Date.now() + path.parse(file.originalname).ext);
+          },
+        }),
+      })
+  )
   @ApiBearerAuth()
   @ApiCreatedResponse({ type: ProductEntity })
-  async update(@Param('id', ParseIntPipe) id: number, @Body() updateProductDto: UpdateProductDto) {
+  async update(
+      @Param('id', ParseIntPipe) id: number,
+      @Body() updateProductDto: UpdateProductDto,
+      @UploadedFile() file: Express.Multer.File
+  ): Promise<ProductModel> {
+    if (file) {
+      const product = new ProductEntity(await this.productsService.product({id: id}))
+      updateProductDto.image = '/' + file.destination.toString() + '/' + file.filename.toString();
+
+      if (product.image) {
+        fs.unlink(product.image, (err) => {
+          if (err) {
+            console.log(err);
+            return err;
+          }
+        });
+      }
+    }
+
     return new ProductEntity(await this.productsService.update(id, updateProductDto));
   }
 
