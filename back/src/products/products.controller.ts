@@ -21,6 +21,7 @@ import {FileInterceptor} from "@nestjs/platform-express";
 import {diskStorage} from "multer";
 import * as path from "path";
 import * as fs from "fs";
+import {ProductArEntity} from "./entities/product-ar.entity";
 
 @Controller('products')
 @ApiTags('products')
@@ -68,6 +69,12 @@ export class ProductsController {
   async findOne(@Param('id', ParseIntPipe) id: number): Promise<ProductModel> {
     return new ProductEntity(await this.productsService.product({id: id}));
   }
+
+  @Get(':id/ar')
+  async findOneForAr(@Param('id', ParseIntPipe) id: number): Promise<ProductModel> {
+    return new ProductArEntity(await this.productsService.product({id: id}));
+  }
+
 
   @Patch(':id')
   @UseGuards(JwtAuthGuard)
