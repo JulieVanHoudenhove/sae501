@@ -95,6 +95,10 @@ function AR({ glasse, defaultGlasses }) {
     };
   }, []);
 
+  const toggleMenu = () => {
+    refChangeModel.current.classList.toggle("show");
+  }
+
   return (
     <div ref={refPlaceHolder} className="JeelizVTOWidgetContainer">
       <div ref={refAdjust} className="JeelizVTOWidgetAdjustNotice">
@@ -144,6 +148,7 @@ function AR({ glasse, defaultGlasses }) {
       </div>
 
       <div className="JeelizVTOWidget">
+        <button className="toggle-responsive" onClick={toggleMenu}>Menu</button>
         <canvas ref={refCanvas} className="JeelizVTOWidgetCanvas"></canvas>
         <div
           ref={refAdjustEnter}
