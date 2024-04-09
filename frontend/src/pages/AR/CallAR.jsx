@@ -12,20 +12,20 @@ export function CallAR() {
 		variants.forEach((variant) => {
 			subColors.push({
 				name: variant.name,
-				nameJsonModel: "/glasses-3d/" + location.state.product.id + "/variant-" + variant.id + ".glb",
+				nameJsonModel: "model-" + location.state.product.id + "/variant-" + variant.id,
 				iamgeURL: "http://localhost:3000" + variant.textureImage,
+				isActive: location.state.activeModel === "model-" + location.state.product.id + "/variant-" + variant.id + ".glb",
 			});
 		});
+
 		return subColors;
 	};
 
 	useEffect(() => {
-		if (!location.state || !location.state.product || !location.state.variants) {
+		if (!location.state || !location.state.product || !location.state.variants || !location.state.activeModel) {
 			console.log("No product or variants found in location state");
 			return;
 		}
-
-		console.log(location.state);
 
 		const subColors = createSubColors(location.state.variants);
 
@@ -42,7 +42,7 @@ export function CallAR() {
 	return (
 		<>
 			{glasse ? (
-				<AR glasse={glasse} defaultGlasses={location.state.defaultGlasses} />
+				<AR glasse={glasse} />
 			) : (
 				<div className="loading-ar-container red">
 					<div>

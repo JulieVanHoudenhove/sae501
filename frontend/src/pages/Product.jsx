@@ -95,7 +95,7 @@ const ProductPage = () => {
 								{variant && variant.map((v) => <ProductVariantComponent key={v.id} textureImage={v.textureImage} textureName={v.name} onClick={() => handleVariantClick(v.id)} isActive={activeVariantId === v.id} />)}
 							</div>
 
-							<Link to="/ar" state={{ id: activeModelId, defaultGlasses: "glasses3", product: data, variants: variant }} className="btn-main">
+							<Link to="/ar" state={{ activeModel: activeModelId, product: data, variants: variant }} className="btn-main">
 								Essayer les lunettes
 							</Link>
 							<a href="#" className="link-main">
