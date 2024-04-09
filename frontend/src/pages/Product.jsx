@@ -14,6 +14,20 @@ const ProductPage = () => {
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
 
+	const [activeVariantId, setActiveVariantId] = useState(null);
+	const [activeModelId, setActiveModelId] = useState(null);
+
+	const handleVariantClick = (id) => {
+		if (activeVariantId === id) return;
+
+		setActiveVariantId(id);
+
+		const activeModel = "model-" + data.id + "/variant-" + id + ".glb";
+		console.log(activeModel);
+
+		setActiveModelId(activeModel);
+	};
+
 	const getVariants = async (id) => {
 		try {
 			const response = await fetch(`http://localhost:3000/variants/product/${id}`);
@@ -42,6 +56,12 @@ const ProductPage = () => {
 		getVariants(id);
 	}, [product]);
 
+	useEffect(() => {
+		if (data && variant) {
+			handleVariantClick(variant[0].id);
+		}
+	}, [data, variant]);
+
 	return (
 		<main className="product-page">
 			{data && (
@@ -56,12 +76,12 @@ const ProductPage = () => {
 					<section className="configurator">
 						{/* Canvas */}
 						<div className="preview-container">
-							<CanvasScene />
-              
-							<div className="images-container">
+							<CanvasScene currentModelPath={activeModelId} />
+
+							{/* <div className="images-container">
 								<div className="image"></div>
 								<div className="image"></div>
-							</div>
+							</div> */}
 						</div>
 
 						{/* Configurator */}
@@ -72,10 +92,10 @@ const ProductPage = () => {
 							<div className="product-variants">
 								{loading && <p>Loading...</p>}
 								{error && <p>{error}</p>}
-								{variant && variant.map((v) => <ProductVariantComponent key={v.id} textureImage={v.textureImage} textureName={v.name} />)}
+								{variant && variant.map((v) => <ProductVariantComponent key={v.id} textureImage={v.textureImage} textureName={v.name} onClick={() => handleVariantClick(v.id)} isActive={activeVariantId === v.id} />)}
 							</div>
 
-							<Link to="/ar" state={{ id: "glasse-ID 123", defaultGlasses: "glasses3" }} className="btn-main">
+							<Link to="/ar" state={{ id: activeModelId, defaultGlasses: "glasses3", product: data, variants: variant }} className="btn-main">
 								Essayer les lunettes
 							</Link>
 							<a href="#" className="link-main">
