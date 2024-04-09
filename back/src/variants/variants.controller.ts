@@ -61,8 +61,8 @@ export class VariantsController {
   }
 
   @Get()
-  @UseGuards(JwtAuthGuard)
-  @ApiBearerAuth()
+  // @UseGuards(JwtAuthGuard)
+  // @ApiBearerAuth()
   @ApiOkResponse({ type: VariantEntity, isArray: true })
   async findAll(): Promise<VariantModel[]> {
     const variants = await this.variantsService.variants({});
@@ -70,8 +70,8 @@ export class VariantsController {
   }
 
   @Get('product/:id')
-  @UseGuards(JwtAuthGuard)
-  @ApiBearerAuth()
+  // @UseGuards(JwtAuthGuard)
+  // @ApiBearerAuth()
   @ApiOkResponse({ type: VariantEntity, isArray: true })
   async findAllByProduct(@Param('id', ParseIntPipe) id: number): Promise<VariantModel[]> {
     const variants = await this.variantsService.variants({ where: { productId: id } });

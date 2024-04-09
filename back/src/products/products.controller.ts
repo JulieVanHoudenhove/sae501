@@ -52,8 +52,8 @@ export class ProductsController {
   }
 
   @Get()
-  @UseGuards(JwtAuthGuard)
-  @ApiBearerAuth()
+  // @UseGuards(JwtAuthGuard)
+  // @ApiBearerAuth()
   @ApiOkResponse({ type: ProductEntity, isArray: true })
   async findAll(): Promise<ProductModel[]> {
     const products = await this.productsService.products({});
@@ -61,8 +61,8 @@ export class ProductsController {
   }
 
   @Get(':id')
-  @UseGuards(JwtAuthGuard)
-  @ApiBearerAuth()
+  // @UseGuards(JwtAuthGuard)
+  // @ApiBearerAuth()
   @ApiCreatedResponse({ type: ProductEntity })
   async findOne(@Param('id', ParseIntPipe) id: number): Promise<ProductModel> {
     return new ProductEntity(await this.productsService.product({id: id}));

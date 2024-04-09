@@ -24,8 +24,8 @@ export class UsersController {
   }
 
   @Get()
-  @UseGuards(JwtAuthGuard)
-  @ApiBearerAuth()
+  // @UseGuards(JwtAuthGuard)
+  // @ApiBearerAuth()
   @ApiOkResponse({ type: UserEntity, isArray: true })
   async findAll(): Promise<UserModel[]> {
     const users = await this.usersService.users({});
@@ -33,8 +33,8 @@ export class UsersController {
   }
 
   @Get(':id')
-  @UseGuards(JwtAuthGuard)
-  @ApiBearerAuth()
+  // @UseGuards(JwtAuthGuard)
+  // @ApiBearerAuth()
   @ApiOkResponse({ type: UserEntity })
   async findOne(@Param('id', ParseIntPipe) id: number): Promise<UserModel> {
     return new UserEntity(await this.usersService.user({ id: id }));

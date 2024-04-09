@@ -23,8 +23,8 @@ export class CategoriesController {
   }
 
   @Get()
-  @UseGuards(JwtAuthGuard)
-  @ApiBearerAuth()
+  // @UseGuards(JwtAuthGuard)
+  // @ApiBearerAuth()
   @ApiOkResponse({ type: CategoryEntity, isArray: true })
   async findAll(): Promise<CategoryModel[]> {
     const categories = await this.categoriesService.categories({});
@@ -32,8 +32,8 @@ export class CategoriesController {
   }
 
   @Get(':id')
-  @UseGuards(JwtAuthGuard)
-  @ApiBearerAuth()
+  // @UseGuards(JwtAuthGuard)
+  // @ApiBearerAuth()
   @ApiCreatedResponse({ type: CategoryEntity })
   async findOne(@Param('id', ParseIntPipe) id: number): Promise<CategoryModel> {
     return new CategoryEntity(await this.categoriesService.category({id: id}));

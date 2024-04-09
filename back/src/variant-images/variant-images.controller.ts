@@ -55,8 +55,8 @@ export class VariantImagesController {
   }
 
   @Get()
-  @UseGuards(JwtAuthGuard)
-  @ApiBearerAuth()
+  // @UseGuards(JwtAuthGuard)
+  // @ApiBearerAuth()
   @ApiOkResponse({ type: VariantImageEntity, isArray: true })
   async findAll(): Promise<VariantImageModel[]> {
     const variants = await this.variantImagesService.variantImages({});
@@ -64,8 +64,8 @@ export class VariantImagesController {
   }
 
   @Get(':id')
-  @UseGuards(JwtAuthGuard)
-  @ApiBearerAuth()
+  // @UseGuards(JwtAuthGuard)
+  // @ApiBearerAuth()
   @ApiCreatedResponse({ type: VariantImageEntity })
   async findOne(@Param('id', ParseIntPipe) id: number): Promise<VariantImageModel> {
     return new VariantImageEntity(await this.variantImagesService.variantImage({id: id}));
