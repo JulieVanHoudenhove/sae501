@@ -27,6 +27,11 @@
             }
         }
     </script>
+        <!-- ALPINE JS -->
+        <!-- Alpine Plugins -->
+        <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+        <!-- Alpine Core -->
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <title>SAÉ 501 - Roy Lunetier</title>
 </head>
 <body>
@@ -142,6 +147,378 @@
                     <p class="text-[18px] leading-8 text-gray">Cheffe de projet,<br>Développeuse frontend</p>
                 </div>
             </div>
+        </section>
+        <section id="" class="bg-cream p-container flex flex-col gap-9">
+            <h2 class="font-matcha text-dark text-[50px] text-center">Avancement du projet</h2>
+            <p class="text-gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis sem at purus rhoncus pretium. Integer imperdiet sapien ut neque venenatis, at consectetur lacus efficitur. Phasellus vitae leo dignissim, hendrerit arcu sit amet, ornare metus. Suspendisse malesuada turpis vel rhoncus luctus. Integer ultrices mattis orci, egestas congue nibh congue non. Aenean eleifend placerat sem et mattis. Duis sodales nisi quis turpis bibendum condimentum. Cras ornare, ex vitae venenatis aliquet, magna velit condimentum velit, sed feugiat neque lectus bibendum ligula. Duis sodales odio id ultricies fermentum. Etiam sollicitudin turpis in nisl imperdiet, a malesuada urna lobortis. Vivamus ut augue eleifend, gravida metus a, pretium dui.</p>
+        </section>
+        <section x-data="{activeTab: 1}">
+            <div class="grid grid-cols-4">
+                <button @click="activeTab = 1" class="flex justify-center items-center py-16">
+                    <p class="font-matcha text-[32px] text-dark">Semaine 1</p>
+                </button>
+                <button @click="activeTab = 2" class="flex justify-center items-center bg-cream py-16">
+                    <p class="font-matcha text-[32px] text-dark">Semaine 2</p>
+                </button>
+                <button @click="activeTab = 3" class="flex justify-center items-center py-16">
+                    <p class="font-matcha text-[32px] text-dark">Semaine 3</p>
+                </button>
+                <button @click="activeTab = 4" class="flex justify-center items-center bg-cream py-16">
+                    <p class="font-matcha text-[32px] text-dark">Semaine 4</p>
+                </button>
+            </div>
+            <div x-show="activeTab == 1"  class="p-container">
+                <div class="px-container">
+                    <h3 class="font-matcha text-dark text-[50px] text-center py-9">Semaine 1</h3>
+                    <div class="flex flex-col gap-container w-full">
+                        <div class="flex flex-col w-full">
+                            <div class="max-w-[75%] flex flex-col gap-9">
+                                <p class="text-4xl font-matcha text-dark">Développement du visualisateur 3D</p>
+                                <p class="text-gray text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis sem
+                                    at purus rhoncus pretium. Integer imperdiet sapien ut neque venenatis, at consectetur lacus efficitur.
+                                    Phasellus vitae leo dignissim, hendrerit arcu sit amet, ornare metus. Suspendisse malesuada turpis vel
+                                    rhoncus luctus. Integer ultrices mattis orci, egestas congue nibh congue non. Aenean eleifend placerat
+                                    sem et mattis. Duis sodales nisi quis turpis bibendum condimentum. Cras ornare, ex vitae venenatis
+                                    aliquet, magna velit condimentum velit, sed feugiat neque lectus bibendum ligula. Duis sodales odio id
+                                    ultricies fermentum. Etiam sollicitudin turpis in nisl imperdiet, a malesuada urna lobortis. Vivamus ut
+                                    augue eleifend, gravida metus a, pretium dui.</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col text-end w-full items-end">
+                            <div class="max-w-[75%] flex flex-col gap-9">
+                                <p class="text-4xl font-matcha text-dark">Développement de l’essayage en AR</p>
+                                <p class="text-gray text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis sem
+                                    at purus
+                                    rhoncus pretium. Integer
+                                    imperdiet sapien ut neque venenatis, at consectetur lacus efficitur. Phasellus vitae leo dignissim,
+                                    hendrerit
+                                    arcu sit amet, ornare metus. Suspendisse malesuada turpis vel rhoncus luctus. Integer ultrices mattis
+                                    orci,
+                                    egestas congue nibh congue non. Aenean eleifend placerat sem et mattis. Duis sodales nisi quis turpis
+                                    bibendum
+                                    condimentum. Cras ornare, ex vitae venenatis aliquet, magna velit condimentum velit, sed feugiat neque
+                                    lectus
+                                    bibendum ligula. Duis sodales odio id ultricies fermentum. Etiam sollicitudin turpis in nisl imperdiet,
+                                    a
+                                    malesuada urna lobortis. Vivamus ut augue eleifend, gravida metus a, pretium dui.</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col w-full">
+                            <div class="max-w-[75%] flex flex-col gap-9">
+                                <p class="text-4xl font-matcha text-dark">Développement du back office</p>
+                                <p class="text-gray text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis sem
+                                    at purus rhoncus pretium. Integer
+                                    imperdiet sapien ut neque venenatis, at consectetur lacus efficitur. Phasellus vitae leo dignissim,
+                                    hendrerit
+                                    arcu sit amet, ornare metus. Suspendisse malesuada turpis vel rhoncus luctus. Integer ultrices mattis
+                                    orci,
+                                    egestas congue nibh congue non. Aenean eleifend placerat sem et mattis. Duis sodales nisi quis turpis
+                                    bibendum
+                                    condimentum. Cras ornare, ex vitae venenatis aliquet, magna velit condimentum velit, sed feugiat neque
+                                    lectus
+                                    bibendum ligula. Duis sodales odio id ultricies fermentum. Etiam sollicitudin turpis in nisl imperdiet,
+                                    a
+                                    malesuada urna lobortis. Vivamus ut augue eleifend, gravida metus a, pretium dui.</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col text-end w-full items-end">
+                            <div class="max-w-[75%] flex flex-col gap-9">
+                                <p class="text-4xl font-matcha text-dark">Gestion de projet</p>
+                                <p class="text-gray text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis sem
+                                    at purus rhoncus pretium. Integer
+                                    imperdiet sapien ut neque venenatis, at consectetur lacus efficitur. Phasellus vitae leo dignissim,
+                                    hendrerit
+                                    arcu sit amet, ornare metus. Suspendisse malesuada turpis vel rhoncus luctus. Integer ultrices mattis
+                                    orci,
+                                    egestas congue nibh congue non. Aenean eleifend placerat sem et mattis. Duis sodales nisi quis turpis
+                                    bibendum
+                                    condimentum. Cras ornare, ex vitae venenatis aliquet, magna velit condimentum velit, sed feugiat neque
+                                    lectus
+                                    bibendum ligula. Duis sodales odio id ultricies fermentum. Etiam sollicitudin turpis in nisl imperdiet,
+                                    a
+                                    malesuada urna lobortis. Vivamus ut augue eleifend, gravida metus a, pretium dui.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div x-show="activeTab == 2"  class="p-container bg-cream">
+                <div class="px-container">
+                    <h3 class="font-matcha text-dark text-[50px] text-center py-9">Semaine 2</h3>
+                    <div class="flex flex-col gap-container w-full">
+                        <div class="flex flex-col w-full">
+                            <div class="max-w-[75%] flex flex-col gap-9">
+                                <p class="text-4xl font-matcha text-dark">Développement du visualisateur 3D</p>
+                                <p class="text-gray text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis sem
+                                    at purus rhoncus pretium. Integer imperdiet sapien ut neque venenatis, at consectetur lacus efficitur.
+                                    Phasellus vitae leo dignissim, hendrerit arcu sit amet, ornare metus. Suspendisse malesuada turpis vel
+                                    rhoncus luctus. Integer ultrices mattis orci, egestas congue nibh congue non. Aenean eleifend placerat
+                                    sem et mattis. Duis sodales nisi quis turpis bibendum condimentum. Cras ornare, ex vitae venenatis
+                                    aliquet, magna velit condimentum velit, sed feugiat neque lectus bibendum ligula. Duis sodales odio id
+                                    ultricies fermentum. Etiam sollicitudin turpis in nisl imperdiet, a malesuada urna lobortis. Vivamus ut
+                                    augue eleifend, gravida metus a, pretium dui.</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col text-end w-full items-end">
+                            <div class="max-w-[75%] flex flex-col gap-9">
+                                <p class="text-4xl font-matcha text-dark">Développement de l’essayage en AR</p>
+                                <p class="text-gray text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis sem
+                                    at purus
+                                    rhoncus pretium. Integer
+                                    imperdiet sapien ut neque venenatis, at consectetur lacus efficitur. Phasellus vitae leo dignissim,
+                                    hendrerit
+                                    arcu sit amet, ornare metus. Suspendisse malesuada turpis vel rhoncus luctus. Integer ultrices mattis
+                                    orci,
+                                    egestas congue nibh congue non. Aenean eleifend placerat sem et mattis. Duis sodales nisi quis turpis
+                                    bibendum
+                                    condimentum. Cras ornare, ex vitae venenatis aliquet, magna velit condimentum velit, sed feugiat neque
+                                    lectus
+                                    bibendum ligula. Duis sodales odio id ultricies fermentum. Etiam sollicitudin turpis in nisl imperdiet,
+                                    a
+                                    malesuada urna lobortis. Vivamus ut augue eleifend, gravida metus a, pretium dui.</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col w-full">
+                            <div class="max-w-[75%] flex flex-col gap-9">
+                                <p class="text-4xl font-matcha text-dark">Développement du back office</p>
+                                <p class="text-gray text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis sem
+                                    at purus rhoncus pretium. Integer
+                                    imperdiet sapien ut neque venenatis, at consectetur lacus efficitur. Phasellus vitae leo dignissim,
+                                    hendrerit
+                                    arcu sit amet, ornare metus. Suspendisse malesuada turpis vel rhoncus luctus. Integer ultrices mattis
+                                    orci,
+                                    egestas congue nibh congue non. Aenean eleifend placerat sem et mattis. Duis sodales nisi quis turpis
+                                    bibendum
+                                    condimentum. Cras ornare, ex vitae venenatis aliquet, magna velit condimentum velit, sed feugiat neque
+                                    lectus
+                                    bibendum ligula. Duis sodales odio id ultricies fermentum. Etiam sollicitudin turpis in nisl imperdiet,
+                                    a
+                                    malesuada urna lobortis. Vivamus ut augue eleifend, gravida metus a, pretium dui.</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col text-end w-full items-end">
+                            <div class="max-w-[75%] flex flex-col gap-9">
+                                <p class="text-4xl font-matcha text-dark">Gestion de projet</p>
+                                <p class="text-gray text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis sem
+                                    at purus rhoncus pretium. Integer
+                                    imperdiet sapien ut neque venenatis, at consectetur lacus efficitur. Phasellus vitae leo dignissim,
+                                    hendrerit
+                                    arcu sit amet, ornare metus. Suspendisse malesuada turpis vel rhoncus luctus. Integer ultrices mattis
+                                    orci,
+                                    egestas congue nibh congue non. Aenean eleifend placerat sem et mattis. Duis sodales nisi quis turpis
+                                    bibendum
+                                    condimentum. Cras ornare, ex vitae venenatis aliquet, magna velit condimentum velit, sed feugiat neque
+                                    lectus
+                                    bibendum ligula. Duis sodales odio id ultricies fermentum. Etiam sollicitudin turpis in nisl imperdiet,
+                                    a
+                                    malesuada urna lobortis. Vivamus ut augue eleifend, gravida metus a, pretium dui.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div x-show="activeTab == 3" class="p-container">
+                <div class="px-container">
+                    <h3 class="font-matcha text-dark text-[50px] text-center py-9">Semaine 3</h3>
+                    <div class="flex flex-col gap-container w-full">
+                        <div class="flex flex-col w-full">
+                            <div class="max-w-[75%] flex flex-col gap-9">
+                                <p class="text-4xl font-matcha text-dark">Développement du visualisateur 3D</p>
+                                <p class="text-gray text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
+                                    sagittis sem
+                                    at purus rhoncus pretium. Integer imperdiet sapien ut neque venenatis, at consectetur lacus
+                                    efficitur.
+                                    Phasellus vitae leo dignissim, hendrerit arcu sit amet, ornare metus. Suspendisse malesuada
+                                    turpis vel
+                                    rhoncus luctus. Integer ultrices mattis orci, egestas congue nibh congue non. Aenean eleifend
+                                    placerat
+                                    sem et mattis. Duis sodales nisi quis turpis bibendum condimentum. Cras ornare, ex vitae
+                                    venenatis
+                                    aliquet, magna velit condimentum velit, sed feugiat neque lectus bibendum ligula. Duis sodales
+                                    odio id
+                                    ultricies fermentum. Etiam sollicitudin turpis in nisl imperdiet, a malesuada urna lobortis.
+                                    Vivamus ut
+                                    augue eleifend, gravida metus a, pretium dui.</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col text-end w-full items-end">
+                            <div class="max-w-[75%] flex flex-col gap-9">
+                                <p class="text-4xl font-matcha text-dark">Développement de l’essayage en AR</p>
+                                <p class="text-gray text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
+                                    sagittis sem
+                                    at purus
+                                    rhoncus pretium. Integer
+                                    imperdiet sapien ut neque venenatis, at consectetur lacus efficitur. Phasellus vitae leo
+                                    dignissim,
+                                    hendrerit
+                                    arcu sit amet, ornare metus. Suspendisse malesuada turpis vel rhoncus luctus. Integer ultrices
+                                    mattis
+                                    orci,
+                                    egestas congue nibh congue non. Aenean eleifend placerat sem et mattis. Duis sodales nisi quis
+                                    turpis
+                                    bibendum
+                                    condimentum. Cras ornare, ex vitae venenatis aliquet, magna velit condimentum velit, sed feugiat
+                                    neque
+                                    lectus
+                                    bibendum ligula. Duis sodales odio id ultricies fermentum. Etiam sollicitudin turpis in nisl
+                                    imperdiet,
+                                    a
+                                    malesuada urna lobortis. Vivamus ut augue eleifend, gravida metus a, pretium dui.</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col w-full">
+                            <div class="max-w-[75%] flex flex-col gap-9">
+                                <p class="text-4xl font-matcha text-dark">Développement du back office</p>
+                                <p class="text-gray text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
+                                    sagittis sem
+                                    at purus rhoncus pretium. Integer
+                                    imperdiet sapien ut neque venenatis, at consectetur lacus efficitur. Phasellus vitae leo
+                                    dignissim,
+                                    hendrerit
+                                    arcu sit amet, ornare metus. Suspendisse malesuada turpis vel rhoncus luctus. Integer ultrices
+                                    mattis
+                                    orci,
+                                    egestas congue nibh congue non. Aenean eleifend placerat sem et mattis. Duis sodales nisi quis
+                                    turpis
+                                    bibendum
+                                    condimentum. Cras ornare, ex vitae venenatis aliquet, magna velit condimentum velit, sed feugiat
+                                    neque
+                                    lectus
+                                    bibendum ligula. Duis sodales odio id ultricies fermentum. Etiam sollicitudin turpis in nisl
+                                    imperdiet,
+                                    a
+                                    malesuada urna lobortis. Vivamus ut augue eleifend, gravida metus a, pretium dui.</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col text-end w-full items-end">
+                            <div class="max-w-[75%] flex flex-col gap-9">
+                                <p class="text-4xl font-matcha text-dark">Gestion de projet</p>
+                                <p class="text-gray text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
+                                    sagittis sem
+                                    at purus rhoncus pretium. Integer
+                                    imperdiet sapien ut neque venenatis, at consectetur lacus efficitur. Phasellus vitae leo
+                                    dignissim,
+                                    hendrerit
+                                    arcu sit amet, ornare metus. Suspendisse malesuada turpis vel rhoncus luctus. Integer ultrices
+                                    mattis
+                                    orci,
+                                    egestas congue nibh congue non. Aenean eleifend placerat sem et mattis. Duis sodales nisi quis
+                                    turpis
+                                    bibendum
+                                    condimentum. Cras ornare, ex vitae venenatis aliquet, magna velit condimentum velit, sed feugiat
+                                    neque
+                                    lectus
+                                    bibendum ligula. Duis sodales odio id ultricies fermentum. Etiam sollicitudin turpis in nisl
+                                    imperdiet,
+                                    a
+                                    malesuada urna lobortis. Vivamus ut augue eleifend, gravida metus a, pretium dui.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div x-show="activeTab == 4"  class="p-container bg-cream">
+                <div class="px-container">
+                    <h3 class="font-matcha text-dark text-[50px] text-center py-9">Semaine 4</h3>
+                    <div class="flex flex-col gap-container w-full">
+                        <div class="flex flex-col w-full">
+                            <div class="max-w-[75%] flex flex-col gap-9">
+                                <p class="text-4xl font-matcha text-dark">Développement du visualisateur 3D</p>
+                                <p class="text-gray text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis sem
+                                    at purus rhoncus pretium. Integer imperdiet sapien ut neque venenatis, at consectetur lacus efficitur.
+                                    Phasellus vitae leo dignissim, hendrerit arcu sit amet, ornare metus. Suspendisse malesuada turpis vel
+                                    rhoncus luctus. Integer ultrices mattis orci, egestas congue nibh congue non. Aenean eleifend placerat
+                                    sem et mattis. Duis sodales nisi quis turpis bibendum condimentum. Cras ornare, ex vitae venenatis
+                                    aliquet, magna velit condimentum velit, sed feugiat neque lectus bibendum ligula. Duis sodales odio id
+                                    ultricies fermentum. Etiam sollicitudin turpis in nisl imperdiet, a malesuada urna lobortis. Vivamus ut
+                                    augue eleifend, gravida metus a, pretium dui.</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col text-end w-full items-end">
+                            <div class="max-w-[75%] flex flex-col gap-9">
+                                <p class="text-4xl font-matcha text-dark">Développement de l’essayage en AR</p>
+                                <p class="text-gray text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis sem
+                                    at purus
+                                    rhoncus pretium. Integer
+                                    imperdiet sapien ut neque venenatis, at consectetur lacus efficitur. Phasellus vitae leo dignissim,
+                                    hendrerit
+                                    arcu sit amet, ornare metus. Suspendisse malesuada turpis vel rhoncus luctus. Integer ultrices mattis
+                                    orci,
+                                    egestas congue nibh congue non. Aenean eleifend placerat sem et mattis. Duis sodales nisi quis turpis
+                                    bibendum
+                                    condimentum. Cras ornare, ex vitae venenatis aliquet, magna velit condimentum velit, sed feugiat neque
+                                    lectus
+                                    bibendum ligula. Duis sodales odio id ultricies fermentum. Etiam sollicitudin turpis in nisl imperdiet,
+                                    a
+                                    malesuada urna lobortis. Vivamus ut augue eleifend, gravida metus a, pretium dui.</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col w-full">
+                            <div class="max-w-[75%] flex flex-col gap-9">
+                                <p class="text-4xl font-matcha text-dark">Développement du back office</p>
+                                <p class="text-gray text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis sem
+                                    at purus rhoncus pretium. Integer
+                                    imperdiet sapien ut neque venenatis, at consectetur lacus efficitur. Phasellus vitae leo dignissim,
+                                    hendrerit
+                                    arcu sit amet, ornare metus. Suspendisse malesuada turpis vel rhoncus luctus. Integer ultrices mattis
+                                    orci,
+                                    egestas congue nibh congue non. Aenean eleifend placerat sem et mattis. Duis sodales nisi quis turpis
+                                    bibendum
+                                    condimentum. Cras ornare, ex vitae venenatis aliquet, magna velit condimentum velit, sed feugiat neque
+                                    lectus
+                                    bibendum ligula. Duis sodales odio id ultricies fermentum. Etiam sollicitudin turpis in nisl imperdiet,
+                                    a
+                                    malesuada urna lobortis. Vivamus ut augue eleifend, gravida metus a, pretium dui.</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col text-end w-full items-end">
+                            <div class="max-w-[75%] flex flex-col gap-9">
+                                <p class="text-4xl font-matcha text-dark">Gestion de projet</p>
+                                <p class="text-gray text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis sem
+                                    at purus rhoncus pretium. Integer
+                                    imperdiet sapien ut neque venenatis, at consectetur lacus efficitur. Phasellus vitae leo dignissim,
+                                    hendrerit
+                                    arcu sit amet, ornare metus. Suspendisse malesuada turpis vel rhoncus luctus. Integer ultrices mattis
+                                    orci,
+                                    egestas congue nibh congue non. Aenean eleifend placerat sem et mattis. Duis sodales nisi quis turpis
+                                    bibendum
+                                    condimentum. Cras ornare, ex vitae venenatis aliquet, magna velit condimentum velit, sed feugiat neque
+                                    lectus
+                                    bibendum ligula. Duis sodales odio id ultricies fermentum. Etiam sollicitudin turpis in nisl imperdiet,
+                                    a
+                                    malesuada urna lobortis. Vivamus ut augue eleifend, gravida metus a, pretium dui.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="video">
+            <div class="flex justify-center items-center bg-footer_dark h-[1080px]">
+                <p class="font-matcha text-white ">Vidéo de démonstration</p>
+            </div>
+        </section>
+        <section class="flex">
+            <div class="bg-cream w-1/2 flex flex-col p-container gap-9">
+                <h2 class="text-[50px] text-center font-matcha">Projet en ligne</h2>
+                <p class="text-gray text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis sem at purus rhoncus pretium. Integer imperdiet sapien ut neque venenatis, at consectetur lacus efficitur. Phasellus vitae leo dignissim, hendrerit arcu sit amet, ornare metus. Suspendisse malesuada turpis vel rhoncus luctus. Integer ultrices mattis orci, egestas congue nibh congue non. Aenean eleifend placerat sem et mattis. Duis sodales nisi quis turpis bibendum condimentum. Cras ornare, ex vitae venenatis aliquet, magna velit condimentum velit, sed feugiat neque lectus bibendum ligula. Duis sodales odio id ultricies fermentum. Etiam sollicitudin turpis in nisl imperdiet, a malesuada urna lobortis. Vivamus ut augue eleifend, gravida metus a, pretium dui.</p>
+                <div class="flex items-center justify-center">
+                    <a class="flex justify-center items-center bg-dark text-white rounded-full px-16 py-4 w-fit" href="">Découvrir</a>
+                </div>
+            </div>
+            <div class="w-1/2 flex flex-col p-container gap-9">
+                <h2 class="text-[50px] text-center font-matcha">Kikstater</h2>
+                <p class="text-gray text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis sem at purus rhoncus pretium. Integer imperdiet sapien ut neque venenatis, at consectetur lacus efficitur. Phasellus vitae leo dignissim, hendrerit arcu sit amet, ornare metus. Suspendisse malesuada turpis vel rhoncus luctus. Integer ultrices mattis orci, egestas congue nibh congue non. Aenean eleifend placerat sem et mattis. Duis sodales nisi quis turpis bibendum condimentum. Cras ornare, ex vitae venenatis aliquet, magna velit condimentum velit, sed feugiat neque lectus bibendum ligula. Duis sodales odio id ultricies fermentum. Etiam sollicitudin turpis in nisl imperdiet, a malesuada urna lobortis. Vivamus ut augue eleifend, gravida metus a, pretium dui.</p>
+                <div class="flex items-center justify-center">
+                    <a class="flex justify-center items-center bg-dark text-white rounded-full px-16 py-4 w-fit" href="">Nous soutenir</a>
+                </div>
+            </div>
+        </section>
+            <img class="h-[610px] object-cover w-full" src="images/RL-14.jpg" alt="image des matières dans lesquelles sont faites les lunettes">
+        </section>
+        <section id="conclusion" class="bg-cream p-container flex flex-col gap-9">
+            <h2 class="font-matcha text-dark text-[50px] text-center">Conclusion</h2>
+            <p class="text-gray text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis sem at purus rhoncus pretium. Integer imperdiet sapien ut neque venenatis, at consectetur lacus efficitur. Phasellus vitae leo dignissim, hendrerit arcu sit amet, ornare metus. Suspendisse malesuada turpis vel rhoncus luctus. Integer ultrices mattis orci, egestas congue nibh congue non. Aenean eleifend placerat sem et mattis. Duis sodales nisi quis turpis bibendum condimentum. Cras ornare, ex vitae venenatis aliquet, magna velit condimentum velit, sed feugiat neque lectus bibendum ligula. Duis sodales odio id ultricies fermentum. Etiam sollicitudin turpis in nisl imperdiet, a malesuada urna lobortis. Vivamus ut augue eleifend, gravida metus a, pretium dui.</p>
         </section>
     </div>
     <footer>
