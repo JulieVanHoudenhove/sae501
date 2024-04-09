@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import ProductVariantComponent from "../components/ProductVariant";
+import CanvasScene from "../components/CanvasScene";
 
 const ProductPage = () => {
 	const { id } = useParams();
@@ -16,12 +17,13 @@ const ProductPage = () => {
 			<section className="configurator">
 				{/* Canvas */}
 				<div className="preview-container">
-					<div className="canvas"></div>
-					<div className="images-container">
-						<div className="image"></div>
-						<div className="image"></div>
-					</div>
+					<CanvasScene />
 				</div>
+
+				{/* <div className="images-container">
+					<div className="image"></div>
+					<div className="image"></div>
+				</div> */}
 
 				{/* Configurator */}
 				<div className="product">
