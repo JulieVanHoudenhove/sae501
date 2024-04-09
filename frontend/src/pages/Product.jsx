@@ -46,7 +46,7 @@ const ProductPage = () => {
             />
           </div>
 
-          <Link to="/ar" state={{ id: "glasse-ID 123" }} className="btn-main">
+          <Link to="/ar" state={{ id: "glasse-ID 123", defaultGlasses: "glasses3" }} className="btn-main">
             Essayer les lunettes
           </Link>
           <a href="#" className="link-main">

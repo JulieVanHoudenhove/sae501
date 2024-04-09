@@ -263,7 +263,7 @@ hr {
 .loading-ar-container * {
   background: rgba(161, 164, 168, 0.238);
   animation: pulse 3s infinite;
-  border-radius: 5px;
+  border-radius: 2px;
   padding: 20px;
 }
 .h-20 {

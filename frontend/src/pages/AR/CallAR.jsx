@@ -9,6 +9,7 @@ export function CallAR() {
 
   useEffect(() => {
     console.log(location.state.id);
+    console.log(location.state.defaultGlasses);
   }, []);
 
   useEffect(() => {
@@ -35,7 +36,7 @@ export function CallAR() {
               "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSitELPWZe2fuenZ-b1PwGRCbgbhTTFnAw8LvUu15grcvKAWtAXd3HEhGCXwfWNEAxIPgY&usqp=CAU",
           },
           {
-            name: "Anne 1004",
+            name: "Anne 1003",
             nameJsonModel: "glasses3",
             iamgeURL:
               "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSitELPWZe2fuenZ-b1PwGRCbgbhTTFnAw8LvUu15grcvKAWtAXd3HEhGCXwfWNEAxIPgY&usqp=CAU",
@@ -48,7 +49,7 @@ export function CallAR() {
   return (
     <>
       {glasse ? (
-        <AR glasse={glasse} />
+        <AR glasse={glasse} defaultGlasses={location.state.defaultGlasses} />
       ) : (
         <div className="loading-ar-container red">
           <div>

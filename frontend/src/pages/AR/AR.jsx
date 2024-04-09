@@ -7,7 +7,7 @@ import "../../styles/AR/AR.css";
 import searchImage from "../../assets/target512.jpg";
 import { ButtonColor } from "../../components/AR/ButtonColor";
 
-function AR({ glasse }) {
+function AR({ glasse, defaultGlasses }) {
   const refPlaceHolder = useRef();
   const refCanvas = useRef();
   const refAdjustEnter = useRef();
@@ -16,8 +16,14 @@ function AR({ glasse }) {
   const refLoading = useRef();
   const navigate = useNavigate();
   const [activeButton, setActiveButton] = useState(null);
+  const [defaultGlassesModel, setDefaultGlassesModel] = useState(null);
 
-  function init_VTOWidget(placeHolder, canvas, toggle_loading) {
+  function init_VTOWidget(
+    placeHolder,
+    canvas,
+    toggle_loading,
+    defaultGlassesModel
+  ) {
     JEELIZVTOWIDGET.start({
       placeHolder,
       canvas,
@@ -36,7 +42,7 @@ function AR({ glasse }) {
         console.log("INFO: JEELIZVTOWIDGET is ready :)");
 
         // Charge le modèle par défaut une fois que JEELIZVTOWIDGET est prêt
-        load_customModel("glasses3D/glasses1.json");
+        load_customModel(defaultGlassesModel);
       },
       onError: function (errorLabel) {
         console.log("ERROR: ", errorLabel);
@@ -74,12 +80,18 @@ function AR({ glasse }) {
   };
 
   useEffect(() => {
-    const placeHolder = refPlaceHolder.current;
-    const canvas = refCanvas.current;
-    init_VTOWidget(placeHolder, canvas, toggle_loading);
+    const defaultGlassesModel = `glasses3D/${defaultGlasses}.json`;
+    console.log(defaultGlassesModel);
+
+    if (defaultGlassesModel) {
+      const placeHolder = refPlaceHolder.current;
+      const canvas = refCanvas.current;
+
+      init_VTOWidget(placeHolder, canvas, toggle_loading, defaultGlassesModel);
+    }
 
     return () => {
-      //JEELIZVTOWIDGET.destroy()
+      JEELIZVTOWIDGET.destroy()
     };
   }, []);
 
