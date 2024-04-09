@@ -39,7 +39,7 @@ export default function App({ currentModelPath }) {
 		<Canvas shadows camera={{ position: [0, 0, 4], fov: 50 }}>
 			<color attach="background" args={["#f0f0f0"]} />
 
-			<ambientLight intensity={0.5} />
+			<ambientLight intensity={10} />
 
 			<Glasses position={[-0.1, -0.2, 0]} rotation={[0, Math.PI / 2, 0]} scale={0.3} currentModelPath={currentModelPath} />
 
