@@ -24,20 +24,26 @@ export function CallAR() {
         },
         SubColors: [
           {
-            name: "Anne 1001",
-            nameJsonModel: "glasses1",
+            name: "Anne 1",
+            nameJsonModel: "anne 1",
             iamgeURL:
               "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSitELPWZe2fuenZ-b1PwGRCbgbhTTFnAw8LvUu15grcvKAWtAXd3HEhGCXwfWNEAxIPgY&usqp=CAU",
           },
           {
-            name: "Anne 1002",
-            nameJsonModel: "glasses2",
+            name: "Anne 2",
+            nameJsonModel: "anne 2",
             iamgeURL:
               "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSitELPWZe2fuenZ-b1PwGRCbgbhTTFnAw8LvUu15grcvKAWtAXd3HEhGCXwfWNEAxIPgY&usqp=CAU",
           },
           {
-            name: "Anne 1003",
-            nameJsonModel: "glasses3",
+            name: "Anne 3",
+            nameJsonModel: "anne 3",
+            iamgeURL:
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSitELPWZe2fuenZ-b1PwGRCbgbhTTFnAw8LvUu15grcvKAWtAXd3HEhGCXwfWNEAxIPgY&usqp=CAU",
+          },
+          {
+            name: "Anne 4",
+            nameJsonModel: "anne 4",
             iamgeURL:
               "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSitELPWZe2fuenZ-b1PwGRCbgbhTTFnAw8LvUu15grcvKAWtAXd3HEhGCXwfWNEAxIPgY&usqp=CAU",
           },

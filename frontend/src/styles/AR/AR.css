@@ -68,6 +68,7 @@ body {
 	color: white;
 	font-size: 32pt;
 	margin-top: 40vh;
+	text-align: center;
 }
 .JeelizVTOWidgetChangeModelContainer {
 	background: white;
@@ -223,6 +224,7 @@ hr {
 .go-back {
 	color: #303133;
 	text-decoration: underline;
+	text-align: center;
 }
 .go-back:hover {
 	color: rgb(64, 65, 67);
