@@ -10,20 +10,20 @@ function ProductCardComponent({ product }) {
 
 	useEffect(() => {
 		if (!product) return;
-		console.log(product);
+		console.log("variant product:", product);
 	}, [product]);
 
 	return (
 		<article onClick={() => goToProduct(product.id)}>
 			<div className="image-container">
-				<img src={product.img} alt={product.name} />
+				<img src={"http://localhost:3000" + product.image} alt={product.name} />
 
 				<div className="overlay"></div>
 				<button>Configurer</button>
 			</div>
 
-			<h3>Anne</h3>
-			<p>Acétate</p>
+			<h3>{product.name}</h3>
+			<p>{product.category.name}</p>
 		</article>
 	);
 }
