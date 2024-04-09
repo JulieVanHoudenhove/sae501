@@ -1,5 +1,6 @@
 import { Link, useParams, useLocation } from "react-router-dom";
 import ProductVariantComponent from "../components/ProductVariant";
+import CanvasScene from "../components/CanvasScene";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
@@ -55,7 +56,8 @@ const ProductPage = () => {
 					<section className="configurator">
 						{/* Canvas */}
 						<div className="preview-container">
-							<div className="canvas"></div>
+							<CanvasScene />
+              
 							<div className="images-container">
 								<div className="image"></div>
 								<div className="image"></div>
