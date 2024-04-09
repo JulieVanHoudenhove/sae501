@@ -75,14 +75,14 @@ const ProductPage = () => {
 								{variant && variant.map((v) => <ProductVariantComponent key={v.id} textureImage={v.textureImage} textureName={v.name} />)}
 							</div>
 
-							<Link to="/ar" state={{ id: "glasse-ID 123", defaultGlasses: "glasses3" }} className="btn-main">
-								Essayer les lunettes
-							</Link>
-							<a href="#" className="link-main">
-								Comparer avec d'autres lunettes
-							</a>
-						</div>
-					</section>
+          <Link to="/ar" state={{ id: "glasse-ID 123", defaultGlasses: "anne 3" }} className="btn-main">
+            Essayer les lunettes
+          </Link>
+          <a href="#" className="link-main">
+            Comparer avec d'autres lunettes
+          </a>
+        </div>
+      </section>
 
 					<section className="product-details">
 						<h2>Découvrez {data.name}</h2>
