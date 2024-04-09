@@ -258,6 +258,17 @@ nav ul li a svg {
   font-size: 14px;
 }
 
+.product-page .color-gray {
+  color: #777777;
+  text-decoration: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.product-page .color-gray:hover {
+  color: black;
+}
+
 .product-page .configurator {
   padding: 0 50px;
   width: calc(100% - 100px);

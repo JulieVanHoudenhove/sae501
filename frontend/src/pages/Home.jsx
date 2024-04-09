@@ -1,45 +1,33 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ProductCardComponent from "../components/ProductCard";
 
 function HomePage() {
-	const data = [
-		{
-			id: 1,
-			name: "Anne",
-			category: "Acétate",
-			img: "/images/anne.jpg",
-		},
-		{
-			id: 2,
-			name: "Aristide",
-			category: "Acétate",
-			img: "/images/aristide.jpg",
-		},
-		{
-			id: 3,
-			name: "Armelle",
-			category: "Acétate",
-			img: "/images/armelle.jpg",
-		},
-		{
-			id: 4,
-			name: "Anne",
-			category: "Acétate",
-			img: "/images/anne.jpg",
-		},
-		{
-			id: 5,
-			name: "Anne",
-			category: "Acétate",
-			img: "/images/anne.jpg",
-		},
-		{
-			id: 6,
-			name: "Anne",
-			category: "Acétate",
-			img: "/images/anne.jpg",
-		},
-	];
+	const [data, setData] = useState(null);
+	const [loading, setLoading] = useState(true);
+	const [error, setError] = useState(null);
+
+	const getAllProducts = async () => {
+		try {
+			const response = await fetch(`http://localhost:3000/products`);
+
+			if (!response.ok) {
+				throw new Error(`HTTP error: Status ${response.status}`);
+			}
+
+			let data = await response.json();
+			setData(data);
+			setError(null);
+		} catch (err) {
+			setError(err.message);
+			setData(null);
+		} finally {
+			setLoading(false);
+		}
+	};
+
+	useEffect(() => {
+		getAllProducts();
+	}, []);
 
 	return (
 		<main id="home-page">
@@ -47,9 +35,9 @@ function HomePage() {
 			<h1>Tous nos modèles</h1>
 
 			<section className="products-container">
-				{data.map((product) => (
-					<ProductCardComponent key={product.id} product={product} />
-				))}
+				{loading && <p>Loading...</p>}
+				{error && <p>Error: {error}</p>}
+				{data && data.map((product) => <ProductCardComponent key={product.id} product={product} />)}
 			</section>
 		</main>
 	);

@@ -1,0 +1,58 @@
+[
+    {
+        "name" : "Vision clairvoyante",
+        "price" : "10€",
+        "contributions" : "10 contributions",
+        "rewards" : "<ul class='list-disc px-6'><li>un immense <b>MERCI</b> - notre reconnaissance éternelle !</li><li>Votre <b>nom</b> affiché sur notre mur des contributeurs</li></ul>",
+        "comment" : "Votre soutien est le verre de la lunette de notre aventure. Chaque contribution nous rapporche un peu plus de la réalisation de notre projet ! Chaque euro compte et nous sommes honorés de votre confiance."
+    },
+    {
+        "name" : "Visionneur de l'avenir",
+        "price" : "25€",
+        "contributions" : "50 contributions",
+        "rewards" : "<ul class='list-disc px-6'><li>un immense <b>MERCI</b> - notre reconnaissance éternelle !</li><li>Votre <span>nom</span> affiché sur notre mur des contributeurs</li><li>Un accès exclusif à une <b>newsletter</b> avec des mises à jour sur le développement du projet</li></ul>",
+        "comment" : "Votre soutien est le verre de la lunette de notre aventure. Chaque contribution nous rapporche un peu plus de la réalisation de notre projet ! Chaque euro compte et nous sommes honorés de votre confiance."
+    },
+    {
+        "name" : "Vision exploratrice",
+        "price" : "50€",
+        "contributions" : "5 contributions",
+        "rewards" : "<ul class='list-disc px-6'><li>un immense <b>MERCI</b> - notre reconnaissance éternelle !</li><li>Votre <span>nom</span> affiché sur notre mur des contributeurs</li><li>Un accès exclusif à une <b>newsletter</b> avec des mises à jour sur le développement du projet</li><li>Accès anticipé à la <b>version bêta</b> de notre plateforme de configurateur de lunettes 3D.</li></ul>",
+        "comment" : "Votre soutien est le verre de la lunette de notre aventure. Chaque contribution nous rapporche un peu plus de la réalisation de notre projet ! Chaque euro compte et nous sommes honorés de votre confiance."
+    },
+    {
+        "name" : "Vision audacieuse",
+        "price" : "75€",
+        "contributions" : "5 contributions",
+        "rewards" : "<ul class='list-disc px-6'><li>un immense <b>MERCI</b> - notre reconnaissance éternelle !</li><li>Votre <span>nom</span> affiché sur notre mur des contributeurs</li><li>Un accès exclusif à une <b>newsletter</b> avec des mises à jour sur le développement du projet</li><li>Accès anticipé à la <b>version bêta</b> de notre plateforme de configurateur de lunettes 3D.</li><li>Pack de <b>stickers</b> et d'autocollants exclusifs de notre marque.</li></ul>",
+        "comment" : "Votre soutien est le verre de la lunette de notre aventure. Chaque contribution nous rapporche un peu plus de la réalisation de notre projet ! Chaque euro compte et nous sommes honorés de votre confiance."
+    },
+    {
+        "name" : "Vision éclairée",
+        "price" : "100€",
+        "contributions" : "5 contributions",
+        "rewards" : "<ul class='list-disc px-6'><li>un immense <b>MERCI</b> - notre reconnaissance éternelle !</li><li>Votre <span>nom</span> affiché sur notre mur des contributeurs</li><li>Un accès exclusif à une <b>newsletter</b> avec des mises à jour sur le développement du projet</li><li>Accès anticipé à la <b>version bêta</b> de notre plateforme de configurateur de lunettes 3D.</li><li>Pack de <b>stickers</b> et d'autocollants exclusifs de notre marque.</li><li><b>Guide numérique</b> sur les tendances de la mode en matière de lunettes.</li></ul>",
+        "comment" : null
+    },
+    {
+        "name" : "Vision innovatrice",
+        "price" : "300€",
+        "contributions" : "5 contributions",
+        "rewards" : "<ul class='list-disc px-6'><li>un immense <b>MERCI</b> - notre reconnaissance éternelle !</li><li>Votre <span>nom</span> affiché sur notre mur des contributeurs</li><li>Un accès exclusif à une <b>newsletter</b> avec des mises à jour sur le développement du projet</li><li>Accès anticipé à la <b>version bêta</b> de notre plateforme de configurateur de lunettes 3D.</li><li>Pack de <b>stickers</b> et d'autocollants exclusifs de notre marque.</li><li><b>Guide numérique</b> sur les tendances de la mode en matière de lunettes.</li><li>Une paire de <b>lunettes de soleil</b></li></ul>",
+        "comment" : null
+    },
+    {
+        "name" : "Vision prestige",
+        "price" : "500€",
+        "contributions" : "5 contributions",
+        "rewards" : "<ul class='list-disc px-6'><li>un immense <b>MERCI</b> - notre reconnaissance éternelle !</li><li>Votre <span>nom</span> affiché sur notre mur des contributeurs</li><li>Un accès exclusif à une <b>newsletter</b> avec des mises à jour sur le développement du projet</li><li>Accès anticipé à la <b>version bêta</b> de notre plateforme de configurateur de lunettes 3D.</li><li>Pack de <b>stickers</b> et d'autocollants exclusifs de notre marque.</li><li><b>Guide numérique</b> sur les tendances de la mode en matière de lunettes.</li><li>Une paire de <b>lunettes de soleil</b></li><li>Une carte-cadeau de <b>50 euros</b> à utiliser sur notre plateforme après son lancement.</li></ul>",
+        "comment" : null
+    },
+    {
+        "name" : "Vision élite",
+        "price" : "1000€",
+        "contributions" : "5 contributions",
+        "rewards" : "<ul class='list-disc px-6'><li>un immense <b>MERCI</b> - notre reconnaissance éternelle !</li><li>Votre <span>nom</span> affiché sur notre mur des contributeurs</li><li>Un accès exclusif à une <b>newsletter</b> avec des mises à jour sur le développement du projet</li><li>Accès anticipé à la <b>version bêta</b> de notre plateforme de configurateur de lunettes 3D.</li><li>Pack de <b>stickers</b> et d'autocollants exclusifs de notre marque.</li><li><b>Guide numérique</b> sur les tendances de la mode en matière de lunettes.</li><li>Une paire de <b>lunettes de soleil</b></li><li>Une carte-cadeau de <b>50 euros</b> à utiliser sur notre plateforme après son lancement.</li><li>Invitation VIP à un <b>événement de lancement</b> en personne avec l'équipe fondatrice.</li></ul>",
+        "comment" : null
+    }
+]
