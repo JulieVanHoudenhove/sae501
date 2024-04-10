@@ -9,6 +9,7 @@ function NavbarComponent() {
 			<Link to="/">
 				<img src={logo} alt="Logo Roy Lunetier" />
 			</Link>
+
 			<ul>
 				<li>
 					<Link to="/">Accueil</Link>
@@ -33,6 +34,12 @@ function NavbarComponent() {
 					</Link>
 				</li>
 			</ul>
+
+			<div className="burger">
+				<div className="line"></div>
+				<div className="line"></div>
+				<div className="line"></div>
+			</div>
 		</nav>
 	);
 }

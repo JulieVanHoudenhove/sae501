@@ -1,9 +1,9 @@
 import React from "react";
 
-function ProductVariantComponent({ textureImage, textureName, current }) {
+function ProductVariantComponent({ textureImage, textureName, onClick, isActive }) {
 	return (
-		<div className={"texture-variant" + (current ? " current" : "")}>
-			{textureImage ? <img src={"/" + textureImage} alt={textureName} /> : <div className="no-image"></div>}
+		<div className={"texture-variant" + (isActive ? " current" : "")} onClick={onClick}>
+			{textureImage ? <img src={"http://localhost:3000" + textureImage} alt={textureName} /> : <div className="no-image"></div>}
 
 			<p>{textureName}</p>
 		</div>
