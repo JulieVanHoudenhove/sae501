@@ -1,2 +1,2 @@
 -- AlterTable
-ALTER TABLE `variant` MODIFY `material` VARCHAR(191) NULL;
+ALTER TABLE `Variant` MODIFY `material` VARCHAR(191) NULL;
