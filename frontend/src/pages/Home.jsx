@@ -9,7 +9,7 @@ function HomePage() {
 
 	const getAllProducts = async () => {
 		try {
-			const response = await fetch(`http://localhost:3000/products`);
+			const response = await fetch(`http://mmi21h04.mmi-troyes.fr:3000/products`);
 
 			if (!response.ok) {
 				throw new Error(`HTTP error: Status ${response.status}`);

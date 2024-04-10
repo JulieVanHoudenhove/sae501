@@ -13,7 +13,7 @@ export function CallAR() {
 			subColors.push({
 				name: variant.name,
 				nameJsonModel: "model-" + location.state.product.id + "/variant-" + variant.id,
-				iamgeURL: "http://localhost:3000" + variant.textureImage,
+				iamgeURL: "http://mmi21h04.mmi-troyes.fr:3000" + variant.textureImage,
 				isActive: location.state.activeModel === "model-" + location.state.product.id + "/variant-" + variant.id + ".glb",
 			});
 		});
