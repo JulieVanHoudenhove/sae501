@@ -1,206 +1,248 @@
 .product-page {
-	width: 100vw;
-	min-height: 100vh;
-	margin: 50px 0;
+  width: 100vw;
+  min-height: 100vh;
+  margin: 50px 0;
 
-	display: flex;
-	flex-direction: column;
-	gap: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 
-	.breadcrumb {
-		padding: 0 50px;
-		color: $color-text;
-		font-size: 14px;
-	}
+  .breadcrumb {
+    padding: 0 50px;
+    color: $color-text;
+    font-size: 14px;
+  }
 
-	.color-gray {
-		color: $color-text;
-		text-decoration: none;
-		transition: all 0.3s;
+  .color-gray {
+    color: $color-text;
+    text-decoration: none;
+    transition: all 0.3s;
 
-		&:hover {
-			color: black;
-		}
-	}
+    &:hover {
+      color: black;
+    }
+  }
 
-	.configurator {
-		padding: 0 50px;
-		width: 100%;
-		display: flex;
-		justify-content: space-between;
-		gap: 50px;
+  .configurator {
+    padding: 0 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
 
-		.preview-container {
-			position: relative;
-			min-width: 60%;
-			width: 100%;
-			display: flex;
-			flex-direction: column;
-			gap: 20px;
+    .preview-container-grid {
+      position: relative;
+      min-width: 60%;
+      width: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      gap: 10px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 1fr 100px;
+			padding-bottom: 10px;
 
-			.actions-container {
-				position: absolute;
-				top: 15px;
-				left: 15px;
-				display: flex;
-				align-items: center;
-				gap: 10px;
-
-				.action-item {
-					height: 40px;
-					width: 40px;
-					background-color: white;
-					border-radius: 50px;
-					display: flex;
-					align-items: center;
-					justify-content: center;
-					border: 1px solid #ccc;
-					cursor: pointer;
-					transition: all 0.3s;
-
-					&.active,
-					&:hover {
-						border: 1px solid #808080;
-					}
-				}
+      .pls {
+        background: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+			.pls:hover {
+				cursor: pointer;
 			}
-
-			.canvas {
-				height: 55vh;
+      .pls > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .image3d {
+        width: 50% !important;
+        height: 50% !important;
+				object-fit: contain !important;
+        opacity: 0.55;
+				transition: all 0.3s;
+      }
+			.imageScene {
+				grid-column: 1/ -1;
+				object-fit: cover;
 				width: 100%;
-				background-color: lightgray;
+				height: 100%;
 			}
 
-			.images-container {
-				display: flex;
-				gap: 20px;
+      .preview-container {
+        grid-column: 1/ -1;
+				max-height: 430px;
 
-				.image {
-					background-color: lightgray;
-					height: 150px;
-					width: 220px;
-				}
-			}
-		}
+        .actions-container {
+          position: absolute;
+          top: 15px;
+          left: 15px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
 
-		.product {
-			width: 100%;
-			display: flex;
-			flex-direction: column;
-			gap: 10px;
+          .action-item {
+            height: 40px;
+            width: 40px;
+            background-color: white;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            transition: all 0.3s;
 
-			span {
-				color: $color-text;
-				font-size: 16px;
-			}
+            &.active,
+            &:hover {
+              border: 1px solid #808080;
+            }
+          }
+        }
 
-			h1 {
-				font-family: "Matcha";
-				font-size: 64px;
-			}
+        .canvas {
+          height: 55vh;
+          width: 100%;
+          background-color: lightgray;
+        }
 
-			.product-variants {
-				display: flex;
-				flex-direction: column;
-				gap: 15px;
+        .images-container {
+          display: flex;
+          gap: 20px;
 
-				.texture-variant {
-					width: 100%;
-					height: 75px;
-					padding: 0 10px;
-					border: #77777750 1px solid;
-					transition: all 0.3s;
-					cursor: pointer;
+          .image {
+            background-color: lightgray;
+            height: 150px;
+            width: 220px;
+          }
+        }
+      }
+    }
 
-					display: flex;
-					align-items: center;
-					gap: 20px;
+    .product {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
 
-					img {
-						height: 55px;
-						width: 55px;
-						object-fit: cover;
-						object-position: center;
-					}
+      span {
+        color: $color-text;
+        font-size: 16px;
+      }
 
-					.no-image {
-						height: 55px;
-						width: 55px;
-						background-color: lightgray;
-					}
+      h1 {
+        font-family: "Matcha";
+        font-size: 64px;
+      }
 
-					p {
-						color: $color-text;
-						text-transform: uppercase;
-						font-size: 18px;
-						transition: all 0.3s;
-					}
+      .product-variants {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
 
-					&:hover,
-					&.current {
-						border: $color-dark 1px solid;
+        .texture-variant {
+          width: 100%;
+          height: 75px;
+          padding: 0 10px;
+          border: #77777750 1px solid;
+          transition: all 0.3s;
+          cursor: pointer;
 
-						p {
-							color: $color-dark;
-						}
-					}
-				}
-			}
+          display: flex;
+          align-items: center;
+          gap: 20px;
 
-			button {
-				margin-top: 20px;
-			}
+          img {
+            height: 55px;
+            width: 55px;
+            object-fit: cover;
+            object-position: center;
+          }
 
-			a {
-				text-align: center;
-			}
-		}
-	}
+          .no-image {
+            height: 55px;
+            width: 55px;
+            background-color: lightgray;
+          }
 
-	.product-details {
-		margin-top: 100px;
-		padding: 50px;
-		width: 100%;
-		background-color: $color-main;
+          p {
+            color: $color-text;
+            text-transform: uppercase;
+            font-size: 18px;
+            transition: all 0.3s;
+          }
 
-		display: flex;
-		flex-direction: column;
-		gap: 20px;
+          &:hover,
+          &.current {
+            border: $color-dark 1px solid;
 
-		h2 {
-			font-family: "Matcha";
-			font-size: 48px;
-		}
+            p {
+              color: $color-dark;
+            }
+          }
+        }
+      }
 
-		p {
-			color: $color-text;
-			font-size: 16px;
-			max-width: 60%;
-			line-height: 135%;
-		}
-	}
+      button {
+        margin-top: 20px;
+      }
 
-	@media (max-width: 800px) {
-		.breadcrumb {
-			padding: 0 20px;
-		}
+      a {
+        text-align: center;
+      }
+    }
+  }
 
-		.configurator {
-			flex-direction: column;
-			padding: 0 20px;
+  .product-details {
+    margin-top: 100px;
+    padding: 50px;
+    width: 100%;
+    background-color: $color-main;
 
-			.preview-container {
-				height: 60vh;
-			}
-		}
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 
-		.product-details {
-			padding: 30px 20px;
+    h2 {
+      font-family: "Matcha";
+      font-size: 48px;
+    }
 
-			p {
-				max-width: 100%;
-				text-align: justify;
-			}
-		}
-	}
+    p {
+      color: $color-text;
+      font-size: 16px;
+      max-width: 60%;
+      line-height: 135%;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .breadcrumb {
+      padding: 0 20px;
+    }
+
+    .configurator {
+      flex-direction: column;
+      padding: 0 20px;
+
+      .preview-container {
+        height: 60vh;
+      }
+    }
+
+    .product-details {
+      padding: 30px 20px;
+
+      p {
+        max-width: 100%;
+        text-align: justify;
+      }
+    }
+  }
 }
