@@ -160,7 +160,7 @@ if (file_exists($infos)) {
         <img class="h-[500px] w-1/2 object-cover" src="images/visualisateur.gif">
     </section>
     <section class="m-28 flex items-center gap-24">
-        <img class="h-[500px] w-1/2 object-cover" src="images/ar.gif">
+        <img class="h-[500px] w-1/2 object-cover" src="images/stickers.png">
         <div class="flex flex-col gap-7 w-1/2">
             <h2 class="font-cooper text-dark text-6xl">Qui sommes nous ?</h2>
             <div>
