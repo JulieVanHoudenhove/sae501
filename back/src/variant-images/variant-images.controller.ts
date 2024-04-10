@@ -18,10 +18,11 @@ import {JwtAuthGuard} from "../auth/jwt-auth.guard";
 import {FileInterceptor} from "@nestjs/platform-express";
 import {diskStorage} from "multer";
 import {ApiBearerAuth, ApiConsumes, ApiCreatedResponse, ApiOkResponse, ApiTags} from "@nestjs/swagger";
-import {VariantImage as VariantImageModel} from ".prisma/client";
+import {Variant as VariantModel, VariantImage as VariantImageModel} from ".prisma/client";
 import {VariantImageEntity} from "./entities/variant-image.entity";
 import * as path from "path";
 import * as fs from 'fs';
+import {VariantEntity} from "../variants/entities/variant.entity";
 
 @Controller('variant-images')
 @ApiTags('variant-images')
@@ -62,6 +63,15 @@ export class VariantImagesController {
   async findAll(): Promise<VariantImageModel[]> {
     const variants = await this.variantImagesService.variantImages({});
     return variants.map((variant) => new VariantImageEntity(variant))
+  }
+
+  @Get('variant/:id')
+  // @UseGuards(JwtAuthGuard)
+  // @ApiBearerAuth()
+  @ApiOkResponse({ type: VariantEntity, isArray: true })
+  async findAllByProduct(@Param('id', ParseIntPipe) id: number): Promise<VariantModel[]> {
+    const variants = await this.variantImagesService.variantImages({ where: { variantId: id } });
+    return variants.map((variant) => new VariantEntity(variant))
   }
 
   @Get(':id')

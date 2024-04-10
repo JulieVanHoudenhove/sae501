@@ -20,8 +20,19 @@ export class VariantImagesService {
   }
 
   async variantImages(params: {
+    skip?: number;
+    take?: number;
+    cursor?: Prisma.VariantImageWhereUniqueInput;
+    where?: Prisma.VariantImageWhereInput;
+    orderBy?: Prisma.VariantImageOrderByWithRelationInput;
   }): Promise<VariantImage[]> {
+    const { skip, take, cursor, where, orderBy } = params;
     return this.prisma.variantImage.findMany({
+      skip,
+      take,
+      cursor,
+      where,
+      orderBy,
       include: {
         variant: true,
       }
