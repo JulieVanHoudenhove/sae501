@@ -49,7 +49,7 @@ function ProductsPage() {
         Back
       </a>
       <div className="admin-header">
-        <h2>products</h2>
+        <h2>Products</h2>
         <Link to={`/admin/categories/${id}/products/new`}>NEW</Link>
       </div>
       <div className="admin-element-container">
