@@ -36,6 +36,7 @@ export class VariantsService {
       orderBy,
       include: {
         product: true,
+        images: true
       }
     });
   }
