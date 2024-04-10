@@ -160,11 +160,17 @@
 }
 .admin-nav a {
   color: rgb(215, 209, 209);
-  text-decoration: non;
+  text-decoration: none;
 }
 .admin-outlet {
   padding: 20px;
   overflow-y: auto;
+}
+.admin-outlet .login {
+    height: calc(100vh - 40px);
+}
+.admin-outlet .login form {
+    margin: auto;
 }
 .admin-header {
   display: flex;
