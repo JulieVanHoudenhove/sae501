@@ -15,7 +15,7 @@ function ProductCardComponent({ product }) {
 	return (
 		<article onClick={() => goToProduct(product.id)}>
 			<div className="image-container">
-				<img src={"http://mmi21h04.mmi-troyes.fr:3000" + product.image} alt={product.name} />
+				<img src={"https://mmi21h04.mmi-troyes.fr:3000" + product.image} alt={product.name} />
 
 				<div className="overlay"></div>
 				<button>Configurer</button>

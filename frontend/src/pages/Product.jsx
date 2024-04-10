@@ -33,7 +33,7 @@ const ProductPage = () => {
   const getVariants = async (id) => {
     try {
       const response = await fetch(
-        `http://mmi21h04.mmi-troyes.fr:3000/variants/product/${id}`
+        `https://mmi21h04.mmi-troyes.fr:3000/variants/product/${id}`
       );
 
       if (!response.ok) {
@@ -84,7 +84,7 @@ const ProductPage = () => {
 
 								{ preview3d ?
 									<CanvasScene currentModelPath={activeModelId} />
-									: <img className="imageScene" src={"http://mmi21h04.mmi-troyes.fr:3000" + data.image} alt={product.name} />
+									: <img className="imageScene" src={"https://mmi21h04.mmi-troyes.fr:3000" + data.image} alt={product.name} />
 								}
 
                 {/* <div className="images-container">
@@ -93,7 +93,7 @@ const ProductPage = () => {
 							</div> */}
               </div>
 							<div className="pls" onClick={() => {setPreview3d(true)}}><img className="image3d" src={image3d} alt="" /></div>
-							<div className="pls" onClick={() => {setPreview3d(false)}}><img src={"http://mmi21h04.mmi-troyes.fr:3000" + data.image} alt={product.name} /></div>
+							<div className="pls" onClick={() => {setPreview3d(false)}}><img src={"https://mmi21h04.mmi-troyes.fr:3000" + data.image} alt={product.name} /></div>
             </div>
 
             {/* Configurator */}
