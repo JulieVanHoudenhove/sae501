@@ -89,9 +89,9 @@ nav {
 	}
 
 	.burger {
+		display: none;
 		height: 30px;
 		width: 40px;
-		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
 
@@ -104,6 +104,10 @@ nav {
 	}
 
 	@media (max-width: 800px) {
+		.burger {
+			display: flex;
+		}
+
 		ul {
 			display: none;
 		}

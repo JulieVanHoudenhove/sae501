@@ -47,7 +47,7 @@ export default function App({ currentModelPath }) {
 				<Glasses position={[-0.2, 0.4, 1]} rotation={[0, -0.5, 0]} scale={1} currentModelPath={currentModelPath} />
 
 				<Environment preset="city" />
-				<OrbitControls makeDefault autoRotate={autoRotate} autoRotateSpeed={0.5} minPolarAngle={0} maxPolarAngle={Math.PI / 2} />
+				<OrbitControls target={[0, 0, 0.5]} makeDefault autoRotate={autoRotate} autoRotateSpeed={0.5} minPolarAngle={0} maxPolarAngle={Math.PI / 2} />
 
 				<ContactShadows rotation={[0, 0, 0]} position={[0, 0, 0]} opacity={1} width={1} height={1} blur={1.2} far={1} />
 			</Canvas>
