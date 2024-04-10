@@ -22,7 +22,7 @@ function LoginPage() {
             const response = await login(formData);
             if (response.data) {
                 localStorage.setItem('access_token', response.data.accessToken)
-                navigate(`/admin`)
+                location.reload()
             }
         } catch (error) {
             console.error('Error:', error);
@@ -30,10 +30,10 @@ function LoginPage() {
     };
 
     return (
-        <div>
-            <h1>Login</h1>
-            <form onSubmit={handleSubmit}>
-                <div>
+        <div className="login">
+            <form onSubmit={handleSubmit} className="admin-container-form">
+                <h2>Login</h2>
+                <div className="admin-container-input">
                     <label>Email:</label>
                     <input
                         type="email"
@@ -43,7 +43,7 @@ function LoginPage() {
                         required
                     />
                 </div>
-                <div>
+                <div className="admin-container-input">
                     <label>Password:</label>
                     <input
                         type="password"
@@ -52,7 +52,7 @@ function LoginPage() {
                         onChange={handleInputChange}
                     />
                 </div>
-                <button type="submit">Submit</button>
+                <button type="submit" className="admin-main-button">Submit</button>
             </form>
         </div>
     );
