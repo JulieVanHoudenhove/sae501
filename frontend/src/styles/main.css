@@ -157,6 +157,20 @@ nav .burger .line {
   text-decoration: none;
 }
 
+.loading {
+  width: 100vw;
+  height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 footer {
   background-color: #1b1d1f;
   width: 100%;

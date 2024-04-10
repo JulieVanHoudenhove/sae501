@@ -1,7 +1,8 @@
 import { Environment, OrbitControls, ContactShadows } from "@react-three/drei";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { OrbitProgress } from "react-loading-indicators";
 
 import rotateIcon from "../assets/svg/rotate-icon.svg";
 import expandIcon from "../assets/svg/expand-icon.svg";
@@ -32,6 +33,10 @@ function Glasses({ currentModelPath, ...props }) {
 	return <group ref={groupRef} {...props}></group>;
 }
 
+function Loader() {
+	return <OrbitProgress color="#1B1D1F" size="medium" text="" textColor="" />;
+}
+
 export default function App({ currentModelPath }) {
 	const [autoRotate, setAutoRotate] = useState(true);
 
@@ -40,16 +45,18 @@ export default function App({ currentModelPath }) {
 	return (
 		<>
 			<Canvas shadows camera={{ position: [0, 1.5, 4], fov: 50 }}>
-				<color attach="background" args={["#f0f0f0"]} />
+				<Suspense fallback={Loader}>
+					<color attach="background" args={["#f0f0f0"]} />
 
-				<ambientLight intensity={10} />
+					<ambientLight intensity={10} />
 
-				<Glasses position={[-0.2, 0.4, 1]} rotation={[0, -0.5, 0]} scale={1} currentModelPath={currentModelPath} />
+					<Glasses position={[-0.2, 0.4, 1]} rotation={[0, -0.5, 0]} scale={1} currentModelPath={currentModelPath} />
 
-				<Environment preset="city" />
-				<OrbitControls target={[0, 0, 0.6]} makeDefault autoRotate={autoRotate} autoRotateSpeed={0.5} minPolarAngle={0} maxPolarAngle={Math.PI / 2} />
+					<Environment preset="city" />
+					<OrbitControls target={[0, 0, 0.6]} makeDefault autoRotate={autoRotate} autoRotateSpeed={0.5} minPolarAngle={0} maxPolarAngle={Math.PI / 2} />
 
-				<ContactShadows rotation={[0, 0, 0]} position={[0, 0, 0]} opacity={1} width={1} height={1} blur={1.2} far={1} />
+					<ContactShadows rotation={[0, 0, 0]} position={[0, 0, 0]} opacity={1} width={1} height={1} blur={1.2} far={1} />
+				</Suspense>
 			</Canvas>
 
 			<div className="actions-container">

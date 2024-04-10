@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ProductCardComponent from "../components/ProductCard";
+import { BlinkBlur } from "react-loading-indicators";
 
 function HomePage() {
 	const [data, setData] = useState(null);
@@ -35,8 +36,19 @@ function HomePage() {
 			<h1>Tous nos modèles</h1>
 
 			<section className="products-container">
-				{loading && <p>Loading...</p>}
-				{error && <p>Error: {error}</p>}
+				{loading && (
+					<div className="loading">
+						<BlinkBlur color="#1B1D1F" size="medium" text="" textColor="" />
+					</div>
+				)}
+
+				{error && (
+					<div className="error">
+						<p>Une erreur est survenue lors du chargement des produits. Veuillez contacter le support.</p>
+						<p>{error}</p>
+					</div>
+				)}
+
 				{data && data.map((product) => <ProductCardComponent key={product.id} product={product} />)}
 			</section>
 		</main>
