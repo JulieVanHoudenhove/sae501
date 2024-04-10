@@ -1,9 +1,11 @@
 import React, {useEffect, useState} from "react";
 import {deleteCategory, getCategories} from "../../../entities/categoriesProvider.js";
 import {Link} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 function CategoryPage() {
     const [categories, setCategories] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         getCategories().then(response => {
@@ -15,27 +17,29 @@ function CategoryPage() {
 
     return (
         <div>
+            <div className="admin-header">
             <h2>Categories</h2>
-            <Link to={`/admin/categories/new`}>NEW</Link>
-            <ul>
+            <Link to={`/admin/categories/new`} >New</Link>
+            </div>
+            <div className="admin-element-container">
                 {
                     categories.length > 0 ? (
                         categories.map((category) =>
-                            <li key={category.id}>
-                                <div>
-                                    {category.id} - {category.name}
-                                </div>
-                                <div>
-                                    <Link to={`/admin/categories/${category.id}/edit`}>EDIT</Link>
-                                    <Link to={`/admin/categories/${category.id}/products`}>PRODUCTS</Link>
+                            <div key={category.id} className="admin-element">
+                                <p>
+                                    {category.name}
+                                </p>
+                                <div className="flex">
+                                    <Link to={`/admin/categories/${category.id}/products`} className="admin-secondary-button">Products</Link>
+                                    <Link to={`/admin/categories/${category.id}/edit`} className="admin-main-button">Edit</Link>
                                 </div>
                                 {/*<button onClick={deleteCategorycategorie.id)}>DELETE</button>*/}
-                            </li>)
+                            </div>)
                     ) : (
                         <div>No category found</div>
                     )
                 }
-            </ul>
+            </div>
         </div>
     );
 }

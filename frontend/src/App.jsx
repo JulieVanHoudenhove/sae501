@@ -29,7 +29,7 @@ function App() {
 				</Route>
                 <Route path="/ar" element={<CallAR />} />
 				<Route path="/admin" element={<AdminLayout />}>
-					<Route index element={<Dashboard />} />
+					<Route index element={<ListCategory />} />
 					<Route path="login" element={<Login />} />
 					<Route path="categories">
 						<Route index element={<ListCategory />} />
