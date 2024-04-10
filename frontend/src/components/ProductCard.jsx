@@ -10,7 +10,6 @@ function ProductCardComponent({ product }) {
 
 	useEffect(() => {
 		if (!product) return;
-		console.log("variant product:", product);
 	}, [product]);
 
 	return (

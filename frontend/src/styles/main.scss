@@ -87,6 +87,31 @@ nav {
 			}
 		}
 	}
+
+	.burger {
+		display: none;
+		height: 30px;
+		width: 40px;
+		flex-direction: column;
+		justify-content: space-between;
+
+		.line {
+			background-color: black;
+			height: 3px;
+			border-radius: 5px;
+			width: 100%;
+		}
+	}
+
+	@media (max-width: 800px) {
+		.burger {
+			display: flex;
+		}
+
+		ul {
+			display: none;
+		}
+	}
 }
 
 .btn-main {
@@ -102,6 +127,7 @@ nav {
 	cursor: pointer;
 	transition: all 0.3s;
 	text-transform: uppercase;
+	text-decoration: none;
 
 	&:hover {
 		background-color: darken($color: $color-dark, $amount: 5);
@@ -112,6 +138,49 @@ nav {
 	color: $color-dark;
 	cursor: pointer;
 	text-decoration: none;
+}
+
+.loading {
+	width: 100vw;
+	height: 300px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+footer {
+	background-color: #1b1d1f;
+	width: 100%;
+	color: white;
+
+	nav {
+		height: 175px;
+
+		a,
+		li a {
+			color: white;
+			text-decoration: none;
+			font-size: 16;
+			font-weight: normal;
+
+			&:hover {
+				color: white;
+			}
+		}
+	}
+
+	& > div {
+		background-color: #141618;
+		height: 90px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		p {
+			color: white;
+			font-size: 13px;
+		}
+	}
 }
 
 // Pages

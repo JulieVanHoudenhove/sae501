@@ -9,21 +9,16 @@ function NavbarComponent() {
 			<Link to="/">
 				<img src={logo} alt="Logo Roy Lunetier" />
 			</Link>
+
 			<ul>
 				<li>
-					<Link to="/">Accueil</Link>
+					<Link to="/">Démo Live</Link>
 				</li>
 				<li>
-					<Link to="/">Fabrication</Link>
+					<Link to="https://mmi21f15.mmi-troyes.fr/sae501/presentation/">Présentation</Link>
 				</li>
 				<li>
-					<Link to="/">À propos</Link>
-				</li>
-				<li>
-					<Link to="/">Espace Pro</Link>
-				</li>
-				<li>
-					<Link to="/">Contact</Link>
+					<Link to="https://mmi21f15.mmi-troyes.fr/sae501/kickstarter/">Kickstarter</Link>
 				</li>
 				<li>
 					<Link to="https://www.instagram.com/roylunetier/" target="_blank">
@@ -33,6 +28,12 @@ function NavbarComponent() {
 					</Link>
 				</li>
 			</ul>
+
+			<div className="burger">
+				<div className="line"></div>
+				<div className="line"></div>
+				<div className="line"></div>
+			</div>
 		</nav>
 	);
 }

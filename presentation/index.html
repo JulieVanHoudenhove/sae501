@@ -34,13 +34,16 @@
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <title>SAÉ 501 - Roy Lunetier</title>
 </head>
-<body>
-    <header class="bg-white py-5 px-9 w-full fixed h-[100px] top-0">
+<body class="overflow-x-hidden">
+    <header class="bg-white py-5 px-9 w-full fixed h-[100px] top-0 z-10">
         <nav class="flex justify-between items-center">
             <img class="h-[60px]" src="images/oeil_roy_lunetier.svg" alt="Logo Roy Lunetier">
             <ul class="flex gap-7">
                 <li>
-                    <a href="#a-propos">A propos</a>
+                    <a href="#">Accueil</a>
+                </li>
+                <li>
+                    <a href="#a-propos">À propos</a>
                 </li>
                 <li>
                     <a href="#projet">Projet</a>
@@ -49,10 +52,19 @@
                     <a href="#equipe">Équipe</a>
                 </li>
                 <li>
-                    <a href="">Accueil</a>
+                    <a href="#actu">Actualités</a>
                 </li>
                 <li>
-                    <a href="">Accueil</a>
+                    <a href="#video">Vidéo</a>
+                </li>
+                <li>
+                    <a href="#demo">Démo Live</a>
+                </li>
+                <li>
+                    <a href="#kickstarter">Kickstarter</a>
+                </li>
+                <li>
+                    <a href="#conclusion">Conclusion</a>
                 </li>
                 <li>
                     <a href="https://www.instagram.com/roylunetier/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
@@ -86,9 +98,7 @@
                 <img class="w-1/2 object-cover" src="images/RL-1.jpg" alt="">
                 <div class="w-1/2 flex flex-col p-container items-center justify-center gap-[18px]">
                     <h2 class="font-matcha text-[35px] text-dark text-center">Les technologies utilisées</h2>
-                    <p class="text-justify text-gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis sem at purus rhoncus pretium. Integer imperdiet sapien ut neque venenatis, at consectetur lacus efficitur. Phasellus vitae leo dignissim, hendrerit arcu sit amet,
-                    ornare metus. Suspendisse malesuada turpis vel rhoncus luctus. Integer ultrices mattis orci, egestas congue nibh congue non. Aenean eleifend placerat sem et mattis. Duis sodales nisi quis turpis bibendum condimentum. Cras ornare, ex vitae
-                    venenatis aliquet, magna velit condimentum velit, sed feugiat neque lectus bibendum ligula. Duis sodales odio id ultricies fermentum. Etiam sollicitudin turpis in nisl imperdiet, a malesuada urna lobortis. Vivamus ut augue eleifend, gravida metus a, pretium dui.</p>
+                    <p class="text-justify text-gray">Notre projet repose sur une architecture moderne et efficace, combinant plusieurs technologies de pointe pour offrir une expérience immersive et réactive. Nous utilisons React pour la partie frontale de notre application web, permettant ainsi de construire des interfaces utilisateur dynamiques et interactives. Avec Three.js, nous intégrons de la 3D de haute qualité dans notre environnement, ajoutant une dimension visuelle captivante à notre plateforme. Jeeliz complète cette expérience en fournissant des capacités de réalité augmentée basées sur le navigateur, enrichissant ainsi l'interaction utilisateur. En coulisse, Nest.js agit comme notre infrastructure back-end, fournissant une base solide pour la gestion des données et des requêtes serveur. Cette combinaison de technologies nous permet de créer une application web moderne et performante, prête à redéfinir les normes de l'expérience utilisateur en ligne.</p>
                 </div>
             </div>
         </section>
@@ -148,9 +158,9 @@
                 </div>
             </div>
         </section>
-        <section id="" class="bg-cream p-container flex flex-col gap-9">
+        <section id="actu" class="bg-cream p-container flex flex-col gap-9">
             <h2 class="font-matcha text-dark text-[50px] text-center">Avancement du projet</h2>
-            <p class="text-gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis sem at purus rhoncus pretium. Integer imperdiet sapien ut neque venenatis, at consectetur lacus efficitur. Phasellus vitae leo dignissim, hendrerit arcu sit amet, ornare metus. Suspendisse malesuada turpis vel rhoncus luctus. Integer ultrices mattis orci, egestas congue nibh congue non. Aenean eleifend placerat sem et mattis. Duis sodales nisi quis turpis bibendum condimentum. Cras ornare, ex vitae venenatis aliquet, magna velit condimentum velit, sed feugiat neque lectus bibendum ligula. Duis sodales odio id ultricies fermentum. Etiam sollicitudin turpis in nisl imperdiet, a malesuada urna lobortis. Vivamus ut augue eleifend, gravida metus a, pretium dui.</p>
+            <p class="text-gray">Découvrez l'évolution passionnante de notre projet au fil du temps des 4 semaines. Nous sommes ravis de partager notre progression avec vous alors que nous atteignons divers jalons dans le développement de ce projet novateur. Cette section vous offre un aperçu détaillé des fonctionnalités actuelles, des étapes accomplies et des prochaines étapes prévues. Explorez notre voyage et soyez témoin de la transformation de notre vision en réalité, grâce à l'engagement de notre équipe et à l'utilisation de technologies de pointe. Restez à l'écoute pour des mises à jour régulières alors que nous continuons à repousser les limites et à concrétiser notre vision.</p>
         </section>
         <section x-data="{activeTab: 1}">
             <div class="grid grid-cols-4">
@@ -174,69 +184,28 @@
                         <div class="flex flex-col w-full">
                             <div class="max-w-[75%] flex flex-col gap-9">
                                 <p class="text-4xl font-matcha text-dark">Développement du visualisateur 3D</p>
-                                <p class="text-gray text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis sem
-                                    at purus rhoncus pretium. Integer imperdiet sapien ut neque venenatis, at consectetur lacus efficitur.
-                                    Phasellus vitae leo dignissim, hendrerit arcu sit amet, ornare metus. Suspendisse malesuada turpis vel
-                                    rhoncus luctus. Integer ultrices mattis orci, egestas congue nibh congue non. Aenean eleifend placerat
-                                    sem et mattis. Duis sodales nisi quis turpis bibendum condimentum. Cras ornare, ex vitae venenatis
-                                    aliquet, magna velit condimentum velit, sed feugiat neque lectus bibendum ligula. Duis sodales odio id
-                                    ultricies fermentum. Etiam sollicitudin turpis in nisl imperdiet, a malesuada urna lobortis. Vivamus ut
-                                    augue eleifend, gravida metus a, pretium dui.</p>
+                                <p class="text-gray text-justify">Dans la recherche de la stack frontend optimale, j'ai exploré diverses possibilités, notamment en testant Next.js et Three.js ainsi que React et Three.js. Après ces expérimentations, j'ai opté pour React et Three.js pour plusieurs raisons. Pour la création d'un configurateur 3D, la librairie Three.js s'est imposée comme un choix évident en raison de sa popularité, de sa stabilité et de sa large communauté de développeurs. De plus, j'ai rapidement identifié des librairies telles que React Three Fiber et DREI, qui simplifient et accélèrent le développement de projets Three.js avec React, renforçant ainsi ma décision de choisir cette combinaison pour notre stack frontend.</p>
                             </div>
                         </div>
                         <div class="flex flex-col text-end w-full items-end">
                             <div class="max-w-[75%] flex flex-col gap-9">
                                 <p class="text-4xl font-matcha text-dark">Développement de l’essayage en AR</p>
-                                <p class="text-gray text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis sem
-                                    at purus
-                                    rhoncus pretium. Integer
-                                    imperdiet sapien ut neque venenatis, at consectetur lacus efficitur. Phasellus vitae leo dignissim,
-                                    hendrerit
-                                    arcu sit amet, ornare metus. Suspendisse malesuada turpis vel rhoncus luctus. Integer ultrices mattis
-                                    orci,
-                                    egestas congue nibh congue non. Aenean eleifend placerat sem et mattis. Duis sodales nisi quis turpis
-                                    bibendum
-                                    condimentum. Cras ornare, ex vitae venenatis aliquet, magna velit condimentum velit, sed feugiat neque
-                                    lectus
-                                    bibendum ligula. Duis sodales odio id ultricies fermentum. Etiam sollicitudin turpis in nisl imperdiet,
-                                    a
-                                    malesuada urna lobortis. Vivamus ut augue eleifend, gravida metus a, pretium dui.</p>
+                                <p class="text-gray text-justify">Pendant la première semaine de développement de notre Proof of Concept (POC), j'ai entamé des recherches pour créer un filtre de réalité augmentée permettant d'essayer virtuellement des lunettes. J'ai exploré différentes options, notamment des solutions payantes comme DeepAR et Banuba, reconnues pour leur facilité d'utilisation, ainsi que des solutions open source telles que TensorFlow.js et Jeeliz, offrant des outils puissants mais nécessitant plus de configuration. Cette étape initiale de recherche a été essentielle pour évaluer les différentes approches technologiques disponibles et déterminer la voie à suivre pour intégrer le suivi facial et le filtre de lunettes dans notre POC. Ces recherches constituent la base sur laquelle nous construirons notre solution innovante au cours des semaines à venir.</p>
                             </div>
                         </div>
                         <div class="flex flex-col w-full">
                             <div class="max-w-[75%] flex flex-col gap-9">
                                 <p class="text-4xl font-matcha text-dark">Développement du back office</p>
-                                <p class="text-gray text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis sem
-                                    at purus rhoncus pretium. Integer
-                                    imperdiet sapien ut neque venenatis, at consectetur lacus efficitur. Phasellus vitae leo dignissim,
-                                    hendrerit
-                                    arcu sit amet, ornare metus. Suspendisse malesuada turpis vel rhoncus luctus. Integer ultrices mattis
-                                    orci,
-                                    egestas congue nibh congue non. Aenean eleifend placerat sem et mattis. Duis sodales nisi quis turpis
-                                    bibendum
-                                    condimentum. Cras ornare, ex vitae venenatis aliquet, magna velit condimentum velit, sed feugiat neque
-                                    lectus
-                                    bibendum ligula. Duis sodales odio id ultricies fermentum. Etiam sollicitudin turpis in nisl imperdiet,
-                                    a
-                                    malesuada urna lobortis. Vivamus ut augue eleifend, gravida metus a, pretium dui.</p>
+                                <p class="text-gray text-justify">Dans notre sélection du framework backend, nous avons choisi Nest.js parmi Express.js et Adonis.js. Express.js a été écarté en raison du besoin de nombreuses librairies externes et d'une configuration complexe, notamment pour l'authentification. Adonis.js a été écarté en raison de sa communauté plus restreinte et de sa nouveauté en tant que technologie.<br>Nest.js s'est avéré être le choix optimal avec sa surcouche d'Express offrant des fonctionnalités avancées pour le développement rapide en TypeScript. Malgré une communauté plus petite que celle d'Express.js, Nest.js nous a permis de développer efficacement notre application backend avec une combinaison de robustesse et de flexibilité.</p>
                             </div>
                         </div>
                         <div class="flex flex-col text-end w-full items-end">
                             <div class="max-w-[75%] flex flex-col gap-9">
                                 <p class="text-4xl font-matcha text-dark">Gestion de projet</p>
-                                <p class="text-gray text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis sem
-                                    at purus rhoncus pretium. Integer
-                                    imperdiet sapien ut neque venenatis, at consectetur lacus efficitur. Phasellus vitae leo dignissim,
-                                    hendrerit
-                                    arcu sit amet, ornare metus. Suspendisse malesuada turpis vel rhoncus luctus. Integer ultrices mattis
-                                    orci,
-                                    egestas congue nibh congue non. Aenean eleifend placerat sem et mattis. Duis sodales nisi quis turpis
-                                    bibendum
-                                    condimentum. Cras ornare, ex vitae venenatis aliquet, magna velit condimentum velit, sed feugiat neque
-                                    lectus
-                                    bibendum ligula. Duis sodales odio id ultricies fermentum. Etiam sollicitudin turpis in nisl imperdiet,
-                                    a
-                                    malesuada urna lobortis. Vivamus ut augue eleifend, gravida metus a, pretium dui.</p>
+                                <p class="text-gray text-justify">Nous avons mis en place une gestion de projet efficace en répartissant les tâches et en fixant des objectifs clairs au sein de notre équipe. Pour faciliter la collaboration, nous avons utilisé des outils comme Google Docs, Discord et Google Drive pour centraliser nos documents et partager nos idées en temps réel.<br>En parallèle, j'ai élaboré un pitch deck complet pour présenter notre concept à des investisseurs
+                                potentiels. Ce diaporama professionnel comprenait une description du projet, une analyse de marché, les objectifs
+                                commerciaux et des démonstrations visuelles de notre technologie. Cette préparation m'a permis de réaliser des
+                                présentations convaincantes et de nouer des partenariats stratégiques pour soutenir le développement de notre projet.<br>Cette approche proactive de la gestion de projet et de la communication a été essentielle pour progresser avec succès dans notre projet et pour attirer le soutien nécessaire afin de faire avancer notre concept.</p>
                             </div>
                         </div>
                     </div>
@@ -249,69 +218,25 @@
                         <div class="flex flex-col w-full">
                             <div class="max-w-[75%] flex flex-col gap-9">
                                 <p class="text-4xl font-matcha text-dark">Développement du visualisateur 3D</p>
-                                <p class="text-gray text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis sem
-                                    at purus rhoncus pretium. Integer imperdiet sapien ut neque venenatis, at consectetur lacus efficitur.
-                                    Phasellus vitae leo dignissim, hendrerit arcu sit amet, ornare metus. Suspendisse malesuada turpis vel
-                                    rhoncus luctus. Integer ultrices mattis orci, egestas congue nibh congue non. Aenean eleifend placerat
-                                    sem et mattis. Duis sodales nisi quis turpis bibendum condimentum. Cras ornare, ex vitae venenatis
-                                    aliquet, magna velit condimentum velit, sed feugiat neque lectus bibendum ligula. Duis sodales odio id
-                                    ultricies fermentum. Etiam sollicitudin turpis in nisl imperdiet, a malesuada urna lobortis. Vivamus ut
-                                    augue eleifend, gravida metus a, pretium dui.</p>
+                                <p class="text-gray text-justify">Au cours de la deuxième semaine, j'ai travaillé sur la maquette de la page "Collections"des lunette, destinée à afficher toutes les montures disponibles. J'ai ensuite installer un projet React  et intégré cette maquette dans notre site. Par la suite, j'ai débuté des tests sur le visualisateur 3D, explorant les différentes options pour permettre aux utilisateurs de visualiser sous tous les angles les lunettes en utilisant des technologies comme Three.js. Ces tests initiaux ont été cruciaux pour évaluer les fonctionnalités et la convivialité de notre outil de visualisation 3D.</p>
                             </div>
                         </div>
                         <div class="flex flex-col text-end w-full items-end">
                             <div class="max-w-[75%] flex flex-col gap-9">
                                 <p class="text-4xl font-matcha text-dark">Développement de l’essayage en AR</p>
-                                <p class="text-gray text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis sem
-                                    at purus
-                                    rhoncus pretium. Integer
-                                    imperdiet sapien ut neque venenatis, at consectetur lacus efficitur. Phasellus vitae leo dignissim,
-                                    hendrerit
-                                    arcu sit amet, ornare metus. Suspendisse malesuada turpis vel rhoncus luctus. Integer ultrices mattis
-                                    orci,
-                                    egestas congue nibh congue non. Aenean eleifend placerat sem et mattis. Duis sodales nisi quis turpis
-                                    bibendum
-                                    condimentum. Cras ornare, ex vitae venenatis aliquet, magna velit condimentum velit, sed feugiat neque
-                                    lectus
-                                    bibendum ligula. Duis sodales odio id ultricies fermentum. Etiam sollicitudin turpis in nisl imperdiet,
-                                    a
-                                    malesuada urna lobortis. Vivamus ut augue eleifend, gravida metus a, pretium dui.</p>
+                                <p class="text-gray text-justify">Pendant la deuxième semaine de développement, j'ai opté pour la technologie Jeeliz pour créer notre filtre de réalité augmentée, car elle est gratuite pour un usage non commercial et offre un rendu final convaincant avec des ombres portées et un configurateur simple.<br>Pour configurer le testeur, j'ai cloné un dépôt GitHub contenant le code du configurateur et commencé à le personnaliser. J'ai travaillé sur la version HTML du configurateur, modifiant les fonctions personnalisées de Jeeliz pour intégrer nos modèles de lunettes et adapter l'interface à notre concept. Ces progrès nous ont permis d'avancer efficacement dans l'implémentation de notre projet et d'approcher notre objectif d'offrir une expérience immersive aux utilisateurs.</p>
                             </div>
                         </div>
                         <div class="flex flex-col w-full">
                             <div class="max-w-[75%] flex flex-col gap-9">
                                 <p class="text-4xl font-matcha text-dark">Développement du back office</p>
-                                <p class="text-gray text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis sem
-                                    at purus rhoncus pretium. Integer
-                                    imperdiet sapien ut neque venenatis, at consectetur lacus efficitur. Phasellus vitae leo dignissim,
-                                    hendrerit
-                                    arcu sit amet, ornare metus. Suspendisse malesuada turpis vel rhoncus luctus. Integer ultrices mattis
-                                    orci,
-                                    egestas congue nibh congue non. Aenean eleifend placerat sem et mattis. Duis sodales nisi quis turpis
-                                    bibendum
-                                    condimentum. Cras ornare, ex vitae venenatis aliquet, magna velit condimentum velit, sed feugiat neque
-                                    lectus
-                                    bibendum ligula. Duis sodales odio id ultricies fermentum. Etiam sollicitudin turpis in nisl imperdiet,
-                                    a
-                                    malesuada urna lobortis. Vivamus ut augue eleifend, gravida metus a, pretium dui.</p>
+                                <p class="text-gray text-justify">Pendant cette phase de développement, j'ai installé Nest.js et créé une entité utilisateur simple sans hachage de mot de passe, utilisant TypeORM pour gérer la liaison avec la base de données. J'ai exploré la structure du code Nest.js avec ses Controller, Module et Service, et j'ai mis en place un CRUD basique en suivant la documentation de Nest.js.<br>En utilisant Insomnia pour tester les API, j'ai validé le bon fonctionnement des routes CRUD. J'ai ensuite implémenté le hachage du mot de passe en utilisant bcrypt avec 12 rounds de hachage pour renforcer la sécurité. Après avoir examiné Prisma comme alternative à TypeORM, j'ai préféré conserver TypeORM pour sa familiarité.<br>J'ai finalisé le CRUD utilisateur avec gestion des exceptions et validation des entrées grâce à class-validator. J'ai intégré Swagger pour documenter et tester l'API, et j'ai configuré les réponses pour exclure le champ du mot de passe afin de protéger les informations sensibles.</p>
                             </div>
                         </div>
                         <div class="flex flex-col text-end w-full items-end">
                             <div class="max-w-[75%] flex flex-col gap-9">
                                 <p class="text-4xl font-matcha text-dark">Gestion de projet</p>
-                                <p class="text-gray text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis sem
-                                    at purus rhoncus pretium. Integer
-                                    imperdiet sapien ut neque venenatis, at consectetur lacus efficitur. Phasellus vitae leo dignissim,
-                                    hendrerit
-                                    arcu sit amet, ornare metus. Suspendisse malesuada turpis vel rhoncus luctus. Integer ultrices mattis
-                                    orci,
-                                    egestas congue nibh congue non. Aenean eleifend placerat sem et mattis. Duis sodales nisi quis turpis
-                                    bibendum
-                                    condimentum. Cras ornare, ex vitae venenatis aliquet, magna velit condimentum velit, sed feugiat neque
-                                    lectus
-                                    bibendum ligula. Duis sodales odio id ultricies fermentum. Etiam sollicitudin turpis in nisl imperdiet,
-                                    a
-                                    malesuada urna lobortis. Vivamus ut augue eleifend, gravida metus a, pretium dui.</p>
+                                <p class="text-gray text-justify">J'ai commencé à concevoir la maquette du site one-page qui présentera notre concept innovant ainsi que l'avancement de notre projet. Cette maquette mettra en lumière l'entreprise pour laquelle nous développons ce concept, les technologies que nous utilisons, et notre équipe. J'ai créé le design du menu et du footer en utilisant HTML et CSS pour assurer une structure et une présentation cohérente. Ensuite, j'ai commencé à intégrer cette partie en utilisant ces technologies front-end pour donner vie à notre vision sur le web de manière visuellement attrayante et fonctionnelle.</p>
                             </div>
                         </div>
                     </div>
@@ -324,94 +249,25 @@
                         <div class="flex flex-col w-full">
                             <div class="max-w-[75%] flex flex-col gap-9">
                                 <p class="text-4xl font-matcha text-dark">Développement du visualisateur 3D</p>
-                                <p class="text-gray text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-                                    sagittis sem
-                                    at purus rhoncus pretium. Integer imperdiet sapien ut neque venenatis, at consectetur lacus
-                                    efficitur.
-                                    Phasellus vitae leo dignissim, hendrerit arcu sit amet, ornare metus. Suspendisse malesuada
-                                    turpis vel
-                                    rhoncus luctus. Integer ultrices mattis orci, egestas congue nibh congue non. Aenean eleifend
-                                    placerat
-                                    sem et mattis. Duis sodales nisi quis turpis bibendum condimentum. Cras ornare, ex vitae
-                                    venenatis
-                                    aliquet, magna velit condimentum velit, sed feugiat neque lectus bibendum ligula. Duis sodales
-                                    odio id
-                                    ultricies fermentum. Etiam sollicitudin turpis in nisl imperdiet, a malesuada urna lobortis.
-                                    Vivamus ut
-                                    augue eleifend, gravida metus a, pretium dui.</p>
+                                <p class="text-gray text-justify">Pendant cette phase du projet, j'ai entrepris plusieurs tâches essentielles. Tout d'abord, j'ai réalisé la maquette de la page produit, qui permet d'afficher en détail chaque paire de lunettes. Ensuite, j'ai intégré cette maquette dans notre projet React, en veillant à ce que le design soit cohérent et fonctionnel.<br>Par la suite, j'ai ajouté la partie Three.js à cette page, permettant ainsi l'affichage en 3D des modèles de lunettes. J'ai commencé par intégrer un premier modèle 3D pour visualiser les lunettes de manière interactive. Au cours de cette étape, j'ai effectué de nombreux essais pour ajuster le fond, les lumières et les ombres, afin d'obtenir le rendu visuel optimal conforme à nos attentes. Cette phase de réglages a été cruciale pour assurer un aspect réaliste et attrayant lors de la visualisation des lunettes en 3D sur la page produit.</p>
                             </div>
                         </div>
                         <div class="flex flex-col text-end w-full items-end">
                             <div class="max-w-[75%] flex flex-col gap-9">
                                 <p class="text-4xl font-matcha text-dark">Développement de l’essayage en AR</p>
-                                <p class="text-gray text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-                                    sagittis sem
-                                    at purus
-                                    rhoncus pretium. Integer
-                                    imperdiet sapien ut neque venenatis, at consectetur lacus efficitur. Phasellus vitae leo
-                                    dignissim,
-                                    hendrerit
-                                    arcu sit amet, ornare metus. Suspendisse malesuada turpis vel rhoncus luctus. Integer ultrices
-                                    mattis
-                                    orci,
-                                    egestas congue nibh congue non. Aenean eleifend placerat sem et mattis. Duis sodales nisi quis
-                                    turpis
-                                    bibendum
-                                    condimentum. Cras ornare, ex vitae venenatis aliquet, magna velit condimentum velit, sed feugiat
-                                    neque
-                                    lectus
-                                    bibendum ligula. Duis sodales odio id ultricies fermentum. Etiam sollicitudin turpis in nisl
-                                    imperdiet,
-                                    a
-                                    malesuada urna lobortis. Vivamus ut augue eleifend, gravida metus a, pretium dui.</p>
+                                <p class="text-gray text-justify">Pendant cette semaine de développement, j'ai essayé d'intégrer Jeeliz avec React.js pour utiliser la même technologie que sur d'autres interfaces. Cependant, la version React nécessitait un abonnement payant pour appeler les modèles 3D via Jeeliz Cloud en utilisant des JSON.<br>Après plusieurs tests, j'ai réussi à intégrer Jeeliz dans la version React en exploitant une fonction du projet en HTML et JavaScript natif qui semblait bloquée pour la version React premium. J'ai également résolu un problème persistant qui empêchait de définir une paire de lunettes au chargement de la page en impliquant la fonction "callbackReady".<br>Les principales fonctions que j'ai ajoutées à la version React incluent la capacité de charger un modèle personnalisé, de charger dynamiquement un modèle par défaut via l'API, d'activer un état actif pour les lunettes sélectionnées, et de transmettre des informations entre différentes vues pour appeler l'API de manière appropriée. Ces améliorations ont été essentielles pour optimiser l'expérience utilisateur et garantir le bon fonctionnement de notre projet.</p>
                             </div>
                         </div>
                         <div class="flex flex-col w-full">
                             <div class="max-w-[75%] flex flex-col gap-9">
                                 <p class="text-4xl font-matcha text-dark">Développement du back office</p>
-                                <p class="text-gray text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-                                    sagittis sem
-                                    at purus rhoncus pretium. Integer
-                                    imperdiet sapien ut neque venenatis, at consectetur lacus efficitur. Phasellus vitae leo
-                                    dignissim,
-                                    hendrerit
-                                    arcu sit amet, ornare metus. Suspendisse malesuada turpis vel rhoncus luctus. Integer ultrices
-                                    mattis
-                                    orci,
-                                    egestas congue nibh congue non. Aenean eleifend placerat sem et mattis. Duis sodales nisi quis
-                                    turpis
-                                    bibendum
-                                    condimentum. Cras ornare, ex vitae venenatis aliquet, magna velit condimentum velit, sed feugiat
-                                    neque
-                                    lectus
-                                    bibendum ligula. Duis sodales odio id ultricies fermentum. Etiam sollicitudin turpis in nisl
-                                    imperdiet,
-                                    a
-                                    malesuada urna lobortis. Vivamus ut augue eleifend, gravida metus a, pretium dui.</p>
+                                <p class="text-gray text-justify">Pendant cette phase de développement, j'ai implémenté les opérations CRUD pour les produits et les variantes, facilitant ainsi la gestion complète de ces éléments dans notre système. J'ai également ajouté la fonctionnalité de téléchargement de fichiers pour les produits, permettant aux utilisateurs de télécharger des images ou d'autres fichiers associés à chaque produit, en utilisant Multer, un middleware Node.js populaire. Cette intégration avec Multer enrichit notre application en offrant aux utilisateurs la possibilité de gérer des contenus multimédias, améliorant ainsi leur expérience et la fonctionnalité globale du système.</p>
                             </div>
                         </div>
                         <div class="flex flex-col text-end w-full items-end">
                             <div class="max-w-[75%] flex flex-col gap-9">
                                 <p class="text-4xl font-matcha text-dark">Gestion de projet</p>
-                                <p class="text-gray text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-                                    sagittis sem
-                                    at purus rhoncus pretium. Integer
-                                    imperdiet sapien ut neque venenatis, at consectetur lacus efficitur. Phasellus vitae leo
-                                    dignissim,
-                                    hendrerit
-                                    arcu sit amet, ornare metus. Suspendisse malesuada turpis vel rhoncus luctus. Integer ultrices
-                                    mattis
-                                    orci,
-                                    egestas congue nibh congue non. Aenean eleifend placerat sem et mattis. Duis sodales nisi quis
-                                    turpis
-                                    bibendum
-                                    condimentum. Cras ornare, ex vitae venenatis aliquet, magna velit condimentum velit, sed feugiat
-                                    neque
-                                    lectus
-                                    bibendum ligula. Duis sodales odio id ultricies fermentum. Etiam sollicitudin turpis in nisl
-                                    imperdiet,
-                                    a
-                                    malesuada urna lobortis. Vivamus ut augue eleifend, gravida metus a, pretium dui.</p>
+                                <p class="text-gray text-justify">J'ai conçu la maquette de notre page de Kickstarter pour notre campagne de financement participatif, en produisant les contenus tels que les textes et les images nécessaires. En parallèle, j'ai réfléchi aux différents paliers de contribution et aux récompenses correspondantes à intégrer dans la campagne. Ensuite, j'ai procédé à l'intégration complète de la page, en veillant à ce que le design et les fonctionnalités correspondent parfaitement à nos besoins et attentes. Cette démarche m'a permis de créer une présentation attrayante et convaincante de notre projet, optimisée pour attirer l'attention des contributeurs potentiels et favoriser le succès de notre campagne de financement.</p>
                             </div>
                         </div>
                     </div>
@@ -424,69 +280,25 @@
                         <div class="flex flex-col w-full">
                             <div class="max-w-[75%] flex flex-col gap-9">
                                 <p class="text-4xl font-matcha text-dark">Développement du visualisateur 3D</p>
-                                <p class="text-gray text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis sem
-                                    at purus rhoncus pretium. Integer imperdiet sapien ut neque venenatis, at consectetur lacus efficitur.
-                                    Phasellus vitae leo dignissim, hendrerit arcu sit amet, ornare metus. Suspendisse malesuada turpis vel
-                                    rhoncus luctus. Integer ultrices mattis orci, egestas congue nibh congue non. Aenean eleifend placerat
-                                    sem et mattis. Duis sodales nisi quis turpis bibendum condimentum. Cras ornare, ex vitae venenatis
-                                    aliquet, magna velit condimentum velit, sed feugiat neque lectus bibendum ligula. Duis sodales odio id
-                                    ultricies fermentum. Etiam sollicitudin turpis in nisl imperdiet, a malesuada urna lobortis. Vivamus ut
-                                    augue eleifend, gravida metus a, pretium dui.</p>
+                                <p class="text-gray text-justify">Pendant cette étape de développement, j'ai ajouté de nouveaux modèles de lunettes à notre application, élargissant ainsi notre gamme de produits. J'ai ensuite effectué des tests approfondis pour garantir le bon fonctionnement de ces modèles, en vérifiant toutes les fonctionnalités de visualisation et d'interaction.<br>En parallèle, j'ai établi le lien entre le frontend et le back-office pour assurer une gestion efficace des données et des mises à jour des produits. De plus, j'ai collaboré avec l'équipe de réalité augmentée (AR) pour intégrer les fonctionnalités AR à notre application, offrant ainsi une expérience immersive lors des essais virtuels de lunettes. Cette phase a été marquée par des efforts coordonnés visant à enrichir notre application et à garantir son bon fonctionnement dans toutes ses dimensions.</p>
                             </div>
                         </div>
                         <div class="flex flex-col text-end w-full items-end">
                             <div class="max-w-[75%] flex flex-col gap-9">
                                 <p class="text-4xl font-matcha text-dark">Développement de l’essayage en AR</p>
-                                <p class="text-gray text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis sem
-                                    at purus
-                                    rhoncus pretium. Integer
-                                    imperdiet sapien ut neque venenatis, at consectetur lacus efficitur. Phasellus vitae leo dignissim,
-                                    hendrerit
-                                    arcu sit amet, ornare metus. Suspendisse malesuada turpis vel rhoncus luctus. Integer ultrices mattis
-                                    orci,
-                                    egestas congue nibh congue non. Aenean eleifend placerat sem et mattis. Duis sodales nisi quis turpis
-                                    bibendum
-                                    condimentum. Cras ornare, ex vitae venenatis aliquet, magna velit condimentum velit, sed feugiat neque
-                                    lectus
-                                    bibendum ligula. Duis sodales odio id ultricies fermentum. Etiam sollicitudin turpis in nisl imperdiet,
-                                    a
-                                    malesuada urna lobortis. Vivamus ut augue eleifend, gravida metus a, pretium dui.</p>
+                                <p class="text-gray text-justify">Pendant la quatrième semaine de développement, j'ai intégré toutes les paires de lunettes avec leurs différents coloris, en testant leur bon fonctionnement et leur intégration dans notre système. J'ai collaboré étroitement avec l'équipe backend pour assurer la liaison des données et avec l'équipe frontend pour garantir une intégration harmonieuse dans l'interface utilisateur. Cette collaboration interdisciplinaire a été essentielle pour garantir que toutes les fonctionnalités liées à l'essayage de lunettes en réalité augmentée étaient opérationnelles et offraient une expérience utilisateur optimale.</p>
                             </div>
                         </div>
                         <div class="flex flex-col w-full">
                             <div class="max-w-[75%] flex flex-col gap-9">
                                 <p class="text-4xl font-matcha text-dark">Développement du back office</p>
-                                <p class="text-gray text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis sem
-                                    at purus rhoncus pretium. Integer
-                                    imperdiet sapien ut neque venenatis, at consectetur lacus efficitur. Phasellus vitae leo dignissim,
-                                    hendrerit
-                                    arcu sit amet, ornare metus. Suspendisse malesuada turpis vel rhoncus luctus. Integer ultrices mattis
-                                    orci,
-                                    egestas congue nibh congue non. Aenean eleifend placerat sem et mattis. Duis sodales nisi quis turpis
-                                    bibendum
-                                    condimentum. Cras ornare, ex vitae venenatis aliquet, magna velit condimentum velit, sed feugiat neque
-                                    lectus
-                                    bibendum ligula. Duis sodales odio id ultricies fermentum. Etiam sollicitudin turpis in nisl imperdiet,
-                                    a
-                                    malesuada urna lobortis. Vivamus ut augue eleifend, gravida metus a, pretium dui.</p>
+                                <p class="text-gray text-justify">Pendant cette phase de développement, j'ai implémenté l'upload des fichiers pour les entités Variant et VariantImage, avec des fonctionnalités de gestion de fichiers. J'ai également créé le CRUD pour VariantImage, utilisé pour gérer la galerie d'images sur la page de détails du produit. En parallèle, j'ai collaboré avec les développeurs AR et frontend pour assurer les liaisons nécessaires entre les différentes parties du système, renforçant ainsi l'intégration globale de l'application. Ces efforts combinés ont amélioré la robustesse et l'expérience utilisateur de notre application.</p>
                             </div>
                         </div>
                         <div class="flex flex-col text-end w-full items-end">
                             <div class="max-w-[75%] flex flex-col gap-9">
                                 <p class="text-4xl font-matcha text-dark">Gestion de projet</p>
-                                <p class="text-gray text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis sem
-                                    at purus rhoncus pretium. Integer
-                                    imperdiet sapien ut neque venenatis, at consectetur lacus efficitur. Phasellus vitae leo dignissim,
-                                    hendrerit
-                                    arcu sit amet, ornare metus. Suspendisse malesuada turpis vel rhoncus luctus. Integer ultrices mattis
-                                    orci,
-                                    egestas congue nibh congue non. Aenean eleifend placerat sem et mattis. Duis sodales nisi quis turpis
-                                    bibendum
-                                    condimentum. Cras ornare, ex vitae venenatis aliquet, magna velit condimentum velit, sed feugiat neque
-                                    lectus
-                                    bibendum ligula. Duis sodales odio id ultricies fermentum. Etiam sollicitudin turpis in nisl imperdiet,
-                                    a
-                                    malesuada urna lobortis. Vivamus ut augue eleifend, gravida metus a, pretium dui.</p>
+                                <p class="text-gray text-justify">Cette semaine, j'ai poursuivi le développement du site one-page en maquettant la section "Avancement", résumant les progrès hebdomadaires dans les domaines du backend, du frontend, de la réalité augmentée et de la gestion de projet. J'ai ajouté une vidéo de présentation, des sections dédiées au projet en ligne et à la campagne de financement, ainsi qu'une conclusion. Ensuite, j'ai intégré cette maquette au site de présentation déjà existant.<br>J'ai également préparé une présentation orale détaillée sur la campagne de financement participatif, mettant en valeur les aspects clés du projet et les incitations à la participation. Enfin, j'ai contribué au déploiement du projet en assurant son hébergement en ligne. Cette semaine a été marquée par un engagement complet dans le développement, la présentation et le déploiement du projet.</p>
                             </div>
                         </div>
                     </div>
@@ -494,31 +306,35 @@
             </div>
         </section>
         <section id="video">
-            <div class="flex justify-center items-center bg-footer_dark h-[1080px]">
-                <p class="font-matcha text-white ">Vidéo de démonstration</p>
+            <div class="flex justify-center items-center bg-footer_dark p-container">
+                <video controls>
+                    <source src="video/video_demo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </section>
         <section class="flex">
-            <div class="bg-cream w-1/2 flex flex-col p-container gap-9">
+            <div id="demo" class="bg-cream w-1/2 flex flex-col p-container gap-9">
                 <h2 class="text-[50px] text-center font-matcha">Projet en ligne</h2>
-                <p class="text-gray text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis sem at purus rhoncus pretium. Integer imperdiet sapien ut neque venenatis, at consectetur lacus efficitur. Phasellus vitae leo dignissim, hendrerit arcu sit amet, ornare metus. Suspendisse malesuada turpis vel rhoncus luctus. Integer ultrices mattis orci, egestas congue nibh congue non. Aenean eleifend placerat sem et mattis. Duis sodales nisi quis turpis bibendum condimentum. Cras ornare, ex vitae venenatis aliquet, magna velit condimentum velit, sed feugiat neque lectus bibendum ligula. Duis sodales odio id ultricies fermentum. Etiam sollicitudin turpis in nisl imperdiet, a malesuada urna lobortis. Vivamus ut augue eleifend, gravida metus a, pretium dui.</p>
+                <p class="text-gray text-justify">Plongez dans notre projet dès maintenant ! Notre projet est désormais accessible en ligne, vous permettant d'explorer les fonctionnalités de notre visualisateur de lunettes 3D avec essayage en réalité augmentée. Testez différentes montures, visualisez les changements en temps réel et découvrez l'avenir de l'achat de lunettes.</p>
                 <div class="flex items-center justify-center">
                     <a class="flex justify-center items-center bg-dark text-white rounded-full px-16 py-4 w-fit" href="../frontend/">Découvrir</a>
                 </div>
             </div>
-            <div class="w-1/2 flex flex-col p-container gap-9">
-                <h2 class="text-[50px] text-center font-matcha">Kikstater</h2>
-                <p class="text-gray text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis sem at purus rhoncus pretium. Integer imperdiet sapien ut neque venenatis, at consectetur lacus efficitur. Phasellus vitae leo dignissim, hendrerit arcu sit amet, ornare metus. Suspendisse malesuada turpis vel rhoncus luctus. Integer ultrices mattis orci, egestas congue nibh congue non. Aenean eleifend placerat sem et mattis. Duis sodales nisi quis turpis bibendum condimentum. Cras ornare, ex vitae venenatis aliquet, magna velit condimentum velit, sed feugiat neque lectus bibendum ligula. Duis sodales odio id ultricies fermentum. Etiam sollicitudin turpis in nisl imperdiet, a malesuada urna lobortis. Vivamus ut augue eleifend, gravida metus a, pretium dui.</p>
+            <div id="kickstarter" class="w-1/2 flex flex-col p-container gap-9">
+                <h2 class="text-[50px] text-center font-matcha">Kickstarter</h2>
+                <p class="text-gray text-justify">Rejoignez notre campagne de financement participatif ! Notre concept est prêt à passer à l'étape suivante, mais nous avons besoin de votre aide pour y parvenir. Visitez notre page de financement participatif pour en apprendre davantage sur notre projet, nos objectifs et les différentes façons dont vous pouvez nous soutenir dans cette aventure.</p>
                 <div class="flex items-center justify-center">
                     <a class="flex justify-center items-center bg-dark text-white rounded-full px-16 py-4 w-fit" href="../kickstarter/">Nous soutenir</a>
                 </div>
             </div>
         </section>
+        <section>
             <img class="h-[610px] object-cover w-full" src="images/RL-14.jpg" alt="image des matières dans lesquelles sont faites les lunettes">
         </section>
         <section id="conclusion" class="bg-cream p-container flex flex-col gap-9">
             <h2 class="font-matcha text-dark text-[50px] text-center">Conclusion</h2>
-            <p class="text-gray text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis sem at purus rhoncus pretium. Integer imperdiet sapien ut neque venenatis, at consectetur lacus efficitur. Phasellus vitae leo dignissim, hendrerit arcu sit amet, ornare metus. Suspendisse malesuada turpis vel rhoncus luctus. Integer ultrices mattis orci, egestas congue nibh congue non. Aenean eleifend placerat sem et mattis. Duis sodales nisi quis turpis bibendum condimentum. Cras ornare, ex vitae venenatis aliquet, magna velit condimentum velit, sed feugiat neque lectus bibendum ligula. Duis sodales odio id ultricies fermentum. Etiam sollicitudin turpis in nisl imperdiet, a malesuada urna lobortis. Vivamus ut augue eleifend, gravida metus a, pretium dui.</p>
+            <p class="text-gray text-justify">En conclusion, ce projet a été une expérience enrichissante et collaborative qui a nécessité une combinaison de compétences techniques et de créativité. Nous avons réussi à concrétiser notre vision d'un configurateur de lunettes en ligne, permettant aux utilisateurs d'essayer virtuellement des montures dans le confort de leur foyer.<br><br>L'implication de chaque membre de l'équipe dans les différentes phases du projet, du développement à la présentation et au déploiement, a été essentielle pour son succès. La collaboration étroite entre les équipes backend, frontend, AR et de gestion de projet a permis d'atteindre nos objectifs et de surmonter les défis rencontrés en cours de route.<br><br>La création de la campagne Kickstarter et la préparation d'une présentation détaillée ont renforcé notre capacité à promouvoir efficacement le projet et à susciter l'intérêt des contributeurs potentiels. De plus, l'intégration de fonctionnalités telles que l'upload de fichiers, la gestion des variantes et la liaison avec Jeeliz AR ont amélioré l'expérience utilisateur et la valeur ajoutée de notre solution.<br><br>Enfin, le déploiement réussi du projet et son hébergement en ligne marquent la concrétisation de nos efforts et l'ouverture vers de nouvelles opportunités. Ce projet a été un véritable exemple de travail d'équipe, d'innovation technologique et de dévouement envers la réalisation d'une vision commune.</p>
         </section>
     </div>
     <footer>
@@ -530,7 +346,7 @@
                         <a href="#">Accueil</a>
                     </li>
                     <li>
-                        <a href="#a-propos">A propos</a>
+                        <a href="#a-propos">À propos</a>
                     </li>
                     <li>
                         <a href="#projet">Projet</a>
@@ -539,10 +355,19 @@
                         <a href="#equipe">Équipe</a>
                     </li>
                     <li>
-                        <a href="">Accueil</a>
+                        <a href="#actu">Actualités</a>
                     </li>
                     <li>
-                        <a href="">Accueil</a>
+                        <a href="#video">Vidéo</a>
+                    </li>
+                    <li>
+                        <a href="#demo">Démo Live</a>
+                    </li>
+                    <li>
+                        <a href="#kickstarter">Kickstarter</a>
+                    </li>
+                    <li>
+                        <a href="#conclusion">Conclusion</a>
                     </li>
                 </ul>
             </nav>

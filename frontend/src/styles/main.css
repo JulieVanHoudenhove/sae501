@@ -93,6 +93,37 @@ nav ul li a svg {
   transition: all 0.3s;
 }
 
+nav .burger {
+  display: none;
+  height: 30px;
+  width: 40px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+nav .burger .line {
+  background-color: black;
+  height: 3px;
+  border-radius: 5px;
+  width: 100%;
+}
+
+@media (max-width: 800px) {
+  nav .burger {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  nav ul {
+    display: none;
+  }
+}
+
 .btn-main {
   background-color: #303133;
   padding: 15px 20px;
@@ -113,6 +144,7 @@ nav ul li a svg {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   text-transform: uppercase;
+  text-decoration: none;
 }
 
 .btn-main:hover {
@@ -123,6 +155,62 @@ nav ul li a svg {
   color: #303133;
   cursor: pointer;
   text-decoration: none;
+}
+
+.loading {
+  width: 100vw;
+  height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer {
+  background-color: #1b1d1f;
+  width: 100%;
+  color: white;
+}
+
+footer nav {
+  height: 175px;
+}
+
+footer nav a,
+footer nav li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16;
+  font-weight: normal;
+}
+
+footer nav a:hover,
+footer nav li a:hover {
+  color: white;
+}
+
+footer > div {
+  background-color: #141618;
+  height: 90px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer > div p {
+  color: white;
+  font-size: 13px;
 }
 
 #home-page {
@@ -271,7 +359,7 @@ nav ul li a svg {
 
 .product-page .configurator {
   padding: 0 50px;
-  width: calc(100% - 100px);
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -281,7 +369,8 @@ nav ul li a svg {
   gap: 50px;
 }
 
-.product-page .configurator .preview-container {
+.product-page .configurator .preview-container-grid {
+  position: relative;
   min-width: 60%;
   width: 100%;
   display: -webkit-box;
@@ -289,25 +378,116 @@ nav ul li a svg {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 20px;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 10px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: 1fr 100px;
+      grid-template-rows: 1fr 100px;
+  padding-bottom: 10px;
 }
 
-.product-page .configurator .preview-container .canvas {
+.product-page .configurator .preview-container-grid .pls {
+  background: #f0f0f0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.product-page .configurator .preview-container-grid .pls:hover {
+  cursor: pointer;
+}
+
+.product-page .configurator .preview-container-grid .pls > img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.product-page .configurator .preview-container-grid .image3d {
+  width: 50% !important;
+  height: 50% !important;
+  -o-object-fit: contain !important;
+     object-fit: contain !important;
+  opacity: 0.55;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.product-page .configurator .preview-container-grid .imageScene {
+  grid-column: 1/ -1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.product-page .configurator .preview-container-grid .preview-container {
+  grid-column: 1/ -1;
+  max-height: 430px;
+}
+
+.product-page .configurator .preview-container-grid .preview-container .actions-container {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+
+.product-page .configurator .preview-container-grid .preview-container .actions-container .action-item {
+  height: 40px;
+  width: 40px;
+  background-color: white;
+  border-radius: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.product-page .configurator .preview-container-grid .preview-container .actions-container .action-item.active, .product-page .configurator .preview-container-grid .preview-container .actions-container .action-item:hover {
+  border: 1px solid #808080;
+}
+
+.product-page .configurator .preview-container-grid .preview-container .canvas {
   height: 55vh;
   width: 100%;
   background-color: lightgray;
 }
 
-.product-page .configurator .preview-container .images-container {
+.product-page .configurator .preview-container-grid .preview-container .images-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 20px;
 }
 
-.product-page .configurator .preview-container .images-container .image {
+.product-page .configurator .preview-container-grid .preview-container .images-container .image {
   background-color: lightgray;
   height: 150px;
   width: 220px;
@@ -427,5 +607,28 @@ nav ul li a svg {
   font-size: 16px;
   max-width: 60%;
   line-height: 135%;
+}
+
+@media (max-width: 800px) {
+  .product-page .breadcrumb {
+    padding: 0 20px;
+  }
+  .product-page .configurator {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 0 20px;
+  }
+  .product-page .configurator .preview-container {
+    height: 60vh;
+  }
+  .product-page .product-details {
+    padding: 30px 20px;
+  }
+  .product-page .product-details p {
+    max-width: 100%;
+    text-align: justify;
+  }
 }
 /*# sourceMappingURL=main.css.map */
