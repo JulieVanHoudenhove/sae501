@@ -34,13 +34,16 @@
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <title>SAÉ 501 - Roy Lunetier</title>
 </head>
-<body>
+<body class="overflow-x-hidden">
     <header class="bg-white py-5 px-9 w-full fixed h-[100px] top-0 z-10">
         <nav class="flex justify-between items-center">
             <img class="h-[60px]" src="images/oeil_roy_lunetier.svg" alt="Logo Roy Lunetier">
             <ul class="flex gap-7">
                 <li>
-                    <a href="#a-propos">A propos</a>
+                    <a href="#">Accueil</a>
+                </li>
+                <li>
+                    <a href="#a-propos">À propos</a>
                 </li>
                 <li>
                     <a href="#projet">Projet</a>
@@ -49,10 +52,19 @@
                     <a href="#equipe">Équipe</a>
                 </li>
                 <li>
-                    <a href="">Accueil</a>
+                    <a href="#actu">Actualités</a>
                 </li>
                 <li>
-                    <a href="">Accueil</a>
+                    <a href="#video">Vidéo</a>
+                </li>
+                <li>
+                    <a href="#demo">Démo Live</a>
+                </li>
+                <li>
+                    <a href="#kickstarter">Kickstarter</a>
+                </li>
+                <li>
+                    <a href="#conclusion">Conclusion</a>
                 </li>
                 <li>
                     <a href="https://www.instagram.com/roylunetier/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
@@ -146,7 +158,7 @@
                 </div>
             </div>
         </section>
-        <section id="" class="bg-cream p-container flex flex-col gap-9">
+        <section id="actu" class="bg-cream p-container flex flex-col gap-9">
             <h2 class="font-matcha text-dark text-[50px] text-center">Avancement du projet</h2>
             <p class="text-gray">Découvrez l'évolution passionnante de notre projet au fil du temps des 4 semaines. Nous sommes ravis de partager notre progression avec vous alors que nous atteignons divers jalons dans le développement de ce projet novateur. Cette section vous offre un aperçu détaillé des fonctionnalités actuelles, des étapes accomplies et des prochaines étapes prévues. Explorez notre voyage et soyez témoin de la transformation de notre vision en réalité, grâce à l'engagement de notre équipe et à l'utilisation de technologies de pointe. Restez à l'écoute pour des mises à jour régulières alors que nous continuons à repousser les limites et à concrétiser notre vision.</p>
         </section>
@@ -172,14 +184,7 @@
                         <div class="flex flex-col w-full">
                             <div class="max-w-[75%] flex flex-col gap-9">
                                 <p class="text-4xl font-matcha text-dark">Développement du visualisateur 3D</p>
-                                <p class="text-gray text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis sem
-                                    at purus rhoncus pretium. Integer imperdiet sapien ut neque venenatis, at consectetur lacus efficitur.
-                                    Phasellus vitae leo dignissim, hendrerit arcu sit amet, ornare metus. Suspendisse malesuada turpis vel
-                                    rhoncus luctus. Integer ultrices mattis orci, egestas congue nibh congue non. Aenean eleifend placerat
-                                    sem et mattis. Duis sodales nisi quis turpis bibendum condimentum. Cras ornare, ex vitae venenatis
-                                    aliquet, magna velit condimentum velit, sed feugiat neque lectus bibendum ligula. Duis sodales odio id
-                                    ultricies fermentum. Etiam sollicitudin turpis in nisl imperdiet, a malesuada urna lobortis. Vivamus ut
-                                    augue eleifend, gravida metus a, pretium dui.</p>
+                                <p class="text-gray text-justify">Dans la recherche de la stack frontend optimale, j'ai exploré diverses possibilités, notamment en testant Next.js et Three.js ainsi que React et Three.js. Après ces expérimentations, j'ai opté pour React et Three.js pour plusieurs raisons. Pour la création d'un configurateur 3D, la librairie Three.js s'est imposée comme un choix évident en raison de sa popularité, de sa stabilité et de sa large communauté de développeurs. De plus, j'ai rapidement identifié des librairies telles que React Three Fiber et DREI, qui simplifient et accélèrent le développement de projets Three.js avec React, renforçant ainsi ma décision de choisir cette combinaison pour notre stack frontend.</p>
                             </div>
                         </div>
                         <div class="flex flex-col text-end w-full items-end">
@@ -191,19 +196,7 @@
                         <div class="flex flex-col w-full">
                             <div class="max-w-[75%] flex flex-col gap-9">
                                 <p class="text-4xl font-matcha text-dark">Développement du back office</p>
-                                <p class="text-gray text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis sem
-                                    at purus rhoncus pretium. Integer
-                                    imperdiet sapien ut neque venenatis, at consectetur lacus efficitur. Phasellus vitae leo dignissim,
-                                    hendrerit
-                                    arcu sit amet, ornare metus. Suspendisse malesuada turpis vel rhoncus luctus. Integer ultrices mattis
-                                    orci,
-                                    egestas congue nibh congue non. Aenean eleifend placerat sem et mattis. Duis sodales nisi quis turpis
-                                    bibendum
-                                    condimentum. Cras ornare, ex vitae venenatis aliquet, magna velit condimentum velit, sed feugiat neque
-                                    lectus
-                                    bibendum ligula. Duis sodales odio id ultricies fermentum. Etiam sollicitudin turpis in nisl imperdiet,
-                                    a
-                                    malesuada urna lobortis. Vivamus ut augue eleifend, gravida metus a, pretium dui.</p>
+                                <p class="text-gray text-justify">Dans notre sélection du framework backend, nous avons choisi Nest.js parmi Express.js et Adonis.js. Express.js a été écarté en raison du besoin de nombreuses librairies externes et d'une configuration complexe, notamment pour l'authentification. Adonis.js a été écarté en raison de sa communauté plus restreinte et de sa nouveauté en tant que technologie.<br>Nest.js s'est avéré être le choix optimal avec sa surcouche d'Express offrant des fonctionnalités avancées pour le développement rapide en TypeScript. Malgré une communauté plus petite que celle d'Express.js, Nest.js nous a permis de développer efficacement notre application backend avec une combinaison de robustesse et de flexibilité.</p>
                             </div>
                         </div>
                         <div class="flex flex-col text-end w-full items-end">
@@ -225,14 +218,7 @@
                         <div class="flex flex-col w-full">
                             <div class="max-w-[75%] flex flex-col gap-9">
                                 <p class="text-4xl font-matcha text-dark">Développement du visualisateur 3D</p>
-                                <p class="text-gray text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis sem
-                                    at purus rhoncus pretium. Integer imperdiet sapien ut neque venenatis, at consectetur lacus efficitur.
-                                    Phasellus vitae leo dignissim, hendrerit arcu sit amet, ornare metus. Suspendisse malesuada turpis vel
-                                    rhoncus luctus. Integer ultrices mattis orci, egestas congue nibh congue non. Aenean eleifend placerat
-                                    sem et mattis. Duis sodales nisi quis turpis bibendum condimentum. Cras ornare, ex vitae venenatis
-                                    aliquet, magna velit condimentum velit, sed feugiat neque lectus bibendum ligula. Duis sodales odio id
-                                    ultricies fermentum. Etiam sollicitudin turpis in nisl imperdiet, a malesuada urna lobortis. Vivamus ut
-                                    augue eleifend, gravida metus a, pretium dui.</p>
+                                <p class="text-gray text-justify">Au cours de la deuxième semaine, j'ai travaillé sur la maquette de la page "Collections"des lunette, destinée à afficher toutes les montures disponibles. J'ai ensuite installer un projet React  et intégré cette maquette dans notre site. Par la suite, j'ai débuté des tests sur le visualisateur 3D, explorant les différentes options pour permettre aux utilisateurs de visualiser sous tous les angles les lunettes en utilisant des technologies comme Three.js. Ces tests initiaux ont été cruciaux pour évaluer les fonctionnalités et la convivialité de notre outil de visualisation 3D.</p>
                             </div>
                         </div>
                         <div class="flex flex-col text-end w-full items-end">
@@ -263,21 +249,7 @@
                         <div class="flex flex-col w-full">
                             <div class="max-w-[75%] flex flex-col gap-9">
                                 <p class="text-4xl font-matcha text-dark">Développement du visualisateur 3D</p>
-                                <p class="text-gray text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-                                    sagittis sem
-                                    at purus rhoncus pretium. Integer imperdiet sapien ut neque venenatis, at consectetur lacus
-                                    efficitur.
-                                    Phasellus vitae leo dignissim, hendrerit arcu sit amet, ornare metus. Suspendisse malesuada
-                                    turpis vel
-                                    rhoncus luctus. Integer ultrices mattis orci, egestas congue nibh congue non. Aenean eleifend
-                                    placerat
-                                    sem et mattis. Duis sodales nisi quis turpis bibendum condimentum. Cras ornare, ex vitae
-                                    venenatis
-                                    aliquet, magna velit condimentum velit, sed feugiat neque lectus bibendum ligula. Duis sodales
-                                    odio id
-                                    ultricies fermentum. Etiam sollicitudin turpis in nisl imperdiet, a malesuada urna lobortis.
-                                    Vivamus ut
-                                    augue eleifend, gravida metus a, pretium dui.</p>
+                                <p class="text-gray text-justify">Pendant cette phase du projet, j'ai entrepris plusieurs tâches essentielles. Tout d'abord, j'ai réalisé la maquette de la page produit, qui permet d'afficher en détail chaque paire de lunettes. Ensuite, j'ai intégré cette maquette dans notre projet React, en veillant à ce que le design soit cohérent et fonctionnel.<br>Par la suite, j'ai ajouté la partie Three.js à cette page, permettant ainsi l'affichage en 3D des modèles de lunettes. J'ai commencé par intégrer un premier modèle 3D pour visualiser les lunettes de manière interactive. Au cours de cette étape, j'ai effectué de nombreux essais pour ajuster le fond, les lumières et les ombres, afin d'obtenir le rendu visuel optimal conforme à nos attentes. Cette phase de réglages a été cruciale pour assurer un aspect réaliste et attrayant lors de la visualisation des lunettes en 3D sur la page produit.</p>
                             </div>
                         </div>
                         <div class="flex flex-col text-end w-full items-end">
@@ -308,14 +280,7 @@
                         <div class="flex flex-col w-full">
                             <div class="max-w-[75%] flex flex-col gap-9">
                                 <p class="text-4xl font-matcha text-dark">Développement du visualisateur 3D</p>
-                                <p class="text-gray text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis sem
-                                    at purus rhoncus pretium. Integer imperdiet sapien ut neque venenatis, at consectetur lacus efficitur.
-                                    Phasellus vitae leo dignissim, hendrerit arcu sit amet, ornare metus. Suspendisse malesuada turpis vel
-                                    rhoncus luctus. Integer ultrices mattis orci, egestas congue nibh congue non. Aenean eleifend placerat
-                                    sem et mattis. Duis sodales nisi quis turpis bibendum condimentum. Cras ornare, ex vitae venenatis
-                                    aliquet, magna velit condimentum velit, sed feugiat neque lectus bibendum ligula. Duis sodales odio id
-                                    ultricies fermentum. Etiam sollicitudin turpis in nisl imperdiet, a malesuada urna lobortis. Vivamus ut
-                                    augue eleifend, gravida metus a, pretium dui.</p>
+                                <p class="text-gray text-justify">Pendant cette étape de développement, j'ai ajouté de nouveaux modèles de lunettes à notre application, élargissant ainsi notre gamme de produits. J'ai ensuite effectué des tests approfondis pour garantir le bon fonctionnement de ces modèles, en vérifiant toutes les fonctionnalités de visualisation et d'interaction.<br>En parallèle, j'ai établi le lien entre le frontend et le back-office pour assurer une gestion efficace des données et des mises à jour des produits. De plus, j'ai collaboré avec l'équipe de réalité augmentée (AR) pour intégrer les fonctionnalités AR à notre application, offrant ainsi une expérience immersive lors des essais virtuels de lunettes. Cette phase a été marquée par des efforts coordonnés visant à enrichir notre application et à garantir son bon fonctionnement dans toutes ses dimensions.</p>
                             </div>
                         </div>
                         <div class="flex flex-col text-end w-full items-end">
@@ -341,26 +306,30 @@
             </div>
         </section>
         <section id="video">
-            <div class="flex justify-center items-center bg-footer_dark h-[1020px]">
-                <p class="font-matcha text-white text-[75px]">Vidéo de démonstration</p>
+            <div class="flex justify-center items-center bg-footer_dark p-container">
+                <video controls>
+                    <source src="video/video_demo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </section>
         <section class="flex">
-            <div class="bg-cream w-1/2 flex flex-col p-container gap-9">
+            <div id="demo" class="bg-cream w-1/2 flex flex-col p-container gap-9">
                 <h2 class="text-[50px] text-center font-matcha">Projet en ligne</h2>
                 <p class="text-gray text-justify">Plongez dans notre projet dès maintenant ! Notre projet est désormais accessible en ligne, vous permettant d'explorer les fonctionnalités de notre visualisateur de lunettes 3D avec essayage en réalité augmentée. Testez différentes montures, visualisez les changements en temps réel et découvrez l'avenir de l'achat de lunettes.</p>
                 <div class="flex items-center justify-center">
                     <a class="flex justify-center items-center bg-dark text-white rounded-full px-16 py-4 w-fit" href="../frontend/">Découvrir</a>
                 </div>
             </div>
-            <div class="w-1/2 flex flex-col p-container gap-9">
-                <h2 class="text-[50px] text-center font-matcha">Kikstater</h2>
+            <div id="kickstarter" class="w-1/2 flex flex-col p-container gap-9">
+                <h2 class="text-[50px] text-center font-matcha">Kickstarter</h2>
                 <p class="text-gray text-justify">Rejoignez notre campagne de financement participatif ! Notre concept est prêt à passer à l'étape suivante, mais nous avons besoin de votre aide pour y parvenir. Visitez notre page de financement participatif pour en apprendre davantage sur notre projet, nos objectifs et les différentes façons dont vous pouvez nous soutenir dans cette aventure.</p>
                 <div class="flex items-center justify-center">
                     <a class="flex justify-center items-center bg-dark text-white rounded-full px-16 py-4 w-fit" href="../kickstarter/">Nous soutenir</a>
                 </div>
             </div>
         </section>
+        <section>
             <img class="h-[610px] object-cover w-full" src="images/RL-14.jpg" alt="image des matières dans lesquelles sont faites les lunettes">
         </section>
         <section id="conclusion" class="bg-cream p-container flex flex-col gap-9">
@@ -377,7 +346,7 @@
                         <a href="#">Accueil</a>
                     </li>
                     <li>
-                        <a href="#a-propos">A propos</a>
+                        <a href="#a-propos">À propos</a>
                     </li>
                     <li>
                         <a href="#projet">Projet</a>
@@ -386,10 +355,19 @@
                         <a href="#equipe">Équipe</a>
                     </li>
                     <li>
-                        <a href="">Accueil</a>
+                        <a href="#actu">Actualités</a>
                     </li>
                     <li>
-                        <a href="">Accueil</a>
+                        <a href="#video">Vidéo</a>
+                    </li>
+                    <li>
+                        <a href="#demo">Démo Live</a>
+                    </li>
+                    <li>
+                        <a href="#kickstarter">Kickstarter</a>
+                    </li>
+                    <li>
+                        <a href="#conclusion">Conclusion</a>
                     </li>
                 </ul>
             </nav>

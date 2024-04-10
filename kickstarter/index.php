@@ -60,7 +60,7 @@ if (file_exists($infos)) {
         <h2 class="font-cooper text-6xl text-dark">funder.</h2>
     </header>
     <section class="mx-28">
-        <img src="images/site.png">
+        <img src="images/headerimage.png">
         <div class="relative mt-12 flex items-center h-16">
             <div class="absolute bg-white h-16 w-full shadow-[0_13px_22px_0_rgba(0,0,0,0.10)]"></div>
             <div class="absolute bg-pink h-16 w-[800px]"></div>
@@ -157,10 +157,10 @@ if (file_exists($infos)) {
             </div>
             <p class="text-dark text-base">Nous nous engageons à respecter notre calendrier et à vous tenir informés à chaque étape de notre progression. Votre soutien est essentiel pour notre succès et nous sommes reconnaissant pour votre participation. Merci d'être partie prenante de cette aventure palpitante avec nous !</p>
         </div>
-        <img class="h-[500px] w-1/2 object-cover" src="images/visualisateur.gif">
+        <img class="h-[500px] w-1/2 object-cover" src="images/collection.png">
     </section>
     <section class="m-28 flex items-center gap-24">
-        <img class="h-[500px] w-1/2 object-cover" src="images/ar.gif">
+        <img class="h-[500px] w-1/2 object-cover" src="images/stickers.png">
         <div class="flex flex-col gap-7 w-1/2">
             <h2 class="font-cooper text-dark text-6xl">Qui sommes nous ?</h2>
             <div>
